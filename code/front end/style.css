@@ -1,0 +1,65 @@
+/* universal tag */
+*{
+    background-color:#ffffff;
+    font-family: 'Poppins';
+    font-size: 18px;
+}
+/* navbar -> { logo-> img , content } 
+    content -> { p , navright }
+    navright -> { phone , contact}*/
+.navbar{
+    position: absolute;
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.navbar .Logo{
+    width: 5%;
+}
+.navbar .Logo img{
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.navbar .content{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+}
+.navbar .content p{
+    display: inline;
+    margin-left: 20px;
+}
+.navbar .navright{
+    position: absolute;
+    float: right;
+    display: flex;
+    right: 0%;
+    top: 50%;
+    transform:translateX(-20%) translateY(-50%);
+}
+.navbar .navright .phone{
+    display: flex;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.navbar .navright .contact{
+    display: flex;
+    font-family: 'Lobster';
+    color: #ffffff;
+    background-color: #FF9900;
+    border-radius: 6px;
+    width: 122px;
+    height: 37px;
+    margin-right: 20px;
+    justify-content: center;
+    align-items: center;
+}
+/* -------------------------------------------------------- */
+
