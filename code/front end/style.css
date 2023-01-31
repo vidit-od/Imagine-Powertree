@@ -3,20 +3,30 @@
     background-color:#ffffff;
     font-family: 'Poppins';
     font-size: 18px;
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+/* body tag */
+body{
+    display: inline;
 }
 /* navbar -> { logo-> img , content } 
     content -> { p , navright }
     navright -> { phone , contact}*/
 .navbar{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 64px;
     display: flex;
+    z-index: 1;
     justify-content: space-between;
     overflow: hidden;
 }
 .navbar .Logo{
     width: 5%;
+    margin-left: 10px;
 }
 .navbar .Logo img{
     width: 50px;
@@ -54,12 +64,167 @@
     font-family: 'Lobster';
     color: #ffffff;
     background-color: #FF9900;
-    border-radius: 6px;
+    border-radius: 5px;
     width: 122px;
-    height: 37px;
+    height: 25px;
     margin-right: 20px;
     justify-content: center;
     align-items: center;
 }
 /* -------------------------------------------------------- */
+/* home page */
+.home{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    text-align: center;
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+}
+.home .title p{
+    font-family: 'Lobster';
+    font-size: 40px;
+    margin: 0;
+}
+.home .title span{
+    color: #FF9900;
+    font-family: 'lobster';
+    font-size: 40px;
+}
+.home .subtitle {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+.home .subtitle p{
+    font-size: 22px;
+    font-style: normal;
+}
+.home .button{
+    display: flex;
+    margin: auto;
+    width: 225px;
+    height: 36px;
+    background-color: #FF9900;
+    border-radius:6px ;
+}
+.home .button p{
+    position: absolute;
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    font-size: 22px;
+    background-color: transparent;
+    font-family: 'Lobster';
+    color: #ffffff;
+}
+.home img{
+    width: 535px;
+    height: 508px;
+    margin: auto;
+    background-color: transparent;
+}
+/* -------------------------------------------------------- */
+/* page 2 */
+.page2{
+    position: absolute;
+    top: 145%;
+    height: 85%;
+    width: 100%;
+    margin-left: 35px;
+    display: flex;
+    overflow: hidden;
+}
+.page2 .why_powertree{
+    flex-direction: column;
+    width: 51%;
+    height: 518px;
+    text-align: center;
+}
+.page2 .why_powertree .title{
+    font-family: 'lobster';
+    color: #FF9900;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 5%;
+}
+.page2 .why_powertree .title span{
+    font-family: 'lobster';
+    color: #ffffff;
+    font-size: 40px;
+    background-color: #FF9900;
+    border-radius: 32.5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.page2 .why_powertree .subtitle{
+    text-align: left;
+}
+.page2 .why_powertree .statistics {
+    display: flex;
+    background-color: transparent;
+    margin-top: 20px;
+    overflow: visible;
+}
+.page2 .why_powertree .statistics .fact{
+    width: 40%;
+    height: 230px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-radius:19px;
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+}
+.page2 .why_powertree .statistics .fact .title span{
+    font-size: 20px;
+    background-color: white;
+    color: #FF9900;
+    padding: 0%;
+}
+.page2 .why_powertree .statistics .fact .title{
+    padding: 0%;
+    margin: 0%;
+    height: 40%;
+    margin-top: 20px;   
+}
+.page2 .why_powertree .statistics .fact .text{
+    position: absolute;
+    top:60%;
+    font-size: 22px;
+    transform: translateY(-50%);
 
+}
+.page2 .why_powertree .button{
+    margin: auto;
+    margin-top: 20px;
+    background-color: #FF9900;
+    height: 9%;
+    width: 25%;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.page2 .why_powertree .button p{
+    background-color: transparent;
+    font-family: "lobster";
+    font-size: 22px;
+    transform: translateY(8px);
+}
+.page2 img{
+    position:absolute;
+    left: 51%;
+    background-color: transparent;
+    transform: translateY(10px);
+    width: 649.46px;
+    height: 510px;
+    z-index:1;
+}
+.page2 .backshade{
+    position: absolute;
+    background-color: #FFCD82;
+    width: 377px;
+    height: 335px;
+    left: 61%;
+    z-index: 0;
+    border-radius: 100%;
+}
