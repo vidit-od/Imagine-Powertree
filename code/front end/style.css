@@ -76,7 +76,6 @@ body{
     fill: #FF9900;
     margin-right: 10px;
 }
-/* -------------------------------------------------------- */
 /* home page -> {title, subtitle, button, img}
    title -> {p, p} 
    subtitle -> {p, p}
@@ -133,7 +132,6 @@ body{
     margin: auto;
     background-color: transparent;
 }
-/* -------------------------------------------------------- */
 /* page 2 -> { why_powertree, img, backshade}
    why_powertree -> {title ,subtitle, statistics, button}
    statistics -> {fact}
@@ -240,8 +238,12 @@ body{
     z-index: 0;
     border-radius: 100%;
 }
-/* -------------------------------------------------------- */
-/* page 3 */
+/* page 3 -> { image, content } 
+   image -> { img , desc}
+   content -> { titlem ,desc , purpose}
+   purpose -> { parallel , p_dealer }
+   parallel -> { p_industries, p_home}
+   p_dealer,p_industries,p_home -> {svg, title, button}*/
 .page3{
     position: absolute;
     top:240%;
@@ -437,8 +439,13 @@ body{
     width: 25px;
     margin: auto;
 }
-/*-------------------------------------------------------- */
-/* page 4 */
+/* page 4 -> { upper, lower }
+   upper -> { background , content }
+   background -> { blur,img }
+   content -> { title , description }
+   lower -> { products , button }
+   products -> { prod1, prod1, prod1 }
+   prod1 -> { image , title , desc}*/
 .page4{
     position: absolute;
     top: 340%;
@@ -542,7 +549,7 @@ body{
     border-color: #FF9900;
     border-radius:10px ;
 }
-/* banner */
+/* banner -> { lhs , arrow , rhs }*/
 .banner{
     position: absolute;
     top: 480%;
@@ -584,9 +591,17 @@ body{
     border-radius: 10px;
     font-family: 'lobster';
 }
-
-/* page 5 */
-
+/* page5 -> {key_client , sec2 } 
+   key clients -> { title , cards} 
+   cards -> { clients*6 }
+   clients -> {logo, name}
+   sec2 -> { supported , achievements}
+   supported -> { title ,desc ,cards }
+   cards -> { content*3 }
+   content -> { name, image }
+   achievements -> { title ,desc ,cards }
+   cards -> {content*3 }
+   content -> {logo}*/
 .page5{
     position: absolute;
     top: 510%;
@@ -618,7 +633,17 @@ body{
     flex-direction: row;
     justify-content: space-between;
     font-weight: 200;
-    margin-top: 10px;
+    margin-top: 10px;   
+    width: 91%;
+}
+.key_client .cards .Clients .name{
+    position: absolute;
+    bottom: 0%;
+    width: 100px;
+}
+.key_client .cards .Clients .logo{
+    position: absolute;
+    bottom: 20%;
 }
 .key_client .cards img{
     width: 100px;
@@ -709,8 +734,18 @@ body{
     font-size: 14px;
     font-weight: 200;
 }
-
-/* footer */
+/* footer -> { upper, lower }
+   upper -> { background , content}
+   background -> { blur, image}
+   content -> {title}
+   lower -> { content , hr , copyright }
+   content -> { section , reserve }
+   section -> { logo , explore , social , contact }
+   explore -> { main , p}
+   social -> { main , media }
+   media -> { svg_fb, svg_insta, svg_tweet}
+   contact -> { main p}
+   */
 .footer{
     position: absolute;
     top: 600%;
