@@ -371,10 +371,352 @@ body{
     transition: opacity 2s ease;
 }
 .page2 .right{
-    width: 40%;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color:#ffffff;
+    display: flex;
+}
+/* card 1 */
+.page2 .card1{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
     height: 80%;
+    overflow: hidden;
     margin: auto;
-    background-color:#000000;
     border-radius: 10%;
-    
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    transition: height 2s ease;
+}
+.card1 .traditional{
+    position: relative;
+    width: 50%;
+    border-right: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+}
+.card1 .traditional .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card1 .powertree{
+    position: relative;
+    width: 50%;
+    border-left: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+}
+.card1 .powertree .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card1 .traditional .image img{
+    width: 230px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.card1 .powertree .image img{
+    width: 230px;
+
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* card2 */
+.page2 .card2{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 0%;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 10%;
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    transition: height 2s ease;
+}
+.card2 .traditional{
+    position: relative;
+    width: 50%;
+    border-right: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+}
+.card2 .traditional .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card2 .powertree{
+    position: relative;
+    width: 50%;
+    border-left: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+}
+.card2 .powertree .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card2 .traditional .image img{
+    width: 230px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.card2 .powertree .image img{
+    width: 230px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* card3 */
+.page2 .card3{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 0%;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 10%;
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    transition: height 2s ease;
+}
+.card3 .traditional{
+    position: relative;
+    width: 50%;
+    border-right: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+}
+.card3 .traditional .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card3 .powertree{
+    position: relative;
+    width: 50%;
+    border-left: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+}
+.card3 .powertree .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card3 .traditional .image img{
+    width: 230px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.card3 .powertree .image img{
+    width: 230px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* card4 */
+.page2 .card4{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 0%;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 10%;
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    transition: height 2s ease;
+}
+.card4 .traditional{
+    position: relative;
+    width: 50%;
+    border-right: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+.card4 .traditional .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card4 .powertree{
+    position: relative;
+    width: 50%;
+    border-left: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+.card4 .powertree .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card4 .traditional .image img{
+    width: 230px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.card4 .powertree .image img{
+    width: 230px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* card5 */
+.page2 .card5{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 0%;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 10%;
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    transition: height 2s ease;
+}
+.card5 .traditional{
+    position: relative;
+    width: 50%;
+    border-right: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+.card5 .traditional .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card5 .powertree{
+    position: relative;
+    width: 50%;
+    border-left: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+.card5 .powertree .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card5 .traditional .image img{
+    width: 230px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.card5 .powertree .image img{
+    width: 230px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* card6 */
+.page2 .card6{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 0%;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 10%;
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    transition: height 2s ease;
+}
+.card6 .traditional{
+    position: relative;
+    width: 50%;
+    border-right: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+.card6 .traditional .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card6 .powertree{
+    position: relative;
+    width: 50%;
+    border-left: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+.card6 .powertree .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card6 .traditional .image img{
+    height: 200px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.card6 .powertree .image img{
+    height: 200px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
 }
