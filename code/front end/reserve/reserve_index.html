@@ -32,28 +32,36 @@
                 <div class="subtitle">Fill out this form and a Powertree agent will get in touch.</div>
                 <form action="">
                     <div class="field">
-                        <input type="text" name="full-name" autocomplete="off" required />
-                        <label for="full-name" class="label-field">
+                        <select name="role" id="" required>
+                            <option value="" disabled selected value></option>
+                            <option value="Commercial Customer">Commercial Customer</option>
+                            
+                            <option value="Residentail Customer">Residentail Customer</option>
+                            
+                            <option value="Reseller">Reseller</option>
+
+                        </select>
+                        <label for="role" class="label-field">
                             <span class="content-name">I am a.. <span>*</span>
                             </span>
                         </label>
                     </div>
                     <div class="field">
-                        <input type="text" name="full-name" autocomplete="off" required />
+                        <input type="text" name="full-name" autocomplete="off" required/>
                         <label for="full-name" class="label-field">
                             <span class="content-name">Name <span>*</span>
                             </span>
                         </label>
                     </div>
                     <div class="field">
-                        <input type="text" name="full-name" autocomplete="off" required />
+                        <input type="text" name="full-name" autocomplete="off" required placeholder=" "/>
                         <label for="full-name" class="label-field">
                             <span class="content-name">Email <span>*</span>
                             </span>
                         </label>
                     </div>
                     <div class="field">
-                        <input type="text" name="full-name" autocomplete="off" required />
+                        <input type="tel" name="full-name" autocomplete="off" maxlength="10" required />
                         <label for="full-name" class="label-field">
                             <span class="content-name">Contact number <span>*</span>
                             </span>

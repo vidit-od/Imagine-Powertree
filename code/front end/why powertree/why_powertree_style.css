@@ -1,0 +1,380 @@
+*{
+    font-family: 'Poppins';
+    font-size: 18px;
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+/* body tag */
+body{
+    display: inline;
+}
+/* navbar -> { logo-> img , content } 
+    content -> { p , navright }
+    navright -> { phone , contact}*/
+.navbar{
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+.navbar .Logo{
+    position: absolute;
+    width: 5%;
+    left: 0;
+    margin-left: 10px;
+    width: 50px;
+    height: 55px;
+}
+.navbar .Logo img{
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar .content p{
+    display: inline;
+    margin-left: 20px;
+}
+.navbar .navright{
+    position: absolute;
+    float: right;
+    display: flex;
+    right: 0%;
+    top: 50%;
+    transform:translateX(-20%) translateY(-50%);
+}
+.navbar .navright .phone{
+    display: flex;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.navbar .navright .contact{
+    display: flex;
+    font-family: 'Lobster';
+    color: #ffffff;
+    background-color: #FF9900;
+    border-radius: 5px;
+    width: 122px;
+    height: 25px;
+    margin-right: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.navbar .navright svg{
+    width: 20px;
+    fill: #FF9900;
+    margin-right: 10px;
+}
+/*  */
+.page1{
+    position: absolute;
+    content: "a";
+    top: 10%;
+    height: 90%;
+    width: 100%;
+    overflow: hidden;
+}
+.page1 .center-image{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 400px;
+    overflow: visible;
+    transform: translateX(-50%) translateY(-60%);
+    border-radius: 109px;
+}
+.page1 .center-image .image{
+    width: 218px;
+    height: 400px;
+    object-fit: cover;    
+    overflow: hidden;
+    border-radius: 109px;
+}
+.page1 .center-image img{
+    width: 218px;
+    height: 400px;
+    object-fit: cover;    
+    overflow: hidden;
+}
+.page1 .center-image .blur{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 218px;
+    height: 400px;
+    overflow: hidden;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 109px;
+    background-color: rgba(0, 0, 0, 0.4)
+}
+.page1 .center-image .border{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 247px;
+    height: 421px;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 109px;
+    border: solid;
+    border-color: black;
+    opacity: 40%;
+}
+/*  */
+.page1 .text .title{
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    color: #FF9900;
+    font-family: 'lobster';
+    font-size: 40px;
+    left: 5%;
+    margin-left: 20px;
+    width: 44%;
+}
+.page1 .text .subtext{
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    left: 5%;
+    margin-top: 20px;
+    margin-left: 25px;
+    width: 35%;
+}
+
+.page1 .next{
+    display: flex;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    margin-bottom: 2%;
+    margin-right: 2%;
+    overflow: visible;
+}
+.page1 .next .text{
+    font-size: 14px;
+    font-weight: 200;
+    text-align: right;
+    margin-right: 10px;
+}
+.page1 .next .button{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    transform: translateY(15%);
+    overflow: visible;
+}
+.page1 .next .button .inner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translateX(-50%) translateY(-50%);
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    z-index: 2;
+    background-color: #FF9900;
+    color: #ffffff;
+}
+.page1 .next .button .inner svg{
+    height: 20px;
+    fill: #ffffff;
+    animation: clr 5s ease infinite;
+}
+.page1 .next .button .border{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translateX(-50%) translateY(-50%);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 1px solid;
+    border-color: black;
+}
+.page1 .next .button .shade{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translateX(-50%) translateY(-80%) rotate(90deg);
+    width: 25px;
+    height: 51px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    z-index: 1;
+    animation: box 5s ease infinite;
+}
+
+@keyframes clr{
+    0%{
+        fill: #ffffff;
+    }
+    50%{
+        fill: #000000;
+    }
+    100%{
+        fill: #ffffff;
+    }
+}
+@keyframes box{
+    0%{
+        transform:translateX(-00%) translateY(-50%) rotate(0deg);
+    }
+    25%{
+        transform:translateX(-50%) translateY(-20%) rotate(90deg);
+    }
+    50%{
+        transform:translateX(-110%) translateY(-50%) rotate(00deg);
+    }
+    75%{
+        transform:translateX(-50%) translateY(-80%) rotate(90deg);
+    }
+    100%{
+        transform:translateX(-00%) translateY(-50%) rotate(0deg);
+    }
+}
+.page2{
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    top: 100%;
+    display: flex;
+}
+.page2 .left{
+    width: 50%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content:flex-end;
+    padding-bottom: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.page2 .left .page2_prev{
+    background-color: #FF9900;
+    border: none;
+    width: 100px;
+    border-radius: 20px;
+}
+.page2 .left .page2_next{
+    background-color: #FF9900;
+    border: none;
+    width: 100px;
+    border-radius: 20px;
+}
+.page2 .wheel{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    z-index: -1;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #D9D9D9;
+    border-radius: 160%;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+}
+.page2 .wheel .wheel_content{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.page2 .wheel .wheel_content .div0{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 150px;
+    opacity: 1;
+    text-align: center;
+}
+.page2 .wheel .wheel_content .div1{
+    position: absolute;
+    left: 50%;
+    width: 150px;
+    transform: translateX(-50%) translateY(50%);
+    text-align: center;
+}
+.page2 .wheel .wheel_content .div2{
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translateX(-30%) translateY(-150%);
+    width: 150px;
+    opacity: 1;
+    text-align: center;
+}
+.page2 .wheel .wheel_content .div3{
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translateX(-20%) translateY(50%);
+    width: 150px;
+    opacity: 1;
+    text-align: center;
+}
+.page2 .wheel .wheel_content .div4{
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    transform:translateX(-50%) translateY(-50%);
+    width: 150px;
+    opacity: 1;
+    text-align: center;
+}
+.page2 .wheel .wheel_content .div5{
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translateX(20%) translateY(50%);
+    width: 150px;
+    opacity: 1;
+    text-align: center;
+}
+.page2 .wheel .wheel_content .div6{
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translateX(20%) translateY(-150%);
+    width: 150px;
+    opacity: 1;
+    text-align: center;
+}
+.page2 .left .wheel img{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    transition: all 1.5s ease;
+}
+.div1,.div2,.div3,.div4,.div5,.div6{
+    transition: opacity 2s ease;
+}
+.page2 .right{
+    width: 40%;
+    height: 80%;
+    margin: auto;
+    background-color:#000000;
+    border-radius: 10%;
+    
+}

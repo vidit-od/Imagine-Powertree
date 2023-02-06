@@ -70,6 +70,7 @@
     height: 90%;
     text-align: center;
     padding: 10%;
+    margin-top: 10%;
     padding-bottom: 0%;
 }
 /* styles for each field of form */
@@ -87,6 +88,14 @@
     border: none;
     outline: none; 
     padding-top: 20px;
+}
+.field select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none; 
+    padding-top: 20px;
+    transform: translateX(-4px);
 }
 .field label{
     position: absolute;
@@ -133,6 +142,16 @@
 }
 .field input:focus + .label-field::after, 
 .field input:valid + .label-field::after {
+    transform: translateX(0%);
+}
+.field select:focus + .label-field .content-name, 
+.field select:valid + .label-field .content-name{
+    transform: translateY(-100%);
+    font-size: 14px;
+    color: #ff9900;
+}
+.field select:focus + .label-field::after, 
+.field select:valid + .label-field::after {
     transform: translateX(0%);
 }
 .radio{
