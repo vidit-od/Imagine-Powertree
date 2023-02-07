@@ -5,6 +5,7 @@
     padding: 0%;
     box-sizing: border-box;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 /* body tag */
 body{
@@ -39,7 +40,6 @@ body{
     top: 50%;
     transform: translateY(-50%);
 }
-
 .navbar .content p{
     display: inline;
     margin-left: 20px;
@@ -150,7 +150,6 @@ body{
     margin-left: 25px;
     width: 35%;
 }
-
 .page1 .next{
     display: flex;
     position: absolute;
@@ -185,6 +184,7 @@ body{
     justify-content: center;
     align-items: center;
     border-radius: 100%;
+    border: none;
     z-index: 2;
     background-color: #FF9900;
     color: #ffffff;
@@ -254,9 +254,10 @@ body{
 .page2{
     position: absolute;
     width: 100%;
-    height: 90%;
+    height: 100%;
     top: 100%;
     display: flex;
+    padding-top: 5%;
 }
 .page2 .left{
     width: 50%;
@@ -380,17 +381,17 @@ body{
 /* card 1 */
 .page2 .card1{
     position: absolute;
-    top: 10%;
     left: 10%;
     width: 80%;
     height: 80%;
     overflow: hidden;
+    background-color: white;
     margin: auto;
     border-radius: 10%;
     box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: space-between;
-    transition: height 2s ease;
+    transition: height 1s ease;
 }
 .card1 .traditional{
     position: relative;
@@ -421,34 +422,27 @@ body{
     margin-bottom: 30px;
 }
 .card1 .traditional .image img{
-    width: 230px;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 160px;
+    margin-bottom: 40px;
 }
 .card1 .powertree .image img{
-    width: 230px;
-
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 160px;
+    margin-bottom: 40px;
 }
 /* card2 */
 .page2 .card2{
     position: absolute;
-    top: 10%;
     left: 10%;
     width: 80%;
     height: 0%;
     overflow: hidden;
     margin: auto;
+    background-color: white;
     border-radius: 10%;
     box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: space-between;
-    transition: height 2s ease;
+    transition: height 1s ease;
 }
 .card2 .traditional{
     position: relative;
@@ -479,33 +473,27 @@ body{
     margin-bottom: 30px;
 }
 .card2 .traditional .image img{
-    width: 230px;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 160px;
+    margin-bottom: 40px;
 }
 .card2 .powertree .image img{
-    width: 230px;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 160px;
+    margin-bottom: 40px;
 }
 /* card3 */
 .page2 .card3{
     position: absolute;
-    top: 10%;
     left: 10%;
     width: 80%;
     height: 0%;
     overflow: hidden;
     margin: auto;
     border-radius: 10%;
+    background-color: white;
     box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: space-between;
-    transition: height 2s ease;
+    transition: height 1s ease;
 }
 .card3 .traditional{
     position: relative;
@@ -536,33 +524,27 @@ body{
     margin-bottom: 30px;
 }
 .card3 .traditional .image img{
-    width: 230px;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 160px;
+    margin-bottom: 40px;
 }
 .card3 .powertree .image img{
-    width: 230px;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 160px;
+    margin-bottom: 40px;
 }
 /* card4 */
 .page2 .card4{
     position: absolute;
-    top: 10%;
     left: 10%;
     width: 80%;
     height: 0%;
     overflow: hidden;
     margin: auto;
     border-radius: 10%;
+    background-color: white;
     box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: space-between;
-    transition: height 2s ease;
+    transition: height 1s ease;
 }
 .card4 .traditional{
     position: relative;
@@ -593,33 +575,27 @@ body{
     margin-bottom: 30px;
 }
 .card4 .traditional .image img{
-    width: 230px;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 160px;
+    margin-bottom: 40px;
 }
 .card4 .powertree .image img{
-    width: 230px;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 160px;
+    margin-bottom: 40px;
 }
 /* card5 */
 .page2 .card5{
     position: absolute;
-    top: 10%;
     left: 10%;
     width: 80%;
     height: 0%;
     overflow: hidden;
     margin: auto;
     border-radius: 10%;
+    background-color: white;
     box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: space-between;
-    transition: height 2s ease;
+    transition: height 1s ease;
 }
 .card5 .traditional{
     position: relative;
@@ -650,33 +626,27 @@ body{
     margin-bottom: 30px;
 }
 .card5 .traditional .image img{
-    width: 230px;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 160px;
+    margin-bottom: 40px;
 }
 .card5 .powertree .image img{
-    width: 230px;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 160px;
+    margin-bottom: 40px;
 }
 /* card6 */
 .page2 .card6{
     position: absolute;
-    top: 10%;
     left: 10%;
     width: 80%;
     height: 0%;
     overflow: hidden;
     margin: auto;
     border-radius: 10%;
+    background-color: white;
     box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: space-between;
-    transition: height 2s ease;
+    transition: height 1s ease;
 }
 .card6 .traditional{
     position: relative;
@@ -707,16 +677,161 @@ body{
     margin-bottom: 30px;
 }
 .card6 .traditional .image img{
-    height: 200px;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 160px;
+    margin-bottom: 40px;
 }
 .card6 .powertree .image img{
-    height: 200px;
+    height: 160px;
+    margin-bottom: 40px;
+}
+/* page 3 */
+.page3{
+    position: absolute;
+    top: 200%;
+    width: 100%;
+    height: 90%;
+    text-align: center;
+}
+.page3 .title{
+    font-family: 'lobster';
+    color: #FF9900;
+    font-size: 40px;
+    margin-top: 9%;
+}
+.page3 .subtext{
+    font-size: 20px;
+    font-weight: 200;
+    margin-top: 15px;
+}
+.page3 .steps{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 8%;
+    padding-bottom: 6%;
+}
+.page3 .steps .step1,
+.page3 .steps .step2,
+.page3 .steps .step3{
+    display: flex;
+}
+.page3 .steps .step1 .number,
+.page3 .steps .step2 .number,
+.page3 .steps .step3 .number{
+    color: #FF9900;
+    font-size: 20px;
+    margin: 10px;
+}
+.page3 .steps .step1 .text,
+.page3 .steps .step2 .text,
+.page3 .steps .step3 .text{
+    width: 300px;
+}
+.page3 .steps .step1 .text .main,
+.page3 .steps .step2 .text .main,
+.page3 .steps .step3 .text .main{
+    font-size: 18px;
+    font-weight: 700;
+}
+.page3 .steps .step1 .text .explain,
+.page3 .steps .step2 .text .explain,
+.page3 .steps .step3 .text .explain{
+    font-size: 15px;
+    font-weight: 200;
+}
+.page3 .button button{
+    width: 250px;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    color: #FF9900;
+    border:1px solid #FF9900;
+}
+
+/* footer -> { upper, lower }
+   upper -> { background , content}
+   background -> { blur, image}
+   content -> {title}
+   lower -> { content , hr , copyright }
+   content -> { section , reserve }
+   section -> { logo , explore , social , contact }
+   explore -> { main , p}
+   social -> { main , media }
+   media -> { svg_fb, svg_insta, svg_tweet}
+   contact -> { main p}
+   */
+   .footer{
+    position: absolute;
+    top: 300%;
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+}
+.footer .lower{
+    position: relative;
+    background-color: #1E1E1E;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.footer .lower .content{
+    display: flex;
+    flex-direction: column;
+    height: 85%;
+    justify-content: center;
+}
+.footer .lower .content p{
+    color: #ffffff;
+    opacity: 60%;
+    font-weight: 200;
+}
+.footer .lower .content .main{
+    color: #ffffff;
+    font-weight: 800;
+    opacity: 100%;
+}
+.footer .lower .content .section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+.footer .lower .content .section .social{
+    text-align: center;
+}
+.footer .lower .content .section .social .media {
+    display: flex;
+    width: 130px;
+    justify-content: space-between;
+}
+.footer .lower .content .section .social .media svg{
+    width: 30px;
+    margin-top: 10px;
+    fill: #ffffff;
+    opacity: 60%;
+}
+.footer .lower .content .section .contact{
+    text-align: right;
+}
+.footer .lower .section .logo img{
+    width: 70px;
+}
+.reserve{
+    background-color: #FF9900;
+    width: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
     position: absolute;
     bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    right:4%
+}
+.copyright{
+    margin-left: 2%;
+    transform: translateY(15%);
+    color:#ffffff;
+    opacity: 60%;
 }

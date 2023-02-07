@@ -35,6 +35,7 @@ card5.style.height="0%";
 card6.style.height="0%";
 const cards=[card1,card2,card3,card4,card5,card6];
 
+card1.style.top="10%"
 prev.addEventListener("click" ,function(){
     
     angle=angle-60;
@@ -46,6 +47,20 @@ prev.addEventListener("click" ,function(){
     div5.style.opacity="0";
     div6.style.opacity="0";
     
+    card1.style.bottom='';
+    card2.style.bottom='';
+    card3.style.bottom='';
+    card4.style.bottom='';
+    card5.style.bottom='';
+    card6.style.bottom='';
+
+    card1.style.top='';
+    card2.style.top='';
+    card3.style.top='';
+    card4.style.top='';
+    card5.style.top='';
+    card6.style.top='';
+
     card1.style.height="0%";
     card2.style.height="0%";
     card3.style.height="0%";
@@ -53,12 +68,22 @@ prev.addEventListener("click" ,function(){
     card5.style.height="0%";
     card6.style.height="0%";
     
+    cards[page].style.bottom="10%";
+    cards[page].style.top='';
+    
     page=page-1;
     if(page==-1){
         page=5;
     }
+
     divs[page].style.opacity="1";
+    
+    cards[page].style.top="10%";
+    cards[page].style.bottom='';
+    
+    
     cards[page].style.height="80%";
+    
     wheel.style.transform= "rotate("+angle+"deg)";
 
 })
@@ -73,6 +98,20 @@ next.addEventListener("click" ,function(){
     div5.style.opacity="0";
     div6.style.opacity="0";
 
+    card1.style.bottom='';
+    card2.style.bottom='';
+    card3.style.bottom='';
+    card4.style.bottom='';
+    card5.style.bottom='';
+    card6.style.bottom='';
+
+    card1.style.top='';
+    card2.style.top='';
+    card3.style.top='';
+    card4.style.top='';
+    card5.style.top='';
+    card6.style.top='';
+
     card1.style.height="0%";
     card2.style.height="0%";
     card3.style.height="0%";
@@ -80,10 +119,17 @@ next.addEventListener("click" ,function(){
     card5.style.height="0%";
     card6.style.height="0%";
     
+    cards[page].style.bottom='';
+    cards[page].style.top='10%';
+
     page=page+1;
     if(page==6){
         page=0
     }
+
+    cards[page].style.top='';
+    cards[page].style.bottom='10%';
+
     divs[page].style.opacity="1";
     cards[page].style.height="80%";
     wheel.style.transform= "rotate("+angle+"deg)";
