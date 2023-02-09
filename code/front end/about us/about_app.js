@@ -13,8 +13,9 @@ window.addEventListener('scroll', () => {
     percent=percent/100;
     path.style.strokeDashoffset= -percent*pathlength+200;
     
+    console.log(percent)
     // 2018
-    if( percent <0.96){
+    if( percent <0.97){
         document.getElementById("hide-title1").style.width="0%";
         document.getElementById("circle1").style.opacity="1";
     }
@@ -22,26 +23,26 @@ window.addEventListener('scroll', () => {
         document.getElementById("hide-title1").style.width="100%";
         document.getElementById("circle1").style.opacity="0";
     }
-    if(percent < 0.92){
+    if(percent < 0.93){
         document.getElementById("c1hide1").style.width="0%";
     }
     else{
         document.getElementById("c1hide1").style.width="100%";
     }
-    if(percent < 0.88){
+    if(percent < 0.90){
         document.getElementById("c1hide2").style.width="0%";
     }
     else{
         document.getElementById("c1hide2").style.width="100%";
     }
-    if(percent < 0.85){
+    if(percent < 0.86){
         document.getElementById("c1hide3").style.width="0%";
     }
     else{
         document.getElementById("c1hide3").style.width="100%";
     }
    // 2019
-    if(percent < 0.78){
+    if(percent < 0.79){
         document.getElementById("hide-title2").style.width="0%";
         document.getElementById("circle2").style.opacity="1";
     }
@@ -49,7 +50,7 @@ window.addEventListener('scroll', () => {
         document.getElementById("hide-title2").style.width="100%";
         document.getElementById("circle2").style.opacity="0";
     }
-    if(percent < 0.75){
+    if(percent < 0.76){
         document.getElementById("c2hide1").style.width="0%";
     }
     else{
@@ -68,7 +69,7 @@ window.addEventListener('scroll', () => {
         document.getElementById("c2hide3").style.width="100%";
     }
    // 2020
-    if(percent < 0.61){
+    if(percent < 0.62){
         document.getElementById("hide-title3").style.width="0%";
         document.getElementById("circle3").style.opacity="1";
     }
@@ -76,13 +77,13 @@ window.addEventListener('scroll', () => {
         document.getElementById("hide-title3").style.width="100%";
         document.getElementById("circle3").style.opacity="0";
     }
-    if(percent < 0.56){
+    if(percent < 0.58){
         document.getElementById("c3hide1").style.width="0%";
     }
     else{
         document.getElementById("c3hide1").style.width="100%";
     }
-    if(percent < 0.52){
+    if(percent < 0.53){
         document.getElementById("c3hide2").style.width="0%";
     }
     else{
@@ -103,7 +104,7 @@ window.addEventListener('scroll', () => {
     else{
         document.getElementById("c4hide1").style.width="100%";
     }
-    if(percent < 0.40){
+    if(percent < 0.41){
         document.getElementById("c4hide2").style.width="0%";
     }
     else{
@@ -116,7 +117,7 @@ window.addEventListener('scroll', () => {
         document.getElementById("c4hide3").style.width="100%";
     }
    // 2022
-    if(percent < 0.32){
+    if(percent < 0.33){
         document.getElementById("hide-title5").style.width="0%";
         document.getElementById("circle5").style.opacity="1";
     }
@@ -124,7 +125,7 @@ window.addEventListener('scroll', () => {
         document.getElementById("hide-title5").style.width="100%";
         document.getElementById("circle5").style.opacity="0";
     }
-    if(percent < 0.28){
+    if(percent < 0.29){
         document.getElementById("c5hide1").style.width="0%";
     }
     else{
@@ -136,14 +137,14 @@ window.addEventListener('scroll', () => {
     else{
         document.getElementById("c5hide2").style.width="100%";
     }
-    if(percent < 0.22){
+    if(percent < 0.23){
         document.getElementById("c5hide3").style.width="0%";
     }
     else{
         document.getElementById("c5hide3").style.width="100%";
     }
     // banner
-    if(percent < 0.15){
+    if(percent < 0.14){
         document.getElementById("banner").style.height="100%"
     }
     else{
