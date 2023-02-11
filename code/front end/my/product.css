@@ -1,0 +1,301 @@
+*{
+    font-family: 'Poppins';
+    font-size: 18px;
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.page2{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+}
+.slideshow{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.slideshow__deco {
+	position: absolute;
+    background-color: #FFCD82;
+    width: 25%;
+    height: 70%;
+    top: 50%;
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+	backdrop-filter: blur(2px);
+	border-radius: 30px;
+    transform: translateY(-50%);
+    transition: animation 2s ease;
+}
+.nav--prev{
+    background-color: #FFCD82;
+    border: none;
+    position: absolute;
+    left:2%;
+    top: 2%;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    padding: 10px;
+    transition: transform 1s ease;
+}
+.nav--next{
+    background-color: #FFCD82;
+    border: none;
+    position: absolute;
+    right:2%;
+    bottom: 2%;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    padding: 10px;
+    transition: transform 1s ease;
+}
+.nav--prev svg{
+    width: 30px;
+    height: 30px;
+    transform: rotate(-45deg);
+}
+.nav--next svg{
+    width: 30px;
+    height: 30px;
+    transform: rotate(135deg);
+}
+.slide{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 25%;
+    padding-left: 20px;
+    transform: translateX(-50%) translateY(20%);
+    pointer-events: none;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    color: rgb(0,0,0,0.7);
+    opacity: 0;
+    transition: all 1s ease;
+}
+.slide__img{
+    position: absolute;
+    background-color:transparent;
+    width: 50%;
+    height: 100%;
+    top: 50%;
+	border-radius: 30px;
+    transform: translateY(-50%);
+    overflow: hidden;  
+    opacity: 1;
+    transition: all 2s ease;
+}
+.page2 .slide__img img{
+    position: absolute;
+    opacity: 0;
+    width: 75%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-48%) translateY(-70%);
+    transition: all 0.5s ease;
+}
+.slide__img:hover img{
+    width: 100%;
+    transform: translateX(-50%) translateY(-80%);
+}
+.slide .show_slide{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25%;
+    padding-left: 20px;
+    transform: translateX(-50%) translateY(20%);
+    pointer-events: none;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    color: rgb(0,0,0,0.7);
+}
+.slide__number{
+    font-size: 30px;
+    font-weight: 700;
+    overflow: hidden;
+}
+.slide__title{
+    font-size: 40px;
+    font-family: 'lobster';
+    overflow: hidden;
+}
+.slide__subtitle{
+    font-size: 20px;
+    font-weight: 200;
+    width: 620px;
+    color: black;
+    transition: width 0.5s ease;
+    overflow: hidden;
+}
+.click_anim{
+    animation: jiggle 0.5s ease;
+}
+.show_slide{
+    width: 25%;
+    height: fit-content;
+    opacity: 1;
+    transition: all 0.2s ease;
+    animation: text 1s ease;
+}
+.image_up_prev{
+    animation: image_hide_prev 0.5s ease;
+}
+.image_down_prev{
+    animation: image_show_prev 0.5s ease;
+}
+.image_up_next{
+    animation: image_hide_next 0.5s ease;
+}
+.image_down_next{
+    animation: image_show_next 0.5s ease;
+}
+.slideshow .expand__deco{
+    position: absolute;
+    background-color: #FFCD82;
+    width: 100%;
+    height: 200%;
+    top:0%;
+    box-shadow:0px;
+    border-radius:0px;   
+    transition: all 2s;
+}
+.content{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    overflow: hidden;
+}
+.item{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0%;
+    right: 5%;
+    overflow-x: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease;
+    opacity: 0;
+}
+.item .title{
+    font-family: 'lobster';
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.item .desc{
+    font-weight: 200;
+}
+.reserver{
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 30%;
+    background-color: #ff9900;
+    border: none;
+    color: black;
+    border-radius: 20px;
+    text-align: center;
+}
+.back{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: none;
+    top: 50%;
+    left: 0%;
+    transform: translateX(-200%) translateY(-50%);
+    background-color: transparent;
+    pointer-events: all;
+}
+button:hover svg{
+    fill: red;
+}
+.back svg{
+    fill: black;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s ease;
+}
+@keyframes text{
+    0%{
+        height: 0%;
+    }
+    100%{
+        height: 35%;
+    }
+}
+@keyframes jiggle {
+    0%{
+        transform: translateY(-50%) rotateZ(0deg);
+    }    
+    50%{
+        transform: translateY(-55%) rotateZ(-10deg);
+    }
+    100%{
+        transform: translateY(-50%) rotateZ(0deg);
+   }}
+
+@keyframes image_hide_prev {
+    0%{
+        pointer-events: none;
+        transform: translateX(-48%) translateY(-70%);
+        opacity: 1;
+    }
+    100%{
+        pointer-events: none;
+        transform: translateX(-100%) translateY(-220%);
+        opacity: 0;
+    }
+}
+@keyframes image_show_prev {
+    0%{
+        pointer-events: none;
+        transform: translateX(148%) translateY(100%);
+        opacity: 0;
+    }
+    100%{
+        pointer-events: none;
+        transform: translateX(-48%) translateY(-70%);
+        opacity: 1;
+    }
+}
+@keyframes image_hide_next {
+    0%{
+        pointer-events: none;
+        transform: translateX(-48%) translateY(-70%);
+        opacity: 1;
+    }
+    100%{
+        pointer-events: none;
+        transform: translateX(148%) translateY(100%);
+        opacity: 0;
+    }
+}
+@keyframes image_show_next {
+    0%{
+        pointer-events: none;
+        transform: translateX(-100%) translateY(-220%);
+        opacity: 0;
+    }
+    100%{
+        pointer-events: none;
+        transform: translateX(-48%) translateY(-70%);
+        opacity: 1;
+    }
+}
