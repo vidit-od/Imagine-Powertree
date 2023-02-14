@@ -1,3 +1,5 @@
+// const declaration
+
 const prev= document.getElementById("prev")
 const next= document.getElementById("next")
 const all_pages=document.querySelectorAll(".slide");
@@ -8,6 +10,7 @@ const back =document.querySelector(".back");
 const length = all_pages.length;
 
 
+// current and previous product
 let current_page=0;
 let prev_page;
 
@@ -16,6 +19,7 @@ images[0].style.opacity="1";
 all_pages[0].classList.add("show_slide");
 
 
+// previous button 
 prev.addEventListener('click', function(){
     document.getElementById("deco").classList.add("click_anim");
     document.getElementById("deco").addEventListener('animationend', function(){
@@ -48,6 +52,7 @@ prev.addEventListener('click', function(){
     console.log(current_page);
 })
 
+// next button
 next.addEventListener('click', function(){
     document.getElementById("deco").classList.add("click_anim");
 
@@ -80,12 +85,14 @@ next.addEventListener('click', function(){
 
 })
 
+// after page change; change prev and current page
 function pagereplacement(prev_page,current_page){
     // erase all
     all_pages[prev_page].classList.remove("show_slide");
     all_pages[current_page].classList.add("show_slide");
 }
 
+// expand for more info
 image.addEventListener('click', function(){
     document.querySelector(".slideshow__deco").classList.add("expand__deco");
     document.querySelector(".slideshow__deco").addEventListener('transitionend', function(){
@@ -104,6 +111,7 @@ image.addEventListener('click', function(){
     }
 })
 
+// hide info
 back.addEventListener('click', function() {
     document.querySelector(".slideshow__deco").classList.remove("expand__deco");
     items[current_page].style.opacity="0";

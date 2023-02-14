@@ -1,3 +1,4 @@
+// variable declaration
 let current_page=1;
 let transform =0;
 let transformy=0;
@@ -13,6 +14,7 @@ let imgtransform = 600;
 let texttransform = 400;
 let slider_time=2
 
+// initially transform 1 image
 transform =current_page*(-imgtransform);
 console.log(transform);
 transformy =current_page*(-texttransform);
@@ -101,6 +103,7 @@ function nextslide(){
 
 }
 
+// change image  after 5 seconds
 setInterval(function() {
     nextslide()
   }, delay);

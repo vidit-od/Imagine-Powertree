@@ -75,7 +75,10 @@ body{
     fill: #FF9900;
     margin-right: 10px;
 }
-/*  */
+/* page1 -> { center-image , text next}
+   center-image -> {blur, border, image}
+   text -> { title, subtitle}
+   next -> { text , button }*/
 .page1{
     position: absolute;
     content: "a";
@@ -129,7 +132,6 @@ body{
     border-color: black;
     opacity: 40%;
 }
-/*  */
 .page1 .text .title{
     position: absolute;
     top: 55%;
@@ -222,7 +224,11 @@ body{
     z-index: 1;
     animation: box 5s ease infinite;
 }
+/* keyframe animations for button and arrow inside the button
 
+clr for arrow
+box for border
+*/
 @keyframes clr{
     0%{
         fill: #ffffff;
@@ -251,6 +257,11 @@ body{
         transform:translateX(-00%) translateY(-50%) rotate(0deg);
     }
 }
+
+/* page2 -> {left , right}
+   left -> { page2_prev, wheel , page2_next} 
+   wheel -> wheel_content -> {div0, div1, div2, div3, div4, div5, div6, div0, }
+   right -> {card1, card2, card3, card4, card5, card6, }*/
 .page2{
     position: absolute;
     width: 100%;
@@ -684,7 +695,10 @@ body{
     height: 160px;
     margin-bottom: 40px;
 }
-/* page 3 */
+/* page 3 -> { title, subtext, steps, button}
+   steps -> { step1 ,step2, step 3}
+   step1,2,3 -> { number, text}
+   text -> {main, explain}*/
 .page3{
     position: absolute;
     top: 200%;

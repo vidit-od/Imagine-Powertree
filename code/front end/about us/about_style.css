@@ -45,7 +45,9 @@ body{
     display: inline;
     margin-left: 20px;
 }
-/*  */
+/* page1 -> { left, right}
+   left -> { title , subtext}
+   right -> { blur , image} */
 .page1{
     position: absolute;
     top: 10%;
@@ -130,6 +132,7 @@ body{
     height: 100%;
     overflow: hidden;
 }
+
 /* page 2 general */
 .page2 .cmain {
     overflow: visible;
@@ -357,6 +360,8 @@ body{
     font-family: 'lobster';
     transition: width 2s ease;
 }
+
+/* quote banner */
 .banner{
     position: absolute;
     width: 100%;
@@ -377,6 +382,7 @@ body{
     transition: height 0.5s ease;
 }
 
+/* title -> { title, subtext , images} */
 .page3{
     position: absolute;
     top: 540%;
@@ -433,6 +439,7 @@ body{
     border-radius: 20px;
     border: 1px solid #ff9900;
 }
+/* page4-> {title , img} */
 .page4 {
     position: absolute;
     top: 675%;
@@ -483,6 +490,7 @@ body{
     font-size: 20px;
     border-radius: 20px;
 }
+/* join us banner */
 .joinbanner{
     position: absolute;
     top: 635%;
@@ -517,6 +525,7 @@ body{
     font-weight: 200;
     border-radius: 10px;
 }
+/* footer */
 .footer{
     position: absolute;
     top: 815%;

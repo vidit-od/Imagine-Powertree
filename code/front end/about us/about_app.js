@@ -1,9 +1,12 @@
+// variable declaration
 let path =document.querySelector('path');
 let pathlength = path.getTotalLength();
 
-
+// scroll effect for the svg line
 path.style.strokeDasharray=pathlength;
 path.style.strokeDashoffset=-pathlength;
+
+// activate scroll on scroll
 window.addEventListener('scroll', () => {
     let height_1= document.querySelector(".page1").scrollHeight;
     let height_2= document.querySelector(".page2").scrollHeight;

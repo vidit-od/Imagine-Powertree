@@ -1,3 +1,4 @@
+/* universal tag */
 *{
     font-family: 'Poppins';
     font-size: 18px;
@@ -41,6 +42,7 @@
     margin-left: 20px;
 }
 
+/* page 1 for title, image and button to page 2 */
 .page1{
     position: absolute;
     top: 10%;
@@ -96,6 +98,7 @@
     transform: rotate(180deg);
 }
 
+/* all image in a slideshow format */
 .page2{
     position: absolute;
     top: 100%;
@@ -390,7 +393,7 @@
         opacity: 1;
     }
 }
-
+/* section image */
 .section_image{
     position: absolute;
     top: 200%;
@@ -409,7 +412,7 @@
 
 
 
-/* page 3 */
+/* reserve today*/
 .page3{
     position: absolute;
     top: 300%;
@@ -473,7 +476,7 @@
     border:1px solid #FF9900;
 }
 
-
+/* footer */
 .footer{
     position: absolute;
     top: 400%;

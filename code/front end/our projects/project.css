@@ -45,7 +45,7 @@ body{
     margin-left: 20px;
 }
 
-/*  */
+/* image slider */
 .page1{
     position: absolute;
     top: 10%;
@@ -108,7 +108,7 @@ body{
     float: right;
 }
 
-/*  */
+/* some of the recent projects */
 .page2{
     position: absolute;
     top: 100%;
@@ -174,7 +174,7 @@ body{
     max-width: 100%;
 }
 
-/*  */
+/* project index */
 .page3{
     position: absolute;
     top: 260%;
@@ -276,7 +276,7 @@ body{
     padding-left: 10px;
     padding-right: 10px;
 }
-/*  */
+/* key clients */
 .page4 {
     position: absolute;
     top: 360%;
@@ -322,7 +322,7 @@ body{
 .key_client .cards img{
     width: 100px;
 }
-/*  */
+/* footer */
 .footer{
     position: absolute;
     top: 410%;

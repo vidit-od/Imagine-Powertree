@@ -46,7 +46,7 @@ body{
     margin-left: 20px;
 }
 
-/*  */
+/* title and pinned blog */
 
 .page1{
     position: absolute;
@@ -141,6 +141,9 @@ body{
     border-radius: 20px;
     margin-right: 5px;
 }
+
+/* all other blogs  */
+
 .page2 {
     position: absolute;
     top: 100%;
@@ -220,7 +223,7 @@ body{
     padding-right: 10px;
     font-size: 12px;
 }
-
+/* navigation at the bottom of page 2 */
 .page2 .navigation{
     width: 90%;
     display: flex;
@@ -249,6 +252,7 @@ body{
     border-radius: 5px;
 }
 
+/* footer  */
 .footer{
     position: absolute;
     top: 815%;
