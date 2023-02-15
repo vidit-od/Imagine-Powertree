@@ -11,3 +11,21 @@ import random
 
 def index(request):
     return render(request, 'index.html')
+
+def reserve(request):
+    return render(request, 'reserve.html')
+
+def why_powertree(request):
+    return render(request, 'why_powertree.html')
+
+def aboutus(request):
+    return render(request, 'aboutus.html')
+
+def whats_new(request):
+    return render(request, "whats_new.html")
+
+def product(request):
+    return render(request, "product.html")
+
+def project(request):
+    return render(request, "project.html")

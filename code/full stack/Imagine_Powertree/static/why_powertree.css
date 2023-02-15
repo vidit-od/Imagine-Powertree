@@ -1,0 +1,851 @@
+*{
+    font-family: 'Poppins';
+    font-size: 18px;
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+/* body tag */
+body{
+    display: inline;
+}
+/* navbar -> { logo-> img , content } 
+    content -> { p , navright }
+    navright -> { phone , contact}*/
+.navbar{
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+.navbar .Logo{
+    position: absolute;
+    width: 5%;
+    left: 0;
+    margin-left: 10px;
+    width: 50px;
+    height: 55px;
+}
+.navbar .Logo img{
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.navbar .content p{
+    display: inline;
+    margin-left: 20px;
+}
+.navbar .navright{
+    position: absolute;
+    float: right;
+    display: flex;
+    right: 0%;
+    top: 50%;
+    transform:translateX(-20%) translateY(-50%);
+}
+.navbar .navright .phone{
+    display: flex;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.navbar .navright .contact{
+    display: flex;
+    font-family: 'Lobster';
+    color: #ffffff;
+    background-color: #FF9900;
+    border-radius: 5px;
+    width: 122px;
+    height: 25px;
+    margin-right: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.navbar .navright svg{
+    width: 20px;
+    fill: #FF9900;
+    margin-right: 10px;
+}
+/* page1 -> { center-image , text next}
+   center-image -> {blur, border, image}
+   text -> { title, subtitle}
+   next -> { text , button }*/
+.page1{
+    position: absolute;
+    content: "a";
+    top: 10%;
+    height: 90%;
+    width: 100%;
+    overflow: hidden;
+}
+.page1 .center-image{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 400px;
+    overflow: visible;
+    transform: translateX(-50%) translateY(-60%);
+    border-radius: 109px;
+}
+.page1 .center-image .image{
+    width: 218px;
+    height: 400px;
+    object-fit: cover;    
+    overflow: hidden;
+    border-radius: 109px;
+}
+.page1 .center-image img{
+    width: 218px;
+    height: 400px;
+    object-fit: cover;    
+    overflow: hidden;
+}
+.page1 .center-image .blur{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 218px;
+    height: 400px;
+    overflow: hidden;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 109px;
+    background-color: rgba(0, 0, 0, 0.4)
+}
+.page1 .center-image .border{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 247px;
+    height: 421px;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 109px;
+    border: solid;
+    border-color: black;
+    opacity: 40%;
+}
+.page1 .text .title{
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    color: #FF9900;
+    font-family: 'lobster';
+    font-size: 40px;
+    left: 5%;
+    margin-left: 20px;
+    width: 44%;
+}
+.page1 .text .subtext{
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    left: 5%;
+    margin-top: 20px;
+    margin-left: 25px;
+    width: 35%;
+}
+.page1 .next{
+    display: flex;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    margin-bottom: 2%;
+    margin-right: 2%;
+    overflow: visible;
+}
+.page1 .next .text{
+    font-size: 14px;
+    font-weight: 200;
+    text-align: right;
+    margin-right: 10px;
+}
+.page1 .next .button{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    transform: translateY(15%);
+    overflow: visible;
+}
+.page1 .next .button .inner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translateX(-50%) translateY(-50%);
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: none;
+    z-index: 2;
+    background-color: #FF9900;
+    color: #ffffff;
+}
+.page1 .next .button .inner svg{
+    height: 20px;
+    fill: #ffffff;
+    animation: clr 5s ease infinite;
+}
+.page1 .next .button .border{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translateX(-50%) translateY(-50%);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 1px solid;
+    border-color: black;
+}
+.page1 .next .button .shade{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translateX(-50%) translateY(-80%) rotate(90deg);
+    width: 25px;
+    height: 51px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    z-index: 1;
+    animation: box 5s ease infinite;
+}
+/* keyframe animations for button and arrow inside the button
+
+clr for arrow
+box for border
+*/
+@keyframes clr{
+    0%{
+        fill: #ffffff;
+    }
+    50%{
+        fill: #000000;
+    }
+    100%{
+        fill: #ffffff;
+    }
+}
+@keyframes box{
+    0%{
+        transform:translateX(-00%) translateY(-50%) rotate(0deg);
+    }
+    25%{
+        transform:translateX(-50%) translateY(-20%) rotate(90deg);
+    }
+    50%{
+        transform:translateX(-110%) translateY(-50%) rotate(00deg);
+    }
+    75%{
+        transform:translateX(-50%) translateY(-80%) rotate(90deg);
+    }
+    100%{
+        transform:translateX(-00%) translateY(-50%) rotate(0deg);
+    }
+}
+
+/* page2 -> {left , right}
+   left -> { page2_prev, wheel , page2_next} 
+   wheel -> wheel_content -> {div0, div1, div2, div3, div4, div5, div6, div0, }
+   right -> {card1, card2, card3, card4, card5, card6, }*/
+.page2{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    display: flex;
+    padding-top: 5%;
+}
+.page2 .left{
+    width: 50%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content:flex-end;
+    padding-bottom: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.page2 .left .page2_prev{
+    background-color: #FF9900;
+    border: none;
+    width: 100px;
+    border-radius: 20px;
+}
+.page2 .left .page2_next{
+    background-color: #FF9900;
+    border: none;
+    width: 100px;
+    border-radius: 20px;
+}
+.page2 .wheel{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    z-index: -1;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #D9D9D9;
+    border-radius: 160%;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+}
+.page2 .wheel .wheel_content{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.page2 .wheel .wheel_content .div0{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 150px;
+    opacity: 1;
+    text-align: center;
+}
+.page2 .wheel .wheel_content .div1{
+    position: absolute;
+    left: 50%;
+    width: 150px;
+    transform: translateX(-50%) translateY(50%);
+    text-align: center;
+}
+.page2 .wheel .wheel_content .div2{
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translateX(-30%) translateY(-150%);
+    width: 150px;
+    opacity: 1;
+    text-align: center;
+}
+.page2 .wheel .wheel_content .div3{
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translateX(-20%) translateY(50%);
+    width: 150px;
+    opacity: 1;
+    text-align: center;
+}
+.page2 .wheel .wheel_content .div4{
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    transform:translateX(-50%) translateY(-50%);
+    width: 150px;
+    opacity: 1;
+    text-align: center;
+}
+.page2 .wheel .wheel_content .div5{
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translateX(20%) translateY(50%);
+    width: 150px;
+    opacity: 1;
+    text-align: center;
+}
+.page2 .wheel .wheel_content .div6{
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translateX(20%) translateY(-150%);
+    width: 150px;
+    opacity: 1;
+    text-align: center;
+}
+.page2 .left .wheel img{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    transition: all 1.5s ease;
+}
+.div1,.div2,.div3,.div4,.div5,.div6{
+    transition: opacity 2s ease;
+}
+.page2 .right{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color:#ffffff;
+    display: flex;
+}
+/* card 1 */
+.page2 .card1{
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+    background-color: white;
+    margin: auto;
+    border-radius: 10%;
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    transition: height 1s ease;
+}
+.card1 .traditional{
+    position: relative;
+    width: 50%;
+    border-right: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+}
+.card1 .traditional .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card1 .powertree{
+    position: relative;
+    width: 50%;
+    border-left: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+}
+.card1 .powertree .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card1 .traditional .image img{
+    height: 160px;
+    margin-bottom: 40px;
+}
+.card1 .powertree .image img{
+    height: 160px;
+    margin-bottom: 40px;
+}
+/* card2 */
+.page2 .card2{
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 0%;
+    overflow: hidden;
+    margin: auto;
+    background-color: white;
+    border-radius: 10%;
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    transition: height 1s ease;
+}
+.card2 .traditional{
+    position: relative;
+    width: 50%;
+    border-right: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+}
+.card2 .traditional .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card2 .powertree{
+    position: relative;
+    width: 50%;
+    border-left: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+}
+.card2 .powertree .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card2 .traditional .image img{
+    height: 160px;
+    margin-bottom: 40px;
+}
+.card2 .powertree .image img{
+    height: 160px;
+    margin-bottom: 40px;
+}
+/* card3 */
+.page2 .card3{
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 0%;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 10%;
+    background-color: white;
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    transition: height 1s ease;
+}
+.card3 .traditional{
+    position: relative;
+    width: 50%;
+    border-right: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+}
+.card3 .traditional .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card3 .powertree{
+    position: relative;
+    width: 50%;
+    border-left: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+}
+.card3 .powertree .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card3 .traditional .image img{
+    height: 160px;
+    margin-bottom: 40px;
+}
+.card3 .powertree .image img{
+    height: 160px;
+    margin-bottom: 40px;
+}
+/* card4 */
+.page2 .card4{
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 0%;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 10%;
+    background-color: white;
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    transition: height 1s ease;
+}
+.card4 .traditional{
+    position: relative;
+    width: 50%;
+    border-right: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+.card4 .traditional .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card4 .powertree{
+    position: relative;
+    width: 50%;
+    border-left: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+.card4 .powertree .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card4 .traditional .image img{
+    height: 160px;
+    margin-bottom: 40px;
+}
+.card4 .powertree .image img{
+    height: 160px;
+    margin-bottom: 40px;
+}
+/* card5 */
+.page2 .card5{
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 0%;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 10%;
+    background-color: white;
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    transition: height 1s ease;
+}
+.card5 .traditional{
+    position: relative;
+    width: 50%;
+    border-right: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+.card5 .traditional .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card5 .powertree{
+    position: relative;
+    width: 50%;
+    border-left: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+.card5 .powertree .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card5 .traditional .image img{
+    height: 160px;
+    margin-bottom: 40px;
+}
+.card5 .powertree .image img{
+    height: 160px;
+    margin-bottom: 40px;
+}
+/* card6 */
+.page2 .card6{
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 0%;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 10%;
+    background-color: white;
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    transition: height 1s ease;
+}
+.card6 .traditional{
+    position: relative;
+    width: 50%;
+    border-right: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+.card6 .traditional .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card6 .powertree{
+    position: relative;
+    width: 50%;
+    border-left: 1px solid;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+.card6 .powertree .title{
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+.card6 .traditional .image img{
+    height: 160px;
+    margin-bottom: 40px;
+}
+.card6 .powertree .image img{
+    height: 160px;
+    margin-bottom: 40px;
+}
+/* page 3 -> { title, subtext, steps, button}
+   steps -> { step1 ,step2, step 3}
+   step1,2,3 -> { number, text}
+   text -> {main, explain}*/
+.page3{
+    position: absolute;
+    top: 200%;
+    width: 100%;
+    height: 90%;
+    text-align: center;
+}
+.page3 .title{
+    font-family: 'lobster';
+    color: #FF9900;
+    font-size: 40px;
+    margin-top: 9%;
+}
+.page3 .subtext{
+    font-size: 20px;
+    font-weight: 200;
+    margin-top: 15px;
+}
+.page3 .steps{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 8%;
+    padding-bottom: 6%;
+}
+.page3 .steps .step1,
+.page3 .steps .step2,
+.page3 .steps .step3{
+    display: flex;
+}
+.page3 .steps .step1 .number,
+.page3 .steps .step2 .number,
+.page3 .steps .step3 .number{
+    color: #FF9900;
+    font-size: 20px;
+    margin: 10px;
+}
+.page3 .steps .step1 .text,
+.page3 .steps .step2 .text,
+.page3 .steps .step3 .text{
+    width: 300px;
+}
+.page3 .steps .step1 .text .main,
+.page3 .steps .step2 .text .main,
+.page3 .steps .step3 .text .main{
+    font-size: 18px;
+    font-weight: 700;
+}
+.page3 .steps .step1 .text .explain,
+.page3 .steps .step2 .text .explain,
+.page3 .steps .step3 .text .explain{
+    font-size: 15px;
+    font-weight: 200;
+}
+.page3 .button button{
+    width: 250px;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    color: #FF9900;
+    border:1px solid #FF9900;
+}
+
+/* footer -> { upper, lower }
+   upper -> { background , content}
+   background -> { blur, image}
+   content -> {title}
+   lower -> { content , hr , copyright }
+   content -> { section , reserve }
+   section -> { logo , explore , social , contact }
+   explore -> { main , p}
+   social -> { main , media }
+   media -> { svg_fb, svg_insta, svg_tweet}
+   contact -> { main p}
+   */
+   .footer{
+    position: absolute;
+    top: 300%;
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+}
+.footer .lower{
+    position: relative;
+    background-color: #1E1E1E;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.footer .lower .content{
+    display: flex;
+    flex-direction: column;
+    height: 85%;
+    justify-content: center;
+}
+.footer .lower .content p{
+    color: #ffffff;
+    opacity: 60%;
+    font-weight: 200;
+}
+.footer .lower .content .main{
+    color: #ffffff;
+    font-weight: 800;
+    opacity: 100%;
+}
+.footer .lower .content .section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+.footer .lower .content .section .social{
+    text-align: center;
+}
+.footer .lower .content .section .social .media {
+    display: flex;
+    width: 130px;
+    justify-content: space-between;
+}
+.footer .lower .content .section .social .media svg{
+    width: 30px;
+    margin-top: 10px;
+    fill: #ffffff;
+    opacity: 60%;
+}
+.footer .lower .content .section .contact{
+    text-align: right;
+}
+.footer .lower .section .logo img{
+    width: 70px;
+}
+.reserve{
+    background-color: #FF9900;
+    width: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    position: absolute;
+    bottom: 10%;
+    right:4%
+}
+.copyright{
+    margin-left: 2%;
+    transform: translateY(15%);
+    color:#ffffff;
+    opacity: 60%;
+}

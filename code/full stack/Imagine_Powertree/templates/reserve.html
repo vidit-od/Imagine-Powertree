@@ -1,0 +1,116 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- import font poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,700&display=swap" rel="stylesheet">
+    <!-- import font lobster -->
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <link rel="stylesheet" href='{% static "reserve_style.css" %}'>
+    <title>Imagine powertree</title>
+</head>
+<body>
+    <!-- reserver appointment form -->
+    <div class="reserve">
+        <!-- navbar and form contert -->
+        <div class="left">
+            
+            <div class="navbar">
+                <div class="Logo"><img src="{%static 'images/1.png' %}" alt=""></div>
+                <div class="content">
+                    <p>Our Products</p>
+                    <p>For Commercial</p>
+                    <p>Our Projects</p>
+                    <p>Blogs</p>
+                    <p>About us</p>
+                </div>
+            </div>
+            <div class="form">
+                <div class="title">Connect with a <span>Powertree</span>  representative</div>
+                <div class="subtitle">Fill out this form and a Powertree agent will get in touch.</div>
+                <form action="">
+                    <div class="field">
+                        <select name="role" id="" required>
+                            <option value="" disabled selected value></option>
+                            <option value="Commercial Customer">Commercial Customer</option>
+                            
+                            <option value="Residentail Customer">Residentail Customer</option>
+                            
+                            <option value="Reseller">Reseller</option>
+
+                        </select>
+                        <label for="role" class="label-field">
+                            <span class="content-name">I am a.. <span>*</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="full-name" autocomplete="off" required/>
+                        <label for="full-name" class="label-field">
+                            <span class="content-name">Name <span>*</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="full-name" autocomplete="off" required placeholder=" "/>
+                        <label for="full-name" class="label-field">
+                            <span class="content-name">Email <span>*</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <input type="tel" name="full-name" autocomplete="off" maxlength="10" required />
+                        <label for="full-name" class="label-field">
+                            <span class="content-name">Contact number <span>*</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="full-name" autocomplete="off" required />
+                        <label for="full-name" class="label-field">
+                            <span class="content-name">Address line 1 <span>*</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="full-name" autocomplete="off" required />
+                        <label for="full-name" class="label-field">
+                            <span class="content-name">Address line 1 <span>*</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="full-name" autocomplete="off" required />
+                        <label for="full-name" class="label-field">
+                            <span class="content-name">State <span>*</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <input type="text-box" name="full-name" autocomplete="off" required />
+                        <label for="full-name" class="label-field">
+                            <span class="content-name">comment </span>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="declaration" required/>
+                        <label for="declaration">I consent to having this company store my submitted information so they can respond to my inquiry. See our privacy policy to learn more about how we use data. <span>*</span></label>
+                    </div>
+                    <input type="button" value="submit">
+                </form>
+            </div>
+        </div>
+        <!-- image and shade -->
+        <div class="right">
+            <div class="blur"></div>
+            <img src="{%static 'images/20.png' %}" alt="">
+        </div>
+    </div>
+</body>
+</html>

@@ -6,6 +6,17 @@
     padding: 0%;
     box-sizing: border-box;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+span{
+    box-shadow: none;
+}
+a:visited{
+    text-decoration: none;
 }
 /* body tag */
 body{
@@ -23,6 +34,8 @@ body{
     justify-content: space-between;
     overflow: hidden;
     background-color: #ffffff;
+    transform: translateY(-100%);
+    transition: all 0.5s ease;
 }
 .navbar .Logo{
     width: 5%;
@@ -38,8 +51,8 @@ body{
     position: absolute;
     width: 100%;
     top: 50%;
-    transform: translateY(-50%);
-    left: 5%;
+    transform: translateX(-45%) translateY(-50%);
+    left: 50%;
 }
 .navbar .content p{
     display: inline;
@@ -80,6 +93,9 @@ body{
    title -> {p, p} 
    subtitle -> {p, p}
    button -> {p}*/
+.upper{
+    overflow: hidden;
+}
 .home{
     display: flex;
     flex-direction: column;
@@ -89,6 +105,12 @@ body{
     left: 50%;
     transform: translateX(-50%);
     width: 700px;
+    opacity: 1;
+    overflow: visible;
+}
+.home .text_animation{
+    transform: translateY(-200%);
+    transition: all 0.7s ease;
 }
 .home .title p{
     font-family: 'Lobster';
@@ -125,6 +147,11 @@ body{
     background-color: transparent;
     font-family: 'Lobster';
     color: #ffffff;
+}
+.home .home_image{
+    transition: all 0.5s ease;
+    overflow: hidden;
+    opacity: 0;
 }
 .home img{
     width: 535px;
