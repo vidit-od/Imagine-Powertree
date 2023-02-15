@@ -15,6 +15,9 @@ a{
 span{
     box-shadow: none;
 }
+button{
+    border-style: outset;
+}
 a:visited{
     text-decoration: none;
 }
@@ -77,17 +80,59 @@ body{
     font-family: 'Lobster';
     color: #ffffff;
     background-color: #FF9900;
+    border: 1px solid #FF9900;
     border-radius: 5px;
     width: 122px;
     height: 25px;
     margin-right: 20px;
     justify-content: center;
     align-items: center;
+    transition: all 0.5s ease;
+}
+.navbar .navright .contact:hover{
+    background-color: #ffffff;
+    color: #FF9900;
 }
 .navbar .navright svg{
     width: 20px;
     fill: #FF9900;
     margin-right: 10px;
+    margin-left: 10px;
+    overflow: visible;
+    transition: all 0.5s ease;
+    animation: jiggle_phone 2s infinite;
+}
+@keyframes jiggle_phone {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    2%{
+        transform: rotateZ(20deg);
+    }
+    4%{
+        transform: rotateZ(0deg);
+    }
+    6%{
+        transform: rotateZ(-20deg);
+    }
+    8%{
+        transform: rotateZ(0deg);
+    }
+    10%{
+        transform: rotateZ(20deg);
+    }
+    12%{
+        transform: rotateZ(0deg);
+    }
+    14%{
+        transform: rotateZ(-20deg);
+    }
+    16%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(0deg);
+    }
 }
 /* home page -> {title, subtitle, button, img}
    title -> {p, p} 
@@ -137,6 +182,13 @@ body{
     height: 36px;
     background-color: #FF9900;
     border-radius:6px ;
+    color: #ffffff;
+    border: 2px solid #FF9900;
+}
+.home .button:hover{
+    background-color: #ffffff;
+    border: 2px solid #FF9900;
+    color: #FF9900;
 }
 .home .button p{
     position: absolute;
@@ -146,7 +198,9 @@ body{
     font-size: 22px;
     background-color: transparent;
     font-family: 'Lobster';
-    color: #ffffff;
+}
+.home .button:hover + .button p{
+    color: #FF9900;
 }
 .home .home_image{
     transition: all 0.5s ease;
@@ -174,10 +228,12 @@ body{
     overflow: hidden;
 }
 .page2 .why_powertree{
+    transform: translateX(-50%);
     flex-direction: column;
     width: 51%;
     height: 518px;
     text-align: center;
+    margin-left: 35px;
 }
 .page2 .why_powertree .title{
     font-family: 'lobster';
@@ -212,6 +268,10 @@ body{
     border-radius:19px;
     box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(2px);
+    transition: box-shadow 0.5s ease;
+}
+.page2 .why_powertree .statistics .fact:hover{
+    box-shadow:0px 4px 10px #FF9900; ;
 }
 .page2 .why_powertree .statistics .fact .title span{
     font-size: 20px;
@@ -240,6 +300,12 @@ body{
     width: 25%;
     color: #ffffff;
     border-radius: 10px;
+    transition: all 0.5s ease;
+}
+.page2 .why_powertree .button:hover{
+    background-color: #ffffff;
+    border: 1px solid #FF9900;
+    color: #FF9900;
 }
 .page2 .why_powertree .button p{
     background-color: transparent;
@@ -249,9 +315,10 @@ body{
 }
 .page2 img{
     position:absolute;
-    left: 51%;
+    left: 75%;
+    top: 5%;
+    transform: translateX(-50%) translateY(0%);
     background-color: transparent;
-    transform: translateY(20px);
     width: 649.46px;
     height: 510px;
     z-index:1;
@@ -259,9 +326,11 @@ body{
 .page2 .backshade{
     position: absolute;
     background-color: #FFCD82;
-    width: 377px;
-    height: 335px;
-    left: 61%;
+    width: 0px;
+    height: 0px;
+    left: 75%;
+    top: 25%;
+    transform: translateX(-50%) translateY(-25%);
     z-index: 0;
     border-radius: 100%;
 }
@@ -278,17 +347,17 @@ body{
     left:35px;
     display: flex;
 }
-.page3 .image{
+.page3 .p3_image{
     overflow: visible;
     margin-left: 1%;
-    transform: translateY(2%);
+    transform: translateX(-50%) translateY(2%);
     height: fit-content;
 }
-.page3 .image img{
+.page3 .p3_image img{
     width: 540px;
     height: 450px;
 }
-.page3 .image .desc{
+.page3 .p3_image .desc{
     position: absolute;
     background-color: #ffffff;
     padding: 20px;
@@ -299,33 +368,34 @@ body{
     box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(2px);
 }
-.page3 .content{
+.page3 .p3_content{
     width: 50%;
     text-align: center;
     margin-left: 40px;
+    transform: translateX(50%);
 }
-.page3 .content .titlem{
+.page3 .p3_content .titlem{
     font-size: 40px;
     font-family: 'lobster';
     color: #FF9900;
 }
-.page3 .content .desc{
+.page3 .p3_content .desc{
     font-family: 'poppins';
     font-weight: 200;
     margin-top: 21px;
 }
-.page3 .content .purpose{
+.page3 .p3_content .purpose{
     display: flex;
     flex-direction: column;
     padding: 10px;
 }
-.page3 .content .purpose .parallel{
+.page3 .p3_content .purpose .parallel{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
 }
-.page3 .content .purpose .parallel .p_industries, .p_home{
+.page3 .p3_content .purpose .parallel .p_industries, .p_home{
     box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(2px);
     padding: 20px;
@@ -334,6 +404,11 @@ body{
     width: 220px;
     border-radius: 20px;
     overflow: visible;
+    transition: box-shadow 0.5s ease;
+}
+.page3 .p3_content .purpose .parallel .p_industries:hover,
+.page3 .p3_content .purpose .parallel .p_home:hover{
+    box-shadow:0px 4px 10px #FF9900;
 }
 .parallel .p_industries .title{
     font-family: 'lobster';
@@ -402,6 +477,11 @@ body{
     width: 60%;
     margin: auto;
     margin-top: 40px;
+    transition: all 0.5s ease;
+}
+.parallel .p_industries  .button:hover{
+    background-color: #FF9900;
+    color: #ffffff;
 }
 .parallel .p_home  .button{
     border-style: solid;
@@ -412,6 +492,11 @@ body{
     width: 60%;
     margin: auto;
     margin-top: 40px;
+    transition: all 0.5s ease;
+}
+.parallel .p_home  .button:hover{
+    background-color: #FF9900;
+    color: #ffffff;
 }
 .page3 .p_dealer{
     box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -423,6 +508,9 @@ body{
     width: 90%;
     border-radius: 20px;
     overflow: visible;
+}
+.page3 .p_dealer:hover{
+    box-shadow: 0px 4px 10px #FF9900;
 }
 .page3 .p_dealer .title{ 
     font-family: 'lobster';
@@ -446,6 +534,12 @@ body{
     margin: auto;
     margin-bottom: 0;
     margin-top: 10px;
+    transition: all 0.5s ease;
+}
+.page3 .p_dealer .button:hover{
+
+    color: #ffffff;
+    background-color: #FF9900;
 }
 .page3 .p_dealer .svg{
     position: absolute;
@@ -466,7 +560,7 @@ body{
     width: 25px;
     margin: auto;
 }
-/* page 4 -> { upper, lower }
+/* pagimg srce 4 -> { upper, lower }
    upper -> { background , content }
    background -> { blur,img }
    content -> { title , description }
@@ -476,52 +570,20 @@ body{
 .page4{
     position: absolute;
     top: 340%;
-    height:130%;
-}
-.page4 .upper {
     width: 100%;
-    height: 34%;
+    height: 90%;
     overflow: hidden;
 }
-.page4 .upper .background img{
-    width: 100%;
-}
-.page4 .upper .background .blur{
-    position: absolute;
-    width: 100%;
-    height: 34%;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
-}
-.page4 .upper .content {
-    top: 0;
-    position: absolute;
+.page4 .p4_title{
     text-align: center;
-}
-.page4 .upper .content .title{
-    font-family: 'lobster';
-    font-size: 40px;
-    color: #ffffff;
-    margin: 10px;
-    margin-top: 2%;
-}
-.page4 .upper .content .title span{
     font-family: 'lobster';
     font-size: 40px;
     color: #FF9900;
-    background-color: #ffffff;
-    border-radius: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.page4 .upper .content .desc{
-    color: #ffffff;
-    width: 70%;
-    margin: auto;
-    font-weight: 700;
-    margin-top: 2%;
 }
 .page4 .lower{
+    width: 100%;
+    height: 90%;
+    transform: translateY(50%);
     display: flex;
     flex-direction: column;
 }
@@ -544,6 +606,10 @@ body{
     text-align: center;
     border-radius: 15px;
     width: 300px;
+    transition: all 0.5s ease;
+}
+.page4 .lower .products .prod1:hover{
+    box-shadow:0px 4px 10px #FF9900;
 }
 .page4 .lower .products .prod1 .title{
     font-family: 'lobster';
@@ -575,16 +641,24 @@ body{
     border-style: solid;
     border-color: #FF9900;
     border-radius:10px ;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+.page4 .lower .button:hover{
+    background-color: #FF9900;
+    color: #ffffff;
 }
 /* banner -> { lhs , arrow , rhs }*/
 .banner{
     position: absolute;
-    top: 480%;
-    width: 100%;
+    top: 440%;
+    width: 50%;
     height: 30%;
     display: flex;
+    overflow: hidden;
     justify-content: space-between;
     background-color: #FF9900;
+    transition: width 1s ease;
 }
 .banner .lhs{
     font-size: 40px;
@@ -598,10 +672,41 @@ body{
 }
 .banner .arrow{
     position: absolute;
+    width: 40%;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-
+    transition: width 1s ease;
+    animation: arrow 2s infinite;
+}
+.banner .arrow img{
+    width: 100%;
+}
+@keyframes arrow {
+    0%{
+        transition: all 0.5s ease ;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    4%{
+        transition: all 0.5s ease ;
+        transform: translateX(-47%) translateY(-50%);
+    }
+    8%{
+        transition: all 0.5s ease ;
+        transform: translateX(-49%) translateY(-50%);
+    }
+    12%{
+        transition: all 0.5s ease ;
+        transform: translateX(-47%) translateY(-50%);
+    }
+    16%{
+        transition: all 0.5s ease ;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    100%{
+        transition: all 0.5s ease ;
+        transform: translateX(-50%) translateY(-50%);
+    }
 }
 .banner .button{
     position: absolute;
@@ -617,6 +722,44 @@ body{
     font-size: 22px;
     border-radius: 10px;
     font-family: 'lobster';
+    animation: jiggle 2s infinite;
+    transition: all 0.5s ease;
+}
+.banner .button:hover{
+    background-color: #ffffff;
+    color: #FF9900;
+}
+@keyframes jiggle {
+    0%{
+        transform: translateY(-50%) rotateZ(0deg);
+    }
+    2%{
+        transform: translateY(-50%) rotateZ(2deg);
+    }
+    4%{
+        transform: translateY(-50%) rotateZ(0deg);
+    }
+    8%{
+        transform: translateY(-50%) rotateZ(-2deg);
+    }
+    10%{
+        transform: translateY(-50%) rotateZ(0deg);
+    }
+    12%{
+        transform: translateY(-50%) rotateZ(2deg);
+    }
+    14%{
+        transform: translateY(-50%) rotateZ(0deg);
+    }
+    16%{
+        transform: translateY(-50%) rotateZ(-2deg);
+    }
+    18%{
+        transform: translateY(-50%) rotateZ(0deg);
+    }
+    100%{
+        transform: translateY(-50%) rotateZ(0deg);
+    }
 }
 /* page5 -> {key_client , sec2 } 
    key clients -> { title , cards} 
@@ -631,7 +774,7 @@ body{
    content -> {logo}*/
 .page5{
     position: absolute;
-    top: 510%;
+    top: 470%;
     height: 90%;
     width: 100%;
     display: flex;
@@ -775,7 +918,7 @@ body{
    */
 .footer{
     position: absolute;
-    top: 600%;
+    top: 570%;
     height:90%;
     overflow: hidden;
 }
