@@ -34,10 +34,15 @@
             <div class="form">
                 <div class="title">Connect with a <span>Powertree</span>  representative</div>
                 <div class="subtitle">Fill out this form and a Powertree agent will get in touch.</div>
-                <form action="">
+                <form action="" method="POST">
+                    {% csrf_token %}
                     <div class="field">
-                        <select name="role" id="" required>
-                            <option value="" disabled selected value></option>
+                        {% for message in messages %}
+                            {{message}}
+                        {% endfor %}
+
+                        <select id="" name="i_am" required>
+                            <option value="" disabled selected></option>
                             <option value="Commercial Customer">Commercial Customer</option>
                             
                             <option value="Residentail Customer">Residentail Customer</option>
@@ -58,43 +63,43 @@
                         </label>
                     </div>
                     <div class="field">
-                        <input type="text" name="full-name" autocomplete="off" required placeholder=" "/>
-                        <label for="full-name" class="label-field">
+                        <input type="text" name="email" autocomplete="off" required placeholder=" "/>
+                        <label for="email" class="label-field">
                             <span class="content-name">Email <span>*</span>
                             </span>
                         </label>
                     </div>
                     <div class="field">
-                        <input type="tel" name="full-name" autocomplete="off" maxlength="10" required />
-                        <label for="full-name" class="label-field">
+                        <input type="tel" name="number" autocomplete="off" maxlength="15" required />
+                        <label for="number" class="label-field">
                             <span class="content-name">Contact number <span>*</span>
                             </span>
                         </label>
                     </div>
                     <div class="field">
-                        <input type="text" name="full-name" autocomplete="off" required />
-                        <label for="full-name" class="label-field">
+                        <input type="text" name="address_1" autocomplete="off" required />
+                        <label for="address_1" class="label-field">
                             <span class="content-name">Address line 1 <span>*</span>
                             </span>
                         </label>
                     </div>
                     <div class="field">
-                        <input type="text" name="full-name" autocomplete="off" required />
-                        <label for="full-name" class="label-field">
-                            <span class="content-name">Address line 1 <span>*</span>
+                        <input type="text" name="address_2" autocomplete="off" required />
+                        <label for="address_2" class="label-field">
+                            <span class="content-name">Address line 2 <span>*</span>
                             </span>
                         </label>
                     </div>
                     <div class="field">
-                        <input type="text" name="full-name" autocomplete="off" required />
-                        <label for="full-name" class="label-field">
+                        <input type="text" name="state" autocomplete="off" required />
+                        <label for="state" class="label-field">
                             <span class="content-name">State <span>*</span>
                             </span>
                         </label>
                     </div>
                     <div class="field">
-                        <input type="text-box" name="full-name" autocomplete="off" required />
-                        <label for="full-name" class="label-field">
+                        <input type="text-box" name="comment" autocomplete="off"/>
+                        <label for="comment" class="label-field">
                             <span class="content-name">comment </span>
                         </label>
                     </div>
@@ -102,7 +107,7 @@
                         <input type="radio" name="declaration" required/>
                         <label for="declaration">I consent to having this company store my submitted information so they can respond to my inquiry. See our privacy policy to learn more about how we use data. <span>*</span></label>
                     </div>
-                    <input type="button" value="submit">
+                    <input type="submit" value="submit">
                 </form>
             </div>
         </div>

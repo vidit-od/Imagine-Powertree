@@ -152,6 +152,7 @@ body{
     width: 700px;
     opacity: 1;
     overflow: visible;
+    scroll-snap-align: start;
 }
 .home .text_animation{
     transform: translateY(-200%);
@@ -226,6 +227,7 @@ body{
     margin-left: 35px;
     display: flex;
     overflow: hidden;
+    scroll-snap-align: start;
 }
 .page2 .why_powertree{
     transform: translateX(-50%);
