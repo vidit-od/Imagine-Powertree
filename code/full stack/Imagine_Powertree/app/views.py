@@ -4,7 +4,7 @@ from django.contrib.auth.models import auth,User
 from django.contrib import messages
 from datetime import datetime
 from django.urls import reverse
-from .models import reserve as reserve_model
+from .models import reserve as reserve_model,why_powertree as why_model
 import os
 from django.conf import settings
 import random
@@ -43,7 +43,8 @@ def reserve(request):
     return render(request, 'reserve.html')
 
 def why_powertree(request):
-    return render(request, 'why_powertree.html')
+    contents = why_model.objects.all()
+    return render(request, 'why_powertree.html', {'contents': contents})
 
 def aboutus(request):
     return render(request, 'aboutus.html')

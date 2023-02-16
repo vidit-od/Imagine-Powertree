@@ -64,17 +64,19 @@
     <!-- page2 -->
     <div class="page2" id="page2">
         <!-- left section is the wheeel -->
+        {% if contents.count == 6 %}
         <div class="left">
             <!-- button for next -->
             <button class="page2_prev">prev</button>
             <!-- wheel and content -->
             <div class="wheel" id="wheel">
                 <div class="wheel_content" id="wheel_content">
-                    <div class="div0">Industry 
-                        challenges</div>
-                    <div class="div1" id="div1">
-                        Huge Installation space needed
-                    </div>
+                    
+                    <div class="div0">Industry challenges</div>
+                    {% for content in contents %}
+                        <div class="div{{forloop.counter}}" id="div{{forloop.counter}}">{{content.industry_problem}}</div>
+                    {% endfor %}
+                    <!-- <div class="div1" id="div1">Huge Installation space needed </div>
                     
                     <div class="div2" id="div2">Excessive preliminary work required</div>
                     
@@ -84,17 +86,47 @@
                     
                     <div class="div5" id="div5">Solar Needs Visibility – Hidden in rooftop</div>
                     
-                    <div class="div6" id="div6">large staff required to setup </div>
+                    <div class="div6" id="div6">large staff required to setup </div> -->
                 </div>
                 <img id="mask" src="{%static 'images/22.png' %}"alt="" srcset="">
             </div>
             <!-- next button -->
             <button class="page2_next">next</button>
         </div>
+        
         <!-- right section has cards -->
         <div class="right">
+            {% for content in contents %}
+            <div class="card{{forloop.counter}}" id="card{{forloop.counter}}">
+                <div class="traditional">
+                    <div class="title">
+                        Traditional solar panels
+                    </div>
+                    <div class="image">
+                        <img src="{{ content.traditional_image.url }}" alt="">
+                    </div>
+                    <div class="subtext">
+                        {{content.traditional_approach}}
+                    </div>
+                </div>
+                <div class="powertree">
+                    <div class="title">
+                        Powertree
+                    </div>
+                    <div class="image">
+                        <img src="{{ content.powertree_image.url }}"alt="">
+                    </div>
+                    <div class="subtext">
+                        {{content.powertree_approach}}
+                    </div>
+                    
+                </div>
+            </div>
+            {% endfor %}
+
+
             <!-- comparision 1 -->
-            <div class="card1" id="card1">
+            <!-- <div class="card1" id="card1">
                 <div class="traditional">
                     <div class="title">
                         Traditional solar panels
@@ -119,7 +151,6 @@
                     
                 </div>
             </div>
-            <!-- comparision 2 -->
             <div class="card2" id="card2">
                 <div class="traditional">
                     <div class="title">
@@ -146,7 +177,6 @@
                     
                 </div>
             </div>
-            <!-- comparision 3 -->
             <div class="card3" id="card3">
                 <div class="traditional">
                     <div class="title">
@@ -173,7 +203,6 @@
                     
                 </div>
             </div>
-            <!-- comparision 4 -->
             <div class="card4" id="card4">
                 <div class="traditional">
                     <div class="title">
@@ -199,7 +228,6 @@
                     </div>
                 </div>
             </div>
-            <!-- comparision 5 -->
             <div class="card5" id="card5">
                 <div class="traditional">
                     <div class="title">
@@ -224,8 +252,7 @@
                     </div>
                 </div>
             </div>
-            <!-- comparision 6 -->
-            <div class="card6" id="card6">
+            <div class="card6" id="card6"> 
                 <div class="traditional">
                     <div class="title">
                         Traditional solar panels
@@ -248,9 +275,44 @@
                         Powertree is easy to install, requiring less then 50% staff compared to traditional panels 
                     </div>
                 </div>
-    
+            -->
             </div>
         </div>
+        {% else %}
+            <button class="page2_prev_else">prev</button>
+            <div class="card_holder">
+            <div class="all_cards">
+            {% for content in contents %}
+            <div class="card_else" id="card_else">
+            <div class="traditional">
+                <div class="title">
+                    Traditional solar panels
+                </div>
+                <div class="image">
+                    <img src="{{ content.traditional_image.url }}" alt="">
+                </div>
+                <div class="subtext">
+                    {{content.traditional_approach}}
+                </div>
+            </div>
+            <div class="powertree">
+                <div class="title">
+                    Powertree
+                </div>
+                <div class="image">
+                    <img src="{{ content.powertree_image.url }}"alt="">
+                </div>
+                <div class="subtext">
+                    {{content.powertree_approach}}
+                </div>
+                
+            </div>
+            </div>
+            {% endfor %}
+            </div>
+            </div>
+            <button class="page2_next_else">next</button>
+        {% endif %}
     </div>
     <div class="page3">
         <div class="title">

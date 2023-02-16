@@ -20,4 +20,13 @@ class reserve(models.Model):
 
     def __str__(self):
         return '%s || %s || %s' %(self.name,self.contact, self.pk)
-    
+
+class why_powertree(models.Model):
+    industry_problem =models.CharField(max_length=100,blank=False,null=False)
+    traditional_approach = models.CharField(max_length=100,blank=False,null=False)
+    powertree_approach = models.CharField(max_length=100,blank=False,null=False)
+    traditional_image = models.ImageField(upload_to='why_powertree/', height_field=None, width_field=None, max_length=100,blank=False,null=False)
+    powertree_image = models.ImageField(upload_to='why_powertree/', height_field=None, width_field=None, max_length=100,blank=False,null=False)
+
+    def __str__(self):
+        return '%s' %(self.industry_problem)

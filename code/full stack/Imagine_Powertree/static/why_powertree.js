@@ -1,9 +1,13 @@
 // const declarations
 const prev =document.querySelector(".page2_prev");
 const next =document.querySelector(".page2_next");
+const prev_else =document.querySelector(".page2_prev_else");
+const next_else =document.querySelector(".page2_next_else");
 const wheel =document.getElementById("mask");
-
+const all_cards = document.querySelector(".all_cards");
+let max = document.querySelectorAll(".card_else").length
 // all divs
+try{
 const div1=document.getElementById("div1");
 const div2=document.getElementById("div2");
 const div3=document.getElementById("div3");
@@ -175,3 +179,35 @@ next.addEventListener("click" ,function(){
     // rotate wheel
     wheel.style.transform= "rotate("+angle+"deg)";
 })
+}
+
+catch(err){
+let current = 0;
+prev_else.style.pointerEvents="none"
+prev_else.addEventListener("click",function(){
+    current =current-1;
+    if(current == 0){
+        prev_else.style.pointerEvents="none";
+    }
+    else{
+        prev_else.style.pointerEvents="all";
+        next_else.style.pointerEvents="all";
+    }
+    let transform = -(current*500);
+    all_cards.style.transform="translateX("+transform+"px)"
+})
+
+next_else.addEventListener("click",function(){
+    current =current+1;
+    if(current == max-1){
+        next_else.style.pointerEvents="none";
+    }
+    else{
+        next_else.style.pointerEvents="all";
+        prev_else.style.pointerEvents="all";
+    }
+    let transform = -(current*500);
+    all_cards.style.transform="translateX("+transform+"px)"
+})
+
+}
