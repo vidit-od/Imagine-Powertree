@@ -30,3 +30,74 @@ class why_powertree(models.Model):
 
     def __str__(self):
         return '%s' %(self.industry_problem)
+
+class team(models.Model):
+    name = models.CharField(max_length=100, blank=False, null=False)
+    role = models.CharField(max_length=100, blank=False, null=False)
+    desc = models.CharField(max_length=200, blank=True, null=True)
+    linkedin = models.URLField(max_length=100, blank=True, null=True)
+    instagram = models.URLField(max_length=100, blank=True, null=True)
+    twitter = models.URLField(max_length=100, blank=True, null=True)
+    image = models.ImageField(upload_to='team/',  height_field=None, width_field=None ,blank=False ,null=False)
+
+    def __str__(self):
+        return '%s | %s' %(self.name, self.role)
+
+class advisory_board(models.Model):
+    name = models.CharField(max_length=100, blank=False, null=False)
+    role = models.CharField(max_length=100, blank=False, null=False)
+    desc = models.CharField(max_length=200, blank=True, null=True)
+    linkedin = models.URLField(max_length=100, blank=True, null=True)
+    instagram = models.URLField(max_length=100, blank=True, null=True)
+    twitter = models.URLField(max_length=100, blank=True, null=True)
+    image = models.ImageField(upload_to='team/',  height_field=None, width_field=None ,blank=False ,null=False)
+
+    def __str__(self):
+        return '%s | %s' %(self.name, self.role)
+
+class products(models.Model):
+    name = models.CharField(max_length=40, blank=False, null=False)
+    image = models.ImageField(upload_to='products/',  height_field=None, width_field=None ,blank=False ,null=False)
+    sub_text = models.CharField(max_length=180, blank=True, null=True)
+    desc = models.TextField(max_length=2000 , blank=False, null=False ,default="product descriptions")
+
+    def __str__(self):
+        return '%s' %(self.name)
+
+class image_gallery(models.Model):
+    title = models.CharField(max_length=100, blank=False, null=False, default='Title')
+    desc = models.CharField(max_length=200, blank=False, null=False)
+    image = models.ImageField(upload_to='image_gallery/',  height_field=None, width_field=None ,blank=False ,null=False)
+
+    def __str__(self):
+        return '%s' %(self.desc)
+
+class projects(models.Model):
+    project_name = models.CharField(max_length=200, blank=False, null=False)
+    image = models.ImageField(upload_to='projects/',  height_field=None, width_field=None ,blank=False ,null=False)
+    desc = models.CharField(max_length=2000, blank=False, null=False, default="We are updating information regarding this project soon")
+    location = models.CharField(max_length=200, blank=True, null=True)
+    year_of_project = models.IntegerField(blank=True,null=True)
+
+    def __str__(self):
+        return '%s' %(self.project_name)
+
+class products_usedin_project(models.Model):
+    products_id = models.ForeignKey(products, on_delete=models.CASCADE)
+    project_id = models.ForeignKey(projects, on_delete=models.CASCADE)
+    quantity = models.IntegerField(blank=True, null=True)
+
+    def __str__(self):
+        return '%s | %s' %(self.project_id, self.products_id)
+
+class key_clients(models.Model):
+    name = models.CharField(max_length=200, blank=False,null=False)
+    image = models.ImageField(upload_to='key_clients/',  height_field=None, width_field=None ,blank=False ,null=False)
+
+    def __str__(self):
+        return '%s' %(self.name)
+
+class supported_by(models.Model):
+    name = models.CharField(max_length=200, blank=False, null=False)
+    image = models.ImageField(upload_to='supported_by/',  height_field=None, width_field=None ,blank=False ,null=False)
+    

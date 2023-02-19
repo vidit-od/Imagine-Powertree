@@ -6,7 +6,7 @@ const all_pages=document.querySelectorAll(".slide");
 const image = document.querySelector(".slide__img")
 const images =document.querySelectorAll(".images");
 const items = document.querySelectorAll(".item");
-const back =document.querySelector(".back");
+const back =document.querySelectorAll(".back");
 const length = all_pages.length;
 
 
@@ -17,7 +17,6 @@ let prev_page;
 
 images[0].style.opacity="1";
 all_pages[0].classList.add("show_slide");
-
 
 // previous button 
 prev.addEventListener('click', function(){
@@ -92,6 +91,15 @@ function pagereplacement(prev_page,current_page){
     all_pages[current_page].classList.add("show_slide");
 }
 
+for(let i=1; i<document.querySelectorAll(".desc").length;i++){
+    let k = String(document.querySelectorAll(".desc")[i].innerHTML);
+    k=k.toString();
+    k=k.replaceAll("&lt;", "<");
+    k=k.replaceAll("&gt;", ">");
+    document.querySelectorAll(".desc")[i].innerHTML = k;
+    console.log(k)
+}
+
 // expand for more info
 image.addEventListener('click', function(){
     document.querySelector(".slideshow__deco").classList.add("expand__deco");
@@ -109,10 +117,12 @@ image.addEventListener('click', function(){
     for(let i =0; i<images.length; i++){
         images[i].style.pointerEvents="none";
     }
+
 })
 
 // hide info
-back.addEventListener('click', function() {
+for(var i =0; i< back.length; i++){
+back[i].addEventListener('click', function() {
     document.querySelector(".slideshow__deco").classList.remove("expand__deco");
     items[current_page].style.opacity="0";
 
@@ -128,4 +138,4 @@ back.addEventListener('click', function() {
         images[i].style.pointerEvents="all";
     }
 })
-
+}

@@ -221,6 +221,8 @@
     font-size: 40px;
     font-family: 'lobster';
     overflow: hidden;
+    height: 50px;
+    min-width: 150%;
 }
 .slide__subtitle{
     font-size: 20px;

@@ -4,7 +4,7 @@ from django.contrib.auth.models import auth,User
 from django.contrib import messages
 from datetime import datetime
 from django.urls import reverse
-from .models import reserve as reserve_model,why_powertree as why_model
+from .models import reserve as reserve_model,why_powertree as why_model,team, products
 import os
 from django.conf import settings
 import random
@@ -53,7 +53,8 @@ def whats_new(request):
     return render(request, "whats_new.html")
 
 def product(request):
-    return render(request, "product.html")
+    product=products.objects.all()
+    return render(request, "product.html", {'products': product})
 
 def project(request):
     return render(request, "project.html")
