@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
@@ -35,6 +36,7 @@ class team(models.Model):
     name = models.CharField(max_length=100, blank=False, null=False)
     role = models.CharField(max_length=100, blank=False, null=False)
     desc = models.CharField(max_length=200, blank=True, null=True)
+    user_id =models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     linkedin = models.URLField(max_length=100, blank=True, null=True)
     instagram = models.URLField(max_length=100, blank=True, null=True)
     twitter = models.URLField(max_length=100, blank=True, null=True)
@@ -100,4 +102,20 @@ class key_clients(models.Model):
 class supported_by(models.Model):
     name = models.CharField(max_length=200, blank=False, null=False)
     image = models.ImageField(upload_to='supported_by/',  height_field=None, width_field=None ,blank=False ,null=False)
-    
+
+class varient(models.Model):
+    product_id = models.ForeignKey(products, on_delete=models.CASCADE)
+    varient_name = models.CharField(max_length=100, blank=False, null=False, unique=True)
+    desc = models.FileField(upload_to="varients/")
+
+    def __str__(self):
+        return "%s | %s" %(self.product_id, self.varient_name)
+
+class whats_new(models.Model):
+    title = models.CharField(max_length=100,blank=False,null=False)
+    date = models.DateField()
+    desc = models.TextField(max_length=2000, blank=False,null=False)
+    image = models.ImageField(upload_to="whats_new/")
+
+    def __str__(self):
+        return "%s" %(self.title)

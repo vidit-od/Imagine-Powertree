@@ -92,8 +92,14 @@
     <!-- powertree for different purposes -->
     <div class="page3" id="page3">
         <div class="p3_image">
-            <img src="{%static 'images/4.JPG' %}" alt="">
-            <div class="desc">Imagine powertree at sanand </div>
+            <div class="images">
+                {% for image in images %}
+                <div class="p3_images">
+                    <img src='{{image.image.url}}' alt="">
+                    <div class="desc">{{image.title}}</div>
+                </div>
+                {% endfor %}
+            </div>  
         </div>
         <div class="p3_content">
             <div class="titlem">Leading the Way</div>
@@ -197,34 +203,12 @@
         <div class="key_client">
             <div class="title">Our Key Clients</div>
             <div class="cards">
+                {% for client in clients %}
                 <div class="Clients">
-                    <div class="logo"><img src="{%static 'images/10.png' %}" alt=""></div>
-                    <div class="name">ONGC</div>
+                    <div class="logo"><img src="{{ client.image.url }}" alt=""></div>
+                    <div class="name">{{client.name}}</div>
                 </div>
-                <div class="Clients">
-                    <div class="logo"><img src="{%static 'images/16.png' %}" alt=""></div>
-                    <div class="name">Statue of Unity</div>
-                </div>
-                <div class="Clients">
-                    <div class="logo"><img src="{%static 'images/15.png' %}" alt=""></div>
-                    <div class="name">PDEU</div>
-                </div>
-                <div class="Clients">
-                    <div class="logo"><img src="{%static 'images/11.png' %}" alt=""></div>
-                    <div class="name">Smart City Gandhinagar</div>
-                </div>
-                <div class="Clients">
-                    <div class="logo"><img src="{%static 'images/13.png' %}" alt=""></div>
-                    <div class="name">GUDC</div>
-                </div>
-                <div class="Clients">
-                    <div class="logo"><img src="{%static 'images/19.png' %}" alt=""></div>
-                    <div class="name">xyz</div>
-                </div>
-                <div class="Clients">
-                    <div class="logo"><img src="{%static 'images/19.png' %}" alt=""></div>
-                    <div class="name">xyz</div>
-                </div>
+                {% endfor %}
             </div>
         </div>
         <!-- supporters, achievements -->
@@ -233,18 +217,12 @@
                 <div class="title">Supported by</div>
                 <div class="desc">Imagine Powertree witnessed and unimaginable growth in its short span and this was because of the following supporting organizatons </div>
                 <div class="cards">
+                    {% for i in supported %}
                     <div class="content">
-                        <div class="name">PDEU</div>
-                        <div class="logo"><img src="{%static 'images/15.png' %}" alt=""></div>
+                        <div class="name">{{i.name}}</div>
+                        <div class="logo"><img src='{{ i.image.url }}' alt=""></div>
                     </div>
-                    <div class="content">
-                        <div class="name">Industries commisionerate</div>
-                        <div class="logo"><img src="{%static 'images/12.jpeg' %}"alt=""></div>
-                    </div>
-                    <div class="content">
-                        <div class="name">PDEU IIC</div>
-                        <div class="logo"><img src="{%static 'images/14.png' %}" alt=""></div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="achievements">
@@ -268,7 +246,7 @@
         </div>
     </div>
     <!-- image and footer -->
-    <div class="footer">
+    <div class="footer" id="footer">
         <div class="upper">
             <div class="background">
                 <div class="blur"></div>
@@ -326,7 +304,7 @@
 <script>
     VanillaTilt.init(document.querySelectorAll(".prod1"),{
         max:25,
-        speed:1000,
+        speed:10000,
         glare: false,
         "max-flare":1
     });

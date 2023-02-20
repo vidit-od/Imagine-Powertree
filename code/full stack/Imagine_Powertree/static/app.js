@@ -28,8 +28,8 @@ window.addEventListener('scroll', function(){
     // powertree 360 rotation animation
     if (percent >= 0 && percent <=19.02){
         const degree = percent*9;
-        home_image.style.transition="none"
-        home_image.style.transform="rotateZ("+ degree +"deg)"
+        home_image.style.transition="none";
+        home_image.style.transform="rotateZ("+ degree +"deg)";
     }
 
     // page2 appear animation
@@ -75,3 +75,41 @@ window.addEventListener('scroll', function(){
         document.querySelector(".arrow").style.width="0%";
     }
 })
+
+
+let current = 0;
+let transform = 1;
+let images = document.querySelector(".images");
+let all_slider_images= document.querySelectorAll(".p3_images");
+
+let navbar_ht =document.querySelector(".navbar").scrollHeight;
+let page1 = document.querySelector(".home").scrollHeight;
+let page2 = document.querySelector(".page2").scrollHeight;
+let page3 = document.querySelector(".page3").scrollHeight;
+let page4 = document.querySelector(".page4").scrollHeight;
+let page5 = document.querySelector(".page5").scrollHeight;
+let banner = document.querySelector(".banner").scrollHeight;
+document.getElementById("footer").style.top=(navbar_ht+page1+page2+page3+page4+page5+banner+"px");
+
+images.innerHTML=images.innerHTML + "<div class='p3_images'>" +all_slider_images[0].innerHTML + "</div>";
+function next(){
+    current = current+1;
+    transform = -580*current;
+    
+    let max = document.querySelectorAll(".p3_images").length;
+    images.style.transition ="transform 2s ease";
+    images.style.transform = "translateX("+ transform +"px)";
+    images.addEventListener("transitionend" ,function() {
+        if(current == max-1){
+            images.style.transition ="none";
+            current=0;
+            transform = -600*current;
+            images.style.transform = "translateX("+ transform +"px)"
+        }
+    })
+    
+}
+
+setInterval(function() {
+    next()
+  }, 5000);

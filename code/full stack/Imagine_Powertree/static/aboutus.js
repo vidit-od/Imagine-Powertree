@@ -6,6 +6,17 @@ let pathlength = path.getTotalLength();
 path.style.strokeDasharray=pathlength;
 path.style.strokeDashoffset=-pathlength;
 
+let navbar = document.querySelector(".navbar").scrollHeight
+let page1 =document.querySelector(".page1").scrollHeight;
+let page2 =document.querySelector(".page2").scrollHeight;
+let page3 =document.querySelector(".page3").scrollHeight;
+let page4 =document.querySelector(".page4").scrollHeight;
+let banner = document.querySelector(".joinbanner").scrollHeight;
+let footer_top =navbar+ page1+ page2 + page3 + page4 + banner+"px";
+
+let footer = document.getElementById("footer");
+footer.style.top=footer_top;
+
 // activate scroll on scroll
 window.addEventListener('scroll', () => {
     let height_1= document.querySelector(".page1").scrollHeight;
@@ -15,8 +26,6 @@ window.addEventListener('scroll', () => {
     let percent = ((total+height_1-scrollY)/total)*100
     percent=percent/100;
     path.style.strokeDashoffset= -percent*pathlength+200;
-    
-    console.log(percent)
     // 2018
     if( percent <0.97){
         document.getElementById("hide-title1").style.width="0%";

@@ -177,21 +177,15 @@
             We wished, hoped and prayed that the Climate Crisis turns out to be another myth spread by some conspiracy theorists. But as much as we wish, we are well aware that climate crisis is as real as our next door neighbor. And we couldn’t have stopped at just watching frightening documentaries about our dwindling planet, panicking and keeping the tap closed while brushing teeth. What propelled us to conceptualize Powertree was our strong and collective belief that electricity is for all.
         </div>
         <div class="images">
-            <div class="img1">
-                <img src='{% static "images/37.png" %}' alt="">
-                <div class="name">Mr. Mayank Patel</div>
-                <div class="position">Chief Operating Officer</div>
+            {% for person in all_team %}
+            <div class="img{{forloop.counter}}">
+                {% if person.name == "Mr. Mayank Patel" or person.name == "Mr. Shani Pandya"  or person.name == "Mr. Harsh Bhatt" %}
+                <img src="{{ person.image.url }}" alt="">
+                <div class="name">{{person.name}}</div>
+                <div class="position">{{person.role}}</div>
+                {% endif %}
             </div>
-            <div class="img2">
-                <img src='{% static "images/38.png" %}' alt="">
-                <div class="name">Mr. Shani Pandya</div>
-                <div class="position">Founder & Director</div>
-            </div>
-            <div class="img3">
-                <img src='{% static "images/36.png" %}' alt="">
-                <div class="name">Mr. Harsh Bhatt</div>
-                <div class="position">Chief Marketing Officer</div>
-            </div>
+            {% endfor %}
         </div>
         <div class="button">
             <button>See all</button>
@@ -203,39 +197,13 @@
             Advisory Board
         </div>
         <div class="images">
-            <div class="img1">
-                <img src='{% static "images/37.png" %}' alt="">
-                <div class="name">Mr. Mayank Patel</div>
-                <div class="position">Chief Operating Officer</div>
+            {% for adivsor in advisors %}
+            <div class="img">
+                <img src='{{ adivsor.image.url }}' alt="">
+                <div class="name">{{adivsor.name}}</div>
+                <div class="position">{{adivsor.role}}</div>
             </div>
-            <div class="img2">
-                <img src='{% static "images/38.png" %}' alt="">
-                <div class="name">Mr. Shani Pandya</div>
-                <div class="position">Founder & Director</div>
-            </div>
-            <div class="img3">
-                <img src='{% static "images/36.png" %}' alt="">
-                <div class="name">Mr. Harsh Bhatt</div>
-                <div class="position">Chief Marketing Officer</div>
-            </div>
-            <div class="img1">
-                <img src='{% static "images/37.png" %}' alt="">
-                <div class="name">Mr. Mayank Patel</div>
-                <div class="position">Chief Operating Officer</div>
-            </div>
-            <div class="img2">
-                <img src='{% static "images/38.png" %}' alt="">
-                <div class="name">Mr. Shani Pandya</div>
-                <div class="position">Founder & Director</div>
-            </div>
-            <div class="img3">
-                <img src='{% static "images/36.png" %}' alt="">
-                <div class="name">Mr. Harsh Bhatt</div>
-                <div class="position">Chief Marketing Officer</div>
-            </div>
-        </div>
-        <div class="button">
-            <button>See all</button>
+            {% endfor %}
         </div>
     </div>
     <!-- join us banner -->
@@ -246,7 +214,7 @@
             <div class="button">Join Us</div>       
     </div>
     <!-- footer -->
-    <div class="footer">
+    <div class="footer" id="footer">
         <div class="lower">
             <div class="content">
                 <div class="section">

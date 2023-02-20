@@ -4,14 +4,17 @@ from django.contrib.auth.models import auth,User
 from django.contrib import messages
 from datetime import datetime
 from django.urls import reverse
-from .models import reserve as reserve_model,why_powertree as why_model,team, products
+from .models import reserve as reserve_model,why_powertree as why_model,team, products,advisory_board,image_gallery,key_clients,supported_by
 import os
 from django.conf import settings
 import random
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    images=image_gallery.objects.all()
+    clients = key_clients.objects.all()
+    supported = supported_by.objects.all()
+    return render(request, 'index.html',{"images":images , "clients" :clients, "supported":supported})
 
 def reserve(request):
     if request.method=="POST":
@@ -47,7 +50,9 @@ def why_powertree(request):
     return render(request, 'why_powertree.html', {'contents': contents})
 
 def aboutus(request):
-    return render(request, 'aboutus.html')
+    all_team = team.objects.all()
+    advisors = advisory_board.objects.all()
+    return render(request, 'aboutus.html',{"all_team":all_team, "advisors":advisors})
 
 def whats_new(request):
     return render(request, "whats_new.html")
