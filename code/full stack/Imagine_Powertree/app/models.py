@@ -103,6 +103,9 @@ class supported_by(models.Model):
     name = models.CharField(max_length=200, blank=False, null=False)
     image = models.ImageField(upload_to='supported_by/',  height_field=None, width_field=None ,blank=False ,null=False)
 
+    def __str__(self):
+        return '%s' %(self.name)
+        
 class varient(models.Model):
     product_id = models.ForeignKey(products, on_delete=models.CASCADE)
     varient_name = models.CharField(max_length=100, blank=False, null=False, unique=True)

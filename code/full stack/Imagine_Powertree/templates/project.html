@@ -28,64 +28,22 @@
     </div>
     <!-- image slide with caption -->
     <div class="page1">
-        <div class="image-contain"> 
+        <div class="image_frame">
             <div class="images">
-                <div class="allimgs">
-                <div class="image"><img src='{% static "images/56.JPG" %}' alt=""></div>
-                <div class="image"><img src='{% static "images/49.JPG" %}' alt=""></div>
-                <div class="image"><img src='{% static "images/50.JPG" %}' alt=""></div>
-                <div class="image"><img src='{% static "images/51.JPG" %}' alt=""></div>
-                <div class="image"><img src='{% static "images/52.png" %}' alt=""></div>
-                <div class="image"><img src='{% static "images/53.JPG" %}' alt=""></div>
-                <div class="image"><img src='{% static "images/54.JPG" %}' alt=""></div>
-                <div class="image"><img src='{% static "images/55.JPG" %}' alt=""></div>
-                <div class="image"><img src='{% static "images/56.JPG" %}' alt=""></div>
-                <div class="image"><img src='{% static "images/49.JPG" %}' alt=""></div>
+                {% for image in images %}
+                <div class="image">
+                    <img src='{{image.image.url}}' alt="">
                 </div>
-            </div>
-          </div>
-        <div class="descs">
-            <div class="textslider">
+                {% endfor %}
+            </div>  
+        </div>
+        <div class="desc_frame">
+            <div class="texts">
+            {% for image in images %}
             <div class="text">
-                <div class="title"> project 8: sfdv sdv dfdf d dfg df</div>
-                <div class="desc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium illum repellat officia laboriosam amet nemo quam possimus? Omnis eveniet officiis molestias, repellendus odio illum eligendi, ex ratione deserunt possimus tempora.</div>
+                <div class="title">Project: {{image.title}}</div>
             </div>
-            <div class="text">
-                <div class="title"> project 1: sfdv sdv dfdf d dfg df</div>
-                <div class="desc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium illum repellat officia laboriosam amet nemo quam possimus? Omnis eveniet officiis molestias, repellendus odio illum eligendi, ex ratione deserunt possimus tempora.</div>
-            </div>
-            <div class="text">
-                <div class="title"> project 2: sfdv sdv dfdf d dfg df</div>
-                <div class="desc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium illum repellat officia laboriosam amet nemo quam possimus? Omnis eveniet officiis molestias, repellendus odio illum eligendi, ex ratione deserunt possimus tempora.</div>
-            </div>
-            <div class="text">
-                <div class="title"> project 3: sfdv sdv dfdf d dfg df</div>
-                <div class="desc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium illum repellat officia laboriosam amet nemo quam possimus? Omnis eveniet officiis molestias, repellendus odio illum eligendi, ex ratione deserunt possimus tempora.</div>
-            </div>
-            <div class="text">
-                <div class="title"> project 4: sfdv sdv dfdf d dfg df</div>
-                <div class="desc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium illum repellat officia laboriosam amet nemo quam possimus? Omnis eveniet officiis molestias, repellendus odio illum eligendi, ex ratione deserunt possimus tempora.</div>
-            </div>
-            <div class="text">
-                <div class="title"> project 5: sfdv sdv dfdf d dfg df</div>
-                <div class="desc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium illum repellat officia laboriosam amet nemo quam possimus? Omnis eveniet officiis molestias, repellendus odio illum eligendi, ex ratione deserunt possimus tempora.</div>
-            </div>
-            <div class="text">
-                <div class="title"> project 6: sfdv sdv dfdf d dfg df</div>
-                <div class="desc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium illum repellat officia laboriosam amet nemo quam possimus? Omnis eveniet officiis molestias, repellendus odio illum eligendi, ex ratione deserunt possimus tempora.</div>
-            </div>
-            <div class="text">
-                <div class="title"> project 7: sfdv sdv dfdf d dfg df</div>
-                <div class="desc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium illum repellat officia laboriosam amet nemo quam possimus? Omnis eveniet officiis molestias, repellendus odio illum eligendi, ex ratione deserunt possimus tempora.</div>
-            </div>
-            <div class="text">
-                <div class="title"> project 8: sfdv sdv dfdf d dfg df</div>
-                <div class="desc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium illum repellat officia laboriosam amet nemo quam possimus? Omnis eveniet officiis molestias, repellendus odio illum eligendi, ex ratione deserunt possimus tempora.</div>
-            </div>
-            <div class="text">
-                <div class="title"> project 1: sfdv sdv dfdf d dfg df</div>
-                <div class="desc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium illum repellat officia laboriosam amet nemo quam possimus? Omnis eveniet officiis molestias, repellendus odio illum eligendi, ex ratione deserunt possimus tempora.</div>
-            </div>
+            {% endfor %}
             </div>
         </div>
     </div>
@@ -94,32 +52,21 @@
         <div class="title">
             Rcently Working On
         </div>
+        {% for project in top %}
         <div class="project">
-            <div class="title">Gandhinagar Smart City </div>
+            <div class="title">{{project.project_name}} </div>
             <hr>
             <div class="content">
                 <div class="pg2_image">
-                    <img src='{% static "images/50.JPG" %}' alt="" srcset="">
+                    <img src='{{ project.image.url }}' alt="" srcset="">
                 </div>
                 <div class="text">
-                    <div class="desc"> Smart Cities are meant to cater to the needs and aspirations of its citizens in such a way that it is smart, sustainable, economical and utilitarian. And that is exactly what IMAGINE POWERTREES are.</div>
+                    <div class="desc"> {{ project.desc }}</div>
                     <div class="button"> Take a tour</div>
                 </div>
             </div>
         </div>
-        <div class="project">
-            <div class="title">Gandhinagar Smart City </div>
-            <hr>
-            <div class="content">
-                <div class="pg2_image">
-                    <img src='{% static "images/51.JPG" %}' alt="" srcset="">
-                </div>
-                <div class="text">
-                    <div class="desc"> Smart Cities are meant to cater to the needs and aspirations of its citizens in such a way that it is smart, sustainable, economical and utilitarian. And that is exactly what IMAGINE POWERTREES are.</div>
-                    <div class="button"> Take a tour</div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
 
     </div>
     <!-- project index -->
@@ -130,51 +77,51 @@
                 <div class="p2018">
                     <span>2018</span>
                     <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        {% for project in projects %}
+                            {% if project.year_of_project == 2018 %}
+                            <li>{{ project.project_name }}</li>
+                            {% endif %}
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="p2019">
                     <span>2019</span>
                     <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        {% for project in projects %}
+                            {% if project.year_of_project == 2019 %}
+                            <li>{{ project.project_name }}</li>
+                            {% endif %}
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="p2020">
                     <span>2020</span>
                     <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        {% for project in projects %}
+                            {% if project.year_of_project == 2020 %}
+                            <li>{{ project.project_name }}</li>
+                            {% endif %}
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="p2021">
                     <span>2021</span>
                     <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        {% for project in projects %}
+                            {% if project.year_of_project == 2021 %}
+                            <li>{{ project.project_name }}</li>
+                            {% endif %}
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="p2022">
                     <span>2022</span>
                     <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        {% for project in projects %}
+                            {% if project.year_of_project == 2022 %}
+                            <li>{{ project.project_name }}</li>
+                            {% endif %}
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -195,7 +142,7 @@
         </div>
     </div>
     <!-- key clients -->
-    <div class="page4">
+    <div class="page4" id="page4">
     <div class="key_client">
         <div class="title">Our Key Clients</div>
         <div class="cards">
@@ -231,7 +178,7 @@
     </div>
     </div>
     <!-- footer -->
-    <div class="footer">
+    <div class="footer" id="footer">
         <div class="lower">
             <div class="content">
                 <div class="section">

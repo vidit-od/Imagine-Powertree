@@ -104,7 +104,7 @@ function next(){
             images.style.transition ="none";
             current=0;
             transform = -600*current;
-            images.style.transform = "translateX("+ transform +"px)"
+            images.style.transform = "translateX("+ transform +"px)";
         }
     })
     

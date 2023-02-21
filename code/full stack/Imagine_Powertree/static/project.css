@@ -18,7 +18,7 @@ body{
     width: 100%;
     height: 10%;
     display: flex;
-    z-index: 2;
+    z-index: 3;
     justify-content: space-between;
     overflow: hidden;
     background-color: #ffffff;
@@ -52,67 +52,67 @@ body{
     width: 100%;
     height: 90%;
 }
-.images{
+.page1 img{
+    width: 100%;
+}
+.page1 .image_frame{
     position: absolute;
-    bottom: 10%;
     left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
+    width: 500px;
     height: 400px;
-    display: flex;
+    transform: translateX(-50%);
     overflow: hidden;
-    flex-direction: row;
 }
-.allimgs{
+.page1 .image_frame .images{
     display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    flex-direction: column;
 }
-.images .image{
-    min-width: 600px;
-    min-height: 400px;
+.page1 .image_frame .images .image{
+    display: flex;
+    width: 500px;
+    height: 400px;
+    background-color: #ffffff;
+}
+.page1 .image_frame .images .image img{
+    justify-self: center;
+    align-content: center;
+    object-fit: cover;
+}
+.page1 .desc_frame{
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(410px);
+    text-align: center;
+    overflow: hidden;
+}
+.page1 .desc_frame .texts{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: fit-content;
+}
+.page1 .desc_frame .texts .text{
+    width: 480px;
+    height: 70px;
+    margin: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     display: flex;
     justify-content: center;
-
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
 }
-.images img{
-    max-width: 600px;
-    max-height: 400px;
-    bottom: 0%;
-}
-.descs{
-    position: absolute;
-    width: 25%;
-    bottom: 10%;
-    right: 0%;
-    max-height: 400px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-}
-.descs .text{
-    height: 400px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: 5px;
-}
-.descs .text .title{
-    font-weight: 700;
-    font-size: 40px;
-}
-.descs .text .desc{
-    margin-top: 10px;
-    width: 100%;
-    font-weight: 200;;
-    float: right;
-}
-
 /* some of the recent projects */
 .page2{
     position: absolute;
     top: 100%;
     height: 160%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -145,10 +145,14 @@ body{
     width: 60%;
     max-height: 340px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+
 }
 .page2 .project .pg2_image img{
-    width: 100%;
+    max-width: 100%;
     max-height: 340px;
+    object-fit: cover;
 }
 .page2 .project .text{
     width: 40%;
@@ -179,7 +183,6 @@ body{
     position: absolute;
     top: 260%;
     width: 100%;
-    height: 90%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -188,7 +191,6 @@ body{
 }
 .page3 .upper{
     width: 100%;
-    height: 70%;
 }
 .page3 .title{
     text-align: center;
@@ -200,7 +202,7 @@ body{
 .page3 .projects{
     display: flex;
     width: 90%;
-    height: 70%;
+    min-height: 350px;
     margin: auto;
 }
 .page3 .p2018,
@@ -210,7 +212,6 @@ body{
 .page3 .p2022{
     text-align: center;
     width: 20%;
-    height: 100%;
     border-left: 1px solid rgb(0, 0, 0, 0.6);
     border-right: 1px solid rgb(0, 0, 0, 0.6);
 }
@@ -240,7 +241,8 @@ body{
 
 .banner{
     width: 100%;
-    height: 28%;
+    margin-top: 10px;
+    height: 150px;
     background-color: #ff9900;
     display: flex;
     justify-content: space-evenly;
