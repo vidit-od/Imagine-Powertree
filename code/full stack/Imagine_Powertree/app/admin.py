@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.forms import TextInput, Textarea
 from django.db import models
-from .models import reserve,why_powertree,team,advisory_board,products,image_gallery,projects,products_usedin_project,key_clients,supported_by,varient,whats_new
+from .models import reserve,why_powertree,team,advisory_board,products,image_gallery,projects,products_usedin_project,key_clients,supported_by,varient,whats_new,pinned
 # Register your models here.
 
 class YourModelAdmin(admin.ModelAdmin):

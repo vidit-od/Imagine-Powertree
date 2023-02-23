@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- import font poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,700&display=swap" rel="stylesheet">
+    <!-- import font lobster -->
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <link rel="stylesheet" href='{% static "blog.css" %}'>
+    <title>Imagine powertree</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="Logo"><img src='{% static "images/1.png" %}' alt=""></div>
+        <div class="content">
+            <p>Our Products</p>
+            <p>For Commercial</p>
+            <p>Our Projects</p>
+            <p>Blogs</p>
+            <p>About us</p>
+        </div>
+    </div>
+    <div class="page1">
+        <div class="title">
+            {{ selected.title }}
+        </div>
+        <hr>
+        <div class="image">
+            <img src="{{ selected.image.url }}" alt="" srcset="">
+        </div>
+        <div class="desc">
+            {{ selected.desc }}
+        </div>
+    </div>
+</body>
+</html>

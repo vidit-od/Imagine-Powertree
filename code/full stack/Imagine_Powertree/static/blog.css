@@ -1,0 +1,74 @@
+/* universal tag */
+*{
+    font-family: 'Poppins';
+    font-size: 18px;
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+/* body tag */
+body{
+    display: inline;
+}
+/* navbar -> { logo-> img , content } 
+    content -> { p , navright }
+    navright -> { phone , contact}*/
+.navbar{
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    z-index: 2;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+.navbar .Logo{
+    width: 5%;
+    margin-left: 10px;
+}
+.navbar .Logo img{
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.navbar .content{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-25%) translateY(-50%);
+}
+.navbar .content p{
+    display: inline;
+    margin-left: 20px;
+}
+
+/*  */
+
+.page1{
+    width: 100%;
+    position: absolute;
+    top: 10%;
+}
+.page1 .title{
+    text-align: center;
+    font-size: 40px;
+    font-family: 'lobster';
+}
+.page1 .image{
+    width: 100%;
+    overflow: hidden;
+}
+.page1 .image img{
+    width: 100%;
+    height: 460px;
+    object-fit: scale-down;
+    margin-top: 10px;
+}
+.page1 .desc{
+    text-align: center;
+    margin-top: 20px ;
+}

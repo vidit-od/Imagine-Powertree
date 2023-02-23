@@ -114,11 +114,19 @@ class varient(models.Model):
     def __str__(self):
         return "%s | %s" %(self.product_id, self.varient_name)
 
-class whats_new(models.Model):
-    title = models.CharField(max_length=100,blank=False,null=False)
-    date = models.DateField()
-    desc = models.TextField(max_length=2000, blank=False,null=False)
-    image = models.ImageField(upload_to="whats_new/")
+
+class pinned(models.Model):
+    title = models.CharField(max_length=10)
 
     def __str__(self):
         return "%s" %(self.title)
+        
+class whats_new(models.Model):
+    title = models.CharField(max_length=100,blank=False,null=False, unique=True)
+    date = models.DateField()
+    desc = models.TextField(max_length=2000, blank=False,null=False)
+    image = models.ImageField(upload_to="whats_new/")
+    top = models.OneToOneField(pinned, on_delete=models.CASCADE ,blank=True, null=True)
+
+    def __str__(self):
+        return "%s " %(self.title )

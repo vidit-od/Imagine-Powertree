@@ -36,162 +36,62 @@
             the latest industry news,interviews, technologies,and resources
         </div>
         <div class="blogs">
+            {% for blog in all_blogs %}
+            {% if blog.top != None %}
             <div class="pinned">
                 <div class="image">
-                    <img src='{% static "images/42.png" %}' alt="">
+                        <img src='{{ blog.image.url }}' alt="">
                     <div class="blur"></div>
                 </div>
                 <div class="content">
-                    <div class="date"> 28 Jan 2023</div>
-                    <div class="title"> Blog 1 presented by team imagine powertree</div>
-                    <div class="desc">This is the first blog written by imagine powertree team. this blog contains all the information regarding our website and how to use it.  </div>
+                    <div class="date"> {{blog.date}}</div>
+                    <div class="title"> {{blog.title}}</div>
+                    <div class="desc">{{blog.desc|truncatewords:7}}  </div>
                 </div>
             </div>
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
     <!-- other blogs -->
-    <div class="page2">
+    <div class="page2" id="page2">
         <div class="blogs">
+            <div class="cards">
+            {% for blog in all_blogs %}
+            {% if blog.top == None %}
             <div class="card">
                 <div class="image">
-                    <img src='{% static "images/43.png" %}' alt="">
+                    <img src='{{ blog.image.url }}' alt="">
                 </div>
                 <div class="content">
                         <div class="date">
-                            01 Jan 2023
+                            {{ blog.date}}
                         </div>
                     <div class="bolds">    
                         <div class="title">
-                            Professionalism in solar industry
+                            {{blog.title}}
                         </div>
-                        <button class="open">
+                        <button class="open"><a href="whats_new/{{ blog.pk }}">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+                        </a>
                         </button>
                     </div>
                     <div class="desc">
-                        A blog highlighting the importance of professionalism in solar industry
+                        {{blog.desc|truncatewords:7}}
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="image">
-                    <img src='{% static "images/44.png" %}' alt="">
-                </div>
-                <div class="content">
-                        <div class="date">
-                            01 Jan 2023
-                        </div>
-                    <div class="bolds">    
-                        <div class="title">
-                            Professionalism in solar industry
-                        </div>
-                        <button class="open">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
-                        </button>
-                    </div>
-                    <div class="desc">
-                        A blog highlighting the importance of professionalism in solar industry
-                    </div>
-                </div>
+            {% endif %}
+            {% endfor %}
             </div>
-            <div class="card">
-                <div class="image">
-                    <img src='{% static "images/45.png" %}' alt="">
-                </div>
-                <div class="content">
-                        <div class="date">
-                            01 Jan 2023
-                        </div>
-                    <div class="bolds">    
-                        <div class="title">
-                            Professionalism in solar industry
-                        </div>
-                        <button class="open">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
-                        </button>
-                    </div>
-                    <div class="desc">
-                        A blog highlighting the importance of professionalism in solar industry
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image">
-                    <img src='{% static "images/46.png" %}' alt="">
-                </div>
-                <div class="content">
-                        <div class="date">
-                            01 Jan 2023
-                        </div>
-                    <div class="bolds">    
-                        <div class="title">
-                            Professionalism in solar industry
-                        </div>
-                        <button class="open">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
-                        </button>
-                    </div>
-                    <div class="desc">
-                        A blog highlighting the importance of professionalism in solar industry
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image">
-                    <img src='{% static "images/47.png" %}' alt="">
-                </div>
-                <div class="content">
-                        <div class="date">
-                            01 Jan 2023
-                        </div>
-                    <div class="bolds">    
-                        <div class="title">
-                            Professionalism in solar industry
-                        </div>
-                        <button class="open">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
-                        </button>
-                    </div>
-                    <div class="desc">
-                        A blog highlighting the importance of professionalism in solar industry
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image">
-                    <img src='{% static "images/48.png" %}' alt="">
-                </div>
-                <div class="content">
-                        <div class="date">
-                            01 Jan 2023
-                        </div>
-                    <div class="bolds">    
-                        <div class="title">
-                            Professionalism in solar industry
-                        </div>
-                        <button class="open">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
-                        </button>
-                    </div>
-                    <div class="desc">
-                        A blog highlighting the importance of professionalism in solar industry
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="navigation">
-            <div class="prev">Prev</div>
+            <button class="prev">Prev</button>
             <div class="nums">
                 <p class="current">1</p>
-                <p>2</p>
-                <p>3</p>
-                <p>...</p>
-                <p>8</p>
-                <p>9</p>
-                <p>10</p>
             </div>
-            <div class="next">next</div>
+            <button class="next">next</button>
         </div>
+    </div>
     </div>
     <!-- footer -->
     <div class="footer">

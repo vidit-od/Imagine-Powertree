@@ -4,7 +4,7 @@ from django.contrib.auth.models import auth,User
 from django.contrib import messages
 from datetime import datetime
 from django.urls import reverse
-from .models import reserve as reserve_model,why_powertree as why_model,team, products,advisory_board,image_gallery,key_clients,supported_by,projects,products_usedin_project
+from .models import reserve as reserve_model,why_powertree as why_model,team, products,advisory_board,image_gallery,key_clients,supported_by,projects,products_usedin_project,whats_new as blog
 import os
 from django.conf import settings
 import random
@@ -55,7 +55,8 @@ def aboutus(request):
     return render(request, 'aboutus.html',{"all_team":all_team, "advisors":advisors})
 
 def whats_new(request):
-    return render(request, "whats_new.html")
+    all_blogs = blog.objects.all().order_by("pk").reverse()
+    return render(request, "whats_new.html",{"all_blogs" : all_blogs})
 
 def product(request):
     product=products.objects.all()
@@ -78,3 +79,7 @@ def project_details(request,pk):
             product.insert(count, i)
             count = count+1
     return render(request, "project_details.html" , {"project" : project_detail, "products" : product , 'count':count})
+
+def read_blog(request,pk):
+    selected = blog.objects.get(id=pk)
+    return render(request, 'blog.html', {"selected":selected})
