@@ -77,7 +77,7 @@ class image_gallery(models.Model):
 class projects(models.Model):
     project_name = models.CharField(max_length=200, blank=False, null=False)
     image = models.ImageField(upload_to='projects/',  height_field=None, width_field=None ,blank=False ,null=False)
-    desc = models.CharField(max_length=2000, blank=False, null=False, default="We are updating information regarding this project soon")
+    desc = models.TextField(max_length=2000, blank=False, null=False, default="We are updating information regarding this project soon")
     location = models.CharField(max_length=200, blank=True, null=True)
     year_of_project = models.IntegerField(blank=True,null=True)
 

@@ -4,7 +4,7 @@ from django.contrib.auth.models import auth,User
 from django.contrib import messages
 from datetime import datetime
 from django.urls import reverse
-from .models import reserve as reserve_model,why_powertree as why_model,team, products,advisory_board,image_gallery,key_clients,supported_by,projects
+from .models import reserve as reserve_model,why_powertree as why_model,team, products,advisory_board,image_gallery,key_clients,supported_by,projects,products_usedin_project
 import os
 from django.conf import settings
 import random
@@ -65,4 +65,16 @@ def project(request):
     images = image_gallery.objects.all()
     all_projects = projects.objects.all()
     top_two = projects.objects.all()[:2]
-    return render(request, "project.html", {'images':images , "projects":all_projects, "top":top_two})
+    all_clients =key_clients.objects.all()
+    return render(request, "project.html", {'images':images , "projects":all_projects, "top":top_two, "clients": all_clients})
+
+def project_details(request,pk):
+    project_detail = projects.objects.get(id=pk)
+    all_products = products_usedin_project.objects.all()
+    product = list()
+    count =0
+    for i in all_products:
+        if i.project_id == project_detail:
+            product.insert(count, i)
+            count = count+1
+    return render(request, "project_details.html" , {"project" : project_detail, "products" : product , 'count':count})
