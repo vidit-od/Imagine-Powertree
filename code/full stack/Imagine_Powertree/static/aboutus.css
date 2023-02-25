@@ -11,6 +11,13 @@
 body{
     display: inline;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:visited{
+    text-decoration: none;
+}
 /* navbar -> { logo-> img , content } 
     content -> { p , navright }
     navright -> { phone , contact}*/
@@ -36,10 +43,23 @@ body{
 }
 .navbar .content{
     position: absolute;
-    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     top: 50%;
     left: 50%;
-    transform: translateX(-25%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+.navbar .content .navlink{
+    transition: all 0.2s ease;
+}
+.navbar .content .navlink:hover{
+    border-bottom: 2px solid #FF9900;
+}
+.navbar .content .navlink:hover p{
+    transform: translateY(-20px);
 }
 .navbar .content p{
     display: inline;
@@ -591,11 +611,25 @@ body{
     margin-bottom: 20px;
     position: absolute;
     bottom: 10%;
-    right:4%
+    right:4%;
+    transition:all 0.3s ease;
 }
 .copyright{
     margin-left: 2%;
     transform: translateY(15%);
     color:#ffffff;
     opacity: 60%;
+}
+.reserve:hover{
+    background-color: transparent;
+    border:  1px solid #FF9900;
+    color: #ff9900;
+}
+.footer .lower .content .section .social .media :hover{
+    fill: #ffffff ;
+    opacity: 1;
+}
+.footer .lower .content .explore p:hover{
+    font-weight: 700;
+    opacity: 0.8 ;
 }

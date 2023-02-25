@@ -6,6 +6,13 @@
     padding: 0%;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:visited{
+    text-decoration: none;
+}
 /* reserve -> { left, right } 
    left ->{ navbar, form }
    navbar ->{ logo, content }
@@ -72,6 +79,12 @@
     padding: 10%;
     margin-top: 10%;
     padding-bottom: 0%;
+}
+.navbar .content .navlink{
+    transition: all 0.2s ease;
+}
+.navbar .content .navlink:hover{
+    border-bottom: 2px solid #FF9900;
 }
 /* styles for each field of form  */
 .field{
@@ -169,7 +182,7 @@
 .radio span{
     color: #ff9900;
 }
-input[type=button]{
+.submit{
     background-color: #ff9900;
     border: none;
     width: 240px;
@@ -180,7 +193,13 @@ input[type=button]{
     border-radius: 15px;
     margin-top: 20px;
     margin-bottom: 30px;
-
+    border: 1px solid #ff9900;
+    transition: all 0.5s ease;
+}
+.submit:hover{
+    background-color: transparent;
+    color: #FF9900;
+    border-radius: 0%;
 }
 /* heading and subheading */
 .reserve .left .form .title{

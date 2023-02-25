@@ -17,13 +17,12 @@
 <body>
     <!-- Navbar -->
     <div class="navbar">
-        <div class="Logo"><img src='{% static "images/1.png" %}' alt=""></div>
+        <div class="Logo"><a href="{% url 'index' %}"><img src='{% static "images/1.png" %}'alt=""></a></div>
         <div class="content">
-            <p>Our Products</p>
-            <p>For Commercial</p>
-            <p>Our Projects</p>
-            <p>Blogs</p>
-            <p>About us</p>
+            <p class="navlink"><a href="{% url 'product' %}">Our Products</a></p>
+            <p class="navlink"><a href="{% url 'project' %} ">Our Projects</a></p>
+            <p class="navlink"><a href="{% url 'whats_new' %}">What's New</a></p>
+            <p class="navlink"><a href="{% url 'aboutus' %}">About us</a></p>
         </div>
     </div>
     <div class="page1">

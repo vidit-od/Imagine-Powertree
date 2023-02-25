@@ -41,7 +41,7 @@ def reserve(request):
         
         data = reserve_model.objects.create(i_am=i_am, name=name, email=email, contact= contact, address_ln1=address_1, address_ln2=address_2, state=state, comment=comment)
         data.save()
-        return redirect('reserve')
+        return redirect('index')
 
     return render(request, 'reserve.html')
 

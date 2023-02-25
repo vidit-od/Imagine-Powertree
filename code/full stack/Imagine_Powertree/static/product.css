@@ -7,40 +7,60 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:visited{
+    text-decoration: none;
+}
 /* navbar -> { logo-> img , content } 
     content -> { p , navright }
     navright -> { phone , contact}*/
-.navbar{
-    position: fixed;
-    width: 100%;
-    height: 10%;
-    display: flex;
-    z-index: 100;
-    justify-content: space-between;
-    overflow: hidden;
-    background-color: #ffffff;
-}
-.navbar .Logo{
-    width: 5%;
-    margin-left: 10px;
-}
-.navbar .Logo img{
-    width: 50px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.navbar .content{
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-25%) translateY(-50%);
-}
-.navbar .content p{
-    display: inline;
-    margin-left: 20px;
-}
+    .navbar{
+        position: fixed;
+        width: 100%;
+        height: 10%;
+        display: flex;
+        z-index: 2;
+        justify-content: space-between;
+        overflow: hidden;
+        background-color: #ffffff;
+    }
+    .navbar .Logo{
+        width: 5%;
+        margin-left: 10px;
+    }
+    .navbar .Logo img{
+        width: 50px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .navbar .content{
+        position: absolute;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .navbar .content .navlink{
+        transition: all 0.2s ease;
+    }
+    .navbar .content .navlink:hover{
+        border-bottom: 2px solid #FF9900;
+    }
+    .navbar .content .navlink:hover p{
+        transform: translateY(-20px);
+    }
+    .navbar .content p{
+        display: inline;
+        margin-left: 20px;
+    }
 
 /* page 1 for title, image and button to page 2 */
 .page1{
@@ -68,7 +88,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: 2;
+    z-index: 1;
     transform: translateX(-50%) translateY(-50%);
     text-align: center;
     color: #ffffff;
@@ -269,7 +289,7 @@
     top: 0%;
     width: 100%;
     height: 100%;
-    z-index: 10;
+    z-index: 1;
     pointer-events: none;
     overflow: hidden;
 }
@@ -297,7 +317,7 @@
 .item .desc{
     font-weight: 200;
 }
-.reserver{
+.page2 .content .item .reserver{
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -307,6 +327,13 @@
     color: black;
     border-radius: 20px;
     text-align: center;
+    pointer-events: all;
+    transition: all 0.3s ease;
+    border: 1px solid #ff9900;
+}
+.page2 .content .item .reserver:hover{
+    background-color: transparent;
+    color: #ffffff;
 }
 .back{
     position: absolute;
@@ -395,29 +422,11 @@
         opacity: 1;
     }
 }
-/* section image */
-.section_image{
-    position: absolute;
-    top: 200%;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-.section_image .blur{
-    top: 0%;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0, 0, 0,0.6);
-    backdrop-filter: blur(1px);
-}
-
-
 
 /* reserve today*/
 .page3{
     position: absolute;
-    top: 300%;
+    top: 200%;
     width: 100%;
     height: 90%;
     text-align: center;
@@ -476,12 +485,16 @@
     border-radius: 20px;
     color: #FF9900;
     border:1px solid #FF9900;
+    transition: all 0.3s ease;
 }
-
+.page3 .button button:hover{
+    background-color: #FF9900;
+    color: black;
+}
 /* footer */
 .footer{
     position: absolute;
-    top: 400%;
+    top: 300%;
     width: 100%;
     height: 40%;
     overflow: hidden;
@@ -546,11 +559,25 @@
     margin-bottom: 20px;
     position: absolute;
     bottom: 10%;
-    right:4%
+    right:4%;
+    transition:all 0.3s ease;
 }
 .copyright{
     margin-left: 2%;
     transform: translateY(15%);
     color:#ffffff;
     opacity: 60%;
+}
+.reserve:hover{
+    background-color: transparent;
+    border:  1px solid #FF9900;
+    color: #ff9900;
+}
+.footer .lower .content .section .social .media :hover{
+    fill: #ffffff ;
+    opacity: 1;
+}
+.footer .lower .content .explore p:hover{
+    font-weight: 700;
+    opacity: 0.8 ;
 }

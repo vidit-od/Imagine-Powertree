@@ -22,13 +22,12 @@
         <div class="left">
             
             <div class="navbar">
-                <div class="Logo"><img src="{%static 'images/1.png' %}" alt=""></div>
+                <div class="Logo"><a href="{% url 'index' %}"><img src='{% static "images/1.png" %}'alt=""></a></div>
                 <div class="content">
-                    <p>Our Products</p>
-                    <p>For Commercial</p>
-                    <p>Our Projects</p>
-                    <p>Blogs</p>
-                    <p>About us</p>
+                    <p class="navlink"><a href="{% url 'product' %}">Our Products</a></p>
+                    <p class="navlink"><a href="{% url 'project' %} ">Our Projects</a></p>
+                    <p class="navlink"><a href="{% url 'whats_new' %}">What's New</a></p>
+                    <p class="navlink"><a href="{% url 'aboutus' %}">About us</a></p>
                 </div>
             </div>
             <div class="form">
@@ -107,7 +106,7 @@
                         <input type="radio" name="declaration" required/>
                         <label for="declaration">I consent to having this company store my submitted information so they can respond to my inquiry. See our privacy policy to learn more about how we use data. <span>*</span></label>
                     </div>
-                    <input type="submit" value="submit">
+                    <input type="submit" value="submit" class="submit">
                 </form>
             </div>
         </div>

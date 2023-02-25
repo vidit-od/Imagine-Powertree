@@ -68,7 +68,7 @@ class products(models.Model):
 
 class image_gallery(models.Model):
     title = models.CharField(max_length=100, blank=False, null=False, default='Title')
-    desc = models.CharField(max_length=200, blank=False, null=False)
+    desc = models.CharField(max_length=200, blank=True, null=True)
     image = models.ImageField(upload_to='image_gallery/',  height_field=None, width_field=None ,blank=False ,null=False)
 
     def __str__(self):
@@ -113,7 +113,6 @@ class varient(models.Model):
 
     def __str__(self):
         return "%s | %s" %(self.product_id, self.varient_name)
-
 
 class pinned(models.Model):
     title = models.CharField(max_length=10)
