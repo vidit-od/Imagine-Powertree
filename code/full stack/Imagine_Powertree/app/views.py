@@ -83,3 +83,7 @@ def project_details(request,pk):
 def read_blog(request,pk):
     selected = blog.objects.get(id=pk)
     return render(request, 'blog.html', {"selected":selected})
+
+def our_team(request):
+    teams = team.objects.all()
+    return render(request, 'team.html',{"teams":teams})

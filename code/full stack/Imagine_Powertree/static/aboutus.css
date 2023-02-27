@@ -458,6 +458,11 @@ a:visited{
     padding-bottom: 5px;
     border-radius: 20px;
     border: 1px solid #ff9900;
+    transition:all 1s ease;
+}
+.page3 button:hover{
+    background-color: #FF9900;
+    color: #ffffff;
 }
 /* page4-> {title , img} */
 .page4 {
@@ -508,6 +513,21 @@ a:visited{
 .page4 .images .position{
     font-weight: 200;
 }
+
+.page4 .images .socials{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.page4 .images .socials svg{
+    width: 30px;
+    height: 30px;
+    fill-opacity: 60%;
+}
+.page4 .images .socials svg:hover{
+    fill-opacity: 100%;
+}
+
 /* join us banner */
 .joinbanner{
     position: absolute;

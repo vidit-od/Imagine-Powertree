@@ -10,4 +10,5 @@ urlpatterns=[
     path('project',views.project, name="project"),
     path('project/<int:pk>',views.project_details,name='project_detail'),
     path('whats_new/<int:pk>',views.read_blog,name='blog'),
+    path('aboutus/our_team',views.our_team,name="team"),
 ]

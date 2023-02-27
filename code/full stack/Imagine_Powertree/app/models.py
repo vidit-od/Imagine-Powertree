@@ -108,7 +108,7 @@ class supported_by(models.Model):
         
 class varient(models.Model):
     product_id = models.ForeignKey(products, on_delete=models.CASCADE)
-    varient_name = models.CharField(max_length=100, blank=False, null=False, unique=True)
+    varient_name = models.CharField(max_length=100, blank=False, null=False, unique=False)
     desc = models.FileField(upload_to="varients/")
 
     def __str__(self):
