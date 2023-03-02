@@ -3,10 +3,57 @@ const prev =document.querySelector(".page2_prev");
 const next =document.querySelector(".page2_next");
 const prev_else =document.querySelector(".page2_prev_else");
 const next_else =document.querySelector(".page2_next_else");
+const right_prev = document.querySelector(".page2_right_prev");
+const right_next = document.querySelector(".page2_right_next");
 const wheel =document.getElementById("mask");
 const all_cards = document.querySelector(".all_cards");
 let max = document.querySelectorAll(".card_else").length
+
+// create collection of all divs
+const divs=[div1,div2,div3,div4,div5,div6];
+
+
+// collection of all cards
+const cards=[card1,card2,card3,card4,card5,card6];
+
+
 // all divs
+window.addEventListener('DOMContentLoaded',function(){
+    // initially all divs will be invisible except div1
+div1.style.opacity="1";
+div2.style.opacity="0";
+div3.style.opacity="0";
+div4.style.opacity="0";
+div5.style.opacity="0";
+div6.style.opacity="0";
+
+
+
+// intitally only card1 will be visible
+if(window.outerWidth >1000){
+    card1.style.height="80%";
+    card2.style.height="0%";
+    card3.style.height="0%";
+    card4.style.height="0%";
+    card5.style.height="0%";
+    card6.style.height="0%";
+}
+else{
+    card1.style.height="auto";
+    card2.style.height="0%";
+    card3.style.height="0%";
+    card4.style.height="0%";
+    card5.style.height="0%";
+    card6.style.height="0%";
+    let x =document.querySelector(".card1").scrollHeight;
+    document.querySelector(".page2 .right").style.height= x+ 0.2*x + "px"
+}
+
+// visibles are pinned at top
+card1.style.top="10%"
+
+heightset();
+})
 try{
 const div1=document.getElementById("div1");
 const div2=document.getElementById("div2");
@@ -27,31 +74,6 @@ const card6=document.getElementById("card6");
 // angle for the pie animation; page for difference card
 var angle =0;
 var page = 0;
-
-// initially all divs will be invisible except div1
-div1.style.opacity="1";
-div2.style.opacity="0";
-div3.style.opacity="0";
-div4.style.opacity="0";
-div5.style.opacity="0";
-div6.style.opacity="0";
-
-// create collection of all divs
-const divs=[div1,div2,div3,div4,div5,div6];
-
-// intitally only card1 will be visible
-card1.style.height="80%";
-card2.style.height="0%";
-card3.style.height="0%";
-card4.style.height="0%";
-card5.style.height="0%";
-card6.style.height="0%";
-
-// collection of all cards
-const cards=[card1,card2,card3,card4,card5,card6];
-
-// visibles are pinned at top
-card1.style.top="10%"
 
 
 // the pinning from top and free from bottom OR
@@ -179,8 +201,114 @@ next.addEventListener("click" ,function(){
     // rotate wheel
     wheel.style.transform= "rotate("+angle+"deg)";
 })
-}
 
+// 
+right_prev.addEventListener("click" ,function(){
+    // all divs hidden
+    div1.style.opacity="0";
+    div2.style.opacity="0";
+    div3.style.opacity="0";
+    div4.style.opacity="0";
+    div5.style.opacity="0";
+    div6.style.opacity="0";
+    
+    // all cards freed from bottom & top
+    card1.style.bottom='';
+    card2.style.bottom='';
+    card3.style.bottom='';
+    card4.style.bottom='';
+    card5.style.bottom='';
+    card6.style.bottom='';
+
+    card1.style.top='';
+    card2.style.top='';
+    card3.style.top='';
+    card4.style.top='';
+    card5.style.top='';
+    card6.style.top='';
+
+    // all cards hidden
+    card1.style.height="0%";
+    card2.style.height="0%";
+    card3.style.height="0%";
+    card4.style.height="0%";
+    card5.style.height="0%";
+    card6.style.height="0%";
+    
+    // current card pinned to bottom and freed from top
+    cards[page].style.bottom="10%";
+    cards[page].style.top='';
+    
+    // page decrement
+    page=page-1;
+
+    // corner case of reverse at 0
+    if(page==-1){
+        page=5;
+    }
+
+    // current div visible 
+    divs[page].style.opacity="1";
+    
+    // pinned to top and free from bottom
+    cards[page].style.top="10%";
+    cards[page].style.bottom='';
+    cards[page].style.height="auto";
+})
+
+// button action for next
+right_next.addEventListener("click" ,function(){
+    // all divs hidden
+    div1.style.opacity="0";
+    div2.style.opacity="0";
+    div3.style.opacity="0";
+    div4.style.opacity="0";
+    div5.style.opacity="0";
+    div6.style.opacity="0";
+
+    // all cards freed from bottom and top
+    card1.style.bottom='';
+    card2.style.bottom='';
+    card3.style.bottom='';
+    card4.style.bottom='';
+    card5.style.bottom='';
+    card6.style.bottom='';
+
+    card1.style.top='';
+    card2.style.top='';
+    card3.style.top='';
+    card4.style.top='';
+    card5.style.top='';
+    card6.style.top='';
+
+    // all cards hidder
+    card1.style.height="0%";
+    card2.style.height="0%";
+    card3.style.height="0%";
+    card4.style.height="0%";
+    card5.style.height="0%";
+    card6.style.height="0%";
+    
+    // current card free from bottom and pinned from top
+    cards[page].style.bottom='';
+    cards[page].style.top='10%';
+
+    // increment page
+    page=page+1;
+    // corner case
+    if(page==6){
+        page=0
+    }
+
+    // free from top and pinned from bottom
+    cards[page].style.top='';
+    cards[page].style.bottom='10%';
+
+    // card and div visible
+    divs[page].style.opacity="1";
+    cards[page].style.height="auto";
+})
+}
 catch(err){
 let current = 0;
 prev_else.style.pointerEvents="none"
@@ -210,4 +338,16 @@ next_else.addEventListener("click",function(){
     all_cards.style.transform="translateX("+transform+"px)"
 })
 
+}
+
+function heightset(){
+    let navht = document.querySelector(".navbar").scrollHeight;
+    document.querySelector(".page1").style.top= navht + "px"; 
+    let page1 = document.querySelector(".page1").scrollHeight;
+    document.querySelector(".page2").style.top= navht + page1+ "px"; 
+    let page2 = document.querySelector(".page2").scrollHeight;
+    document.querySelector(".page3").style.top= navht + page1+ page2 +"px"; 
+    let page3 = document.querySelector(".page3").scrollHeight;
+    document.querySelector(".footer").style.top= navht + page1+ page2 +page3+"px";
+      
 }

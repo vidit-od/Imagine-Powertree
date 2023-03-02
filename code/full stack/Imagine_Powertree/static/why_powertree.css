@@ -285,6 +285,10 @@ box for border
     width: 100px;
     border-radius: 20px;
 }
+.page2 .right button{
+    opacity: 0%;
+    pointer-events: none;
+}
 .page2 .wheel{
     position: absolute;
     left: 50%;
@@ -936,4 +940,148 @@ box for border
 .footer .lower .content .explore p:hover{
     font-weight: 700;
     opacity: 0.8 ;
+}
+
+@media screen and (max-width:1000px) {
+    .navbar .content{
+        opacity: 0%;
+        pointer-events: none;
+    }
+    .navbar .slider{
+        width: 50px;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar .slider svg{
+        width: 30px;
+        height: 30px;
+        fill: #FF9900;
+    }
+    .page1 .text .subtext{
+        opacity: 0%;
+        pointer-events: none;
+    }
+    .page1 .text .title{
+        width: 100%;
+        max-width: 540px;
+        top: 15%;
+        text-align: center;
+        left: 0%;
+        margin: 0%;
+    }
+    .page1 .center-image{
+        top: 60%;
+    }
+    .page2{
+        overflow: hidden;
+        min-height: 100%;
+        height: auto;
+    }
+    .page2 .left{
+        position: absolute;
+        opacity: 0%;
+        pointer-events: none;
+    }
+    .page2 .right{
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    .page2 .card1,
+    .page2 .card2,
+    .page2 .card3,
+    .page2 .card4,
+    .page2 .card5,
+    .page2 .card6{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        height: auto;
+    }
+    .page2 .card1 .traditional,
+    .page2 .card2 .traditional,
+    .page2 .card3 .traditional,
+    .page2 .card4 .traditional,
+    .page2 .card5 .traditional,
+    .page2 .card6 .traditional,
+    .page2 .card1 .powertree,
+    .page2 .card2 .powertree,
+    .page2 .card3 .powertree,
+    .page2 .card4 .powertree,
+    .page2 .card5 .powertree,
+    .page2 .card6 .powertree{
+        width: 100%;
+    }
+    .page2 .card1 .traditional,
+    .page2 .card2 .traditional,
+    .page2 .card3 .traditional,
+    .page2 .card4 .traditional,
+    .page2 .card5 .traditional,
+    .page2 .card6 .traditional{
+        border: none;
+        border-bottom: 1px solid;
+    }
+    
+    .page2 .card1 .powertree,
+    .page2 .card2 .powertree,
+    .page2 .card3 .powertree,
+    .page2 .card4 .powertree,
+    .page2 .card5 .powertree,
+    .page2 .card6 .powertree{
+        border: none;
+        border-top: 1px solid;
+    }
+    .page2 .right button{
+        opacity: 1;
+        pointer-events: all;
+    }
+    .page2_right_prev {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: translateY(-50%);
+        z-index: 3;
+        width: 50px;
+        height: 30px;
+        background-color: #FF9900;
+        color: #000000;
+        border-radius: 3px;
+    }
+    .page2_right_next {
+        position: absolute;
+        top: 50%;
+        right: 0%;
+        transform: translateY(-50%);
+        z-index: 3;
+        width: 50px;
+        height: 30px;
+        background-color: #FF9900;
+        color: #000000;
+        border-radius: 3px;
+    }
+    .page3 .title{
+        margin-top: 0%;
+    }
+    .page3 .steps{
+        margin: 0%;
+    }
+    .page3 .steps .step1, .page3 .steps .step2, .page3 .steps .step3{
+        margin: 21px;
+    }
+    .footer .lower .section .logo img{
+        width: 40px;
+        margin-right: 10px;
+    }
+    .footer .lower .content .section .social .media{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: auto;
+    }
+    .footer .lower .content .section .social .media svg{
+        width: 20px;
+    }
 }

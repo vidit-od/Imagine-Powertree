@@ -1301,4 +1301,7 @@ body{
     .footer .lower .content .section .social .media svg{
         width: 20px;
     }
+    .explore{
+        width: 130px;
+    }
 }
