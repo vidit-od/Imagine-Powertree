@@ -3,7 +3,7 @@ var height = document.documentElement.scrollHeight
 const navbar =document.querySelector(".navbar");
 const home_title = document.querySelectorAll(".text_animation");
 const home_image = document.querySelector(".home_image");
-
+pageht();
 window.addEventListener('DOMContentLoaded',function(){
     content_resize();
     pageht();
