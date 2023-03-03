@@ -653,3 +653,107 @@ a:visited{
     font-weight: 700;
     opacity: 0.8 ;
 }
+
+@media screen and (max-width:1000px) {
+    .navbar{
+        width: 100%;
+    }
+    .navbar .content{
+        width: 10%;
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .navbar .slider{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar .slider svg{
+        width: 30px;
+        height: 30px;
+        fill: #FF9900;
+    }
+    .page1{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .page1 .left{
+        width: 100%;
+        margin: 0%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .page1 .right{
+        width: 100%;
+        margin: 0%;
+        margin-bottom: 10px;
+    }
+    .page1 .left .title{
+        position: relative;
+        font-size: 30px;
+        margin: 0%;
+        top: 0%;
+        text-align: center;
+    }
+    .page1 .left .title span{
+        font-size: 30px;
+    }
+    .page1 .right{
+        height: 300px;
+    }
+    .page2 .cmain .title{
+        height: 45px;
+        overflow: hidden;
+    }
+    .banner p{
+        font-size: 30px;
+        text-align: center;
+    }
+    .page3{
+        width: 100%;
+        height: auto;
+    }
+    .page3 .images{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .joinbanner .title{
+        text-align: center;
+    }
+    .joinbanner .subtext{
+        width: 100%;
+        max-width: 400px;
+    }
+    .footer .lower .section .logo img{
+        width: 40px;
+        margin-right: 10px;
+    }
+    .footer .lower .content .section .social .media{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: auto;
+    }
+    .footer .lower .content .section .social .media svg{
+        width: 20px;
+    }
+    .explore{
+        width: 130px;
+    }
+    .page2 .title{
+        background-color: #ffffff;
+    }
+    .page1 .right img{
+        width: 100%;
+        object-fit: cover;
+    }
+    .right .blur{
+        width: 100%;
+    }
+}

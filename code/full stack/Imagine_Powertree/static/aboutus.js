@@ -1,21 +1,25 @@
 // variable declaration
-let path =document.querySelector('path');
+let path =document.querySelector('.line path');
 let pathlength = path.getTotalLength();
 
 // scroll effect for the svg line
 path.style.strokeDasharray=pathlength;
 path.style.strokeDashoffset=-pathlength;
 
-let navbar = document.querySelector(".navbar").scrollHeight
-let page1 =document.querySelector(".page1").scrollHeight;
-let page2 =document.querySelector(".page2").scrollHeight;
-let page3 =document.querySelector(".page3").scrollHeight;
-let page4 =document.querySelector(".page4").scrollHeight;
-let banner = document.querySelector(".joinbanner").scrollHeight;
-let footer_top =navbar+ page1+ page2 + page3 + page4 + banner+"px";
-
-let footer = document.getElementById("footer");
-footer.style.top=footer_top;
+window.addEventListener('DOMContentLoaded',function(){
+    let navbar = document.querySelector(".navbar").scrollHeight
+    document.querySelector(".page1").style.top = navbar + 'px';
+    let page1 =document.querySelector(".page1").scrollHeight;
+    document.querySelector(".page2").style.top = navbar + page1 + 'px';
+    let page2 =document.querySelector(".page2").scrollHeight;
+    document.querySelector(".page3").style.top = navbar + page1 + page2 +'px';
+    let page3 =document.querySelector(".page3").scrollHeight;
+    document.querySelector(".page4").style.top = + navbar + page1 + page2 + page3 +'px';
+    let page4 =document.querySelector(".page4").scrollHeight;
+    document.querySelector(".joinbanner").style.top = navbar + page1 + page2 + page3 + page4 +'px';
+    let banner = document.querySelector(".joinbanner").scrollHeight;
+    document.querySelector(".footer").style.top = navbar + page1 + page2 + page3 + page4 + banner + 'px' 
+})
 
 // activate scroll on scroll
 window.addEventListener('scroll', () => {
