@@ -5,20 +5,9 @@ let pathlength = path.getTotalLength();
 // scroll effect for the svg line
 path.style.strokeDasharray=pathlength;
 path.style.strokeDashoffset=-pathlength;
-
+heightset();
 window.addEventListener('DOMContentLoaded',function(){
-    let navbar = document.querySelector(".navbar").scrollHeight
-    document.querySelector(".page1").style.top = navbar + 'px';
-    let page1 =document.querySelector(".page1").scrollHeight;
-    document.querySelector(".page2").style.top = navbar + page1 + 'px';
-    let page2 =document.querySelector(".page2").scrollHeight;
-    document.querySelector(".page3").style.top = navbar + page1 + page2 +'px';
-    let page3 =document.querySelector(".page3").scrollHeight;
-    document.querySelector(".page4").style.top = + navbar + page1 + page2 + page3 +'px';
-    let page4 =document.querySelector(".page4").scrollHeight;
-    document.querySelector(".joinbanner").style.top = navbar + page1 + page2 + page3 + page4 +'px';
-    let banner = document.querySelector(".joinbanner").scrollHeight;
-    document.querySelector(".footer").style.top = navbar + page1 + page2 + page3 + page4 + banner + 'px' 
+    heightset();
 })
 
 // activate scroll on scroll
@@ -167,3 +156,18 @@ window.addEventListener('scroll', () => {
         document.getElementById("banner").style.height="0%"
     }
 })
+
+function heightset(){
+    let navbar = document.querySelector(".navbar").scrollHeight
+    document.querySelector(".page1").style.top = navbar + 'px';
+    let page1 =document.querySelector(".page1").scrollHeight;
+    document.querySelector(".page2").style.top = navbar + page1 + 'px';
+    let page2 =document.querySelector(".page2").scrollHeight;
+    document.querySelector(".page3").style.top = navbar + page1 + page2 +'px';
+    let page3 =document.querySelector(".page3").scrollHeight;
+    document.querySelector(".page4").style.top = + navbar + page1 + page2 + page3 +'px';
+    let page4 =document.querySelector(".page4").scrollHeight;
+    document.querySelector(".joinbanner").style.top = navbar + page1 + page2 + page3 + page4 +'px';
+    let banner = document.querySelector(".joinbanner").scrollHeight;
+    document.querySelector(".footer").style.top = navbar + page1 + page2 + page3 + page4 + banner + 'px'
+}
