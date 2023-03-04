@@ -18,6 +18,7 @@ let prev_page;
 images[0].style.opacity="1";
 all_pages[0].classList.add("show_slide");
 
+heightset();
 // previous button 
 prev.addEventListener('click', function(){
     document.getElementById("deco").classList.add("click_anim");
@@ -111,7 +112,12 @@ image.addEventListener('click', function(){
     all_pages[current_page].classList.remove("show_slide");
 
     image.style.pointerEvents="none";
-    image.style.transform="translateX(-60%) translateY(-50%)";
+    if(window.outerWidth >1000){
+        image.style.transform="translateX(-60%) translateY(-50%)";
+    }
+    else{
+        image.style.opacity=0;
+    }
     images[current_page].style.width="100%";
     
     for(let i =0; i<images.length; i++){
@@ -131,6 +137,7 @@ back[i].addEventListener('click', function() {
     all_pages[current_page].classList.add("show_slide");
 
     image.style.pointerEvents="all";
+    image.style.opacity=1;
     image.style.transform="translateX(0%) translateY(-50%)";
     images[current_page].style.width="";
     
@@ -138,4 +145,19 @@ back[i].addEventListener('click', function() {
         images[i].style.pointerEvents="all";
     }
 })
+}
+
+function heightset(){
+    let navht = document.querySelector(".navbar").clientHeight;
+    document.querySelector(".page1").style.top = navht +"px";
+    
+    let page1 = document.querySelector(".page1").clientHeight;
+    document.querySelector(".page2").style.top= navht + page1 + "px";
+
+    let page2 = document.querySelector(".page2").clientHeight;
+    document.querySelector(".page3").style.top = navht + page1 +page2+ "px";
+
+    let page3 = document.querySelector(".page3").clientHeight;
+    document.querySelector(".footer").style.top = navht + page1 +page2+page3+ "px";
+    console.log("height set");
 }
