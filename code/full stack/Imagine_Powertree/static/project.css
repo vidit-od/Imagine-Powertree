@@ -450,3 +450,115 @@ a:visited{
     font-weight: 700;
     opacity: 0.8 ;
 }
+@media screen and (max-width:1000px) {
+    *{
+        font-size: 16px;
+    }
+    .navbar{
+        width: 100%;
+    }
+    .navbar .content{
+        width: 10%;
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .navbar .slider{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar .slider svg{
+        width: 30px;
+        height: 30px;
+        fill: #FF9900;
+    }
+    .page1{
+        width: 100%;
+        overflow: hidden;
+    }
+    .page1 .desc_frame .texts{
+        transform: translateX(0%) translateY(0%);
+        margin: 0%;
+        padding: 10px;
+        padding-top: 0%;
+        padding-bottom: 0%;
+    }
+    .page1 .desc_frame .texts .text{
+        margin: 0%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .page1 .image_frame{
+        top: 40%;
+        transform:translateX(-50%) translateY(-50%);
+    }
+    .page2{
+        height: auto;
+    }
+    .page2 .project{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .page2 .project .content{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .page2 .project .pg2_image{
+        width: 100%;
+    }
+    .page2 .project .text{
+        width: 100%;
+    }
+    .page3 .projects{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .page3 .p2018, .page3 .p2019, .page3 .p2020, .page3 .p2021, .page3 .p2022{
+        min-width: 145px;
+        min-height: 220px;
+        margin: 10px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .banner{
+        height: 250px;
+        justify-content: space-between;
+    }
+    .banner .text{
+        width: 50%;
+        margin-left: 10px;
+    }
+    .banner .text .main{
+        font-size: 30px;
+    }
+    .banner .arrow{
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .banner .button{
+        margin-left: 20px;
+        margin-right: 20px;    
+    }
+    .footer .lower .section .logo img{
+        width: 40px;
+        margin-right: 10px;
+    }
+    .footer .lower .content .section .social .media{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: auto;
+    }
+    .footer .lower .content .section .social .media svg{
+        width: 20px;
+    }
+    .explore{
+        width: 130px;
+    }
+}
