@@ -92,6 +92,105 @@ a:visited{
     text-align: center;
     margin-top: 20px ;
 }
+.sidemenu{
+    width: 100%;
+    height: 90%;
+    top: 10%;
+    position: fixed;
+    background-color: #FF9900;
+    z-index: 100;
+    transform: translateX(100%);
+}
+.sidemenu .content{
+    width: 100%;
+    text-align: center;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.sidemenu .content .navlink {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.sidemenu .content .navlink a{
+    font-size: 30px;
+    color: #ffffff;
+}
+.sidemenu hr{
+    border: 2px solid white;
+}
+.sidemenu .menufooter{
+    height: 30%;
+    overflow: hidden;
+}
+.sidemenu .stuff{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+}
+.sidemenu .stuff svg{
+    width: 25px;
+}
+.sidemenu .left{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 100%;
+}
+.sidemenu .left .phone{
+    height: 50%;
+}
+.sidemenu .left .phone p{
+    font-weight: 500;
+    color: #ffffff;
+}
+.sidemenu .left .email{
+    height: 40%;
+}
+.sidemenu .left .email p{
+    font-weight: 500;
+    color: #ffffff;
+}
+.sidemenu .right{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+.sidemenu .right .contact{
+    height: 50%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
+.sidemenu .right .social{
+    height: 40%;
+    color: #ffffff;
+    text-align: center;
+}
+.sidemenu .right .social .media{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.sidemenu .right .social .media a svg{
+    opacity: 60%;
+}
 @media screen and (max-width:1000px) {
     *{
         font-size: 16px;

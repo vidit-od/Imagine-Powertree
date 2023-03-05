@@ -1086,7 +1086,6 @@ body{
     background-color: #FF9900;
     z-index: 100;
     transform: translateX(100%);
-    transition: all 1s ease;
 }
 .sidemenu .content{
     width: 100%;

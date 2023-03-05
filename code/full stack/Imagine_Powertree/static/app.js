@@ -3,8 +3,7 @@ var height = document.documentElement.scrollHeight
 const navbar =document.querySelector(".navbar");
 const home_title = document.querySelectorAll(".text_animation");
 const home_image = document.querySelector(".home_image");
-const slider = document.querySelector(".slider");
-pageht();
+
 window.addEventListener('DOMContentLoaded',function(){
     content_resize();
     pageht();
@@ -19,7 +18,10 @@ window.addEventListener('resize',function(){
     content_resize();
     pageht();
 })
+const slider = document.querySelector(".slider");
+pageht();
 let toggle = 0;
+document.querySelector(".sidemenu").style.transition = "all 1s ease";
 slider.addEventListener('click',function(){
     if(toggle == 0){
     document.querySelector(".sidemenu").style.transform = "translateX(0%)";
