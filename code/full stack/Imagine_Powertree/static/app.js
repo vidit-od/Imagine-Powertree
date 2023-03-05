@@ -3,6 +3,7 @@ var height = document.documentElement.scrollHeight
 const navbar =document.querySelector(".navbar");
 const home_title = document.querySelectorAll(".text_animation");
 const home_image = document.querySelector(".home_image");
+const slider = document.querySelector(".slider");
 pageht();
 window.addEventListener('DOMContentLoaded',function(){
     content_resize();
@@ -18,6 +19,26 @@ window.addEventListener('resize',function(){
     content_resize();
     pageht();
 })
+let toggle = 0;
+slider.addEventListener('click',function(){
+    if(toggle == 0){
+    document.querySelector(".sidemenu").style.transform = "translateX(0%)";
+    
+    slider.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>'
+
+    document.querySelector(".slider svg").style.fill ="red";
+    toggle =1;
+    }
+    else{
+        document.querySelector(".sidemenu").style.transform = "translateX(100%)";
+    
+        slider.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>'
+    
+        document.querySelector(".slider svg").style.fill ="#ff9900";
+        toggle =0;
+    }
+})
+
 const navbar_content= document.querySelector(".content");
 const navbar_right =document.querySelector(".navright");
 const why_phowertree = document.querySelector(".why_powertree");
@@ -114,10 +135,11 @@ function next(){
     })
     
 }
-
-
 function pageht(){
     let navbar_ht =document.querySelector(".navbar").scrollHeight;
+    document.querySelector(".sidemenu").style.top = navbar_ht + "px";
+    document.querySelector(".sidemenu").style.height = window.outerHeight - navbar_ht + 'px';
+
     document.querySelector(".home").style.top = navbar_ht + "px";
     let page1 = document.querySelector(".home").scrollHeight;
     document.querySelector(".page2").style.top =navbar_ht + page1 +"px";
