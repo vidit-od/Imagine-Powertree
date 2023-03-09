@@ -150,7 +150,7 @@ function pageht(){
     document.querySelector(".page3").style.top = navbar_ht + page1 + page2 + "px"; 
     let page3 = document.querySelector(".page3").scrollHeight;
     document.querySelector(".page4").style.top = navbar_ht + page1 + page2 + page3 + "px";
-    let page4 = document.querySelector(".page4").scrollHeight;
+    let page4 = document.querySelector(".page4").scrollHeight + 50;
 
     document.querySelector(".banner").style.top = navbar_ht + page1 + page2 + page3 + page4 + "px";
     let banner = document.querySelector(".banner").scrollHeight;
