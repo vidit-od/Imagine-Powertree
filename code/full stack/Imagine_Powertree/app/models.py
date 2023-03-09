@@ -52,7 +52,7 @@ class advisory_board(models.Model):
     linkedin = models.URLField(max_length=100, blank=True, null=True)
     instagram = models.URLField(max_length=100, blank=True, null=True)
     twitter = models.URLField(max_length=100, blank=True, null=True)
-    image = models.ImageField(upload_to='team/',  height_field=None, width_field=None ,blank=False ,null=False)
+    image = models.ImageField(upload_to='advisory/',  height_field=None, width_field=None ,blank=False ,null=False)
 
     def __str__(self):
         return '%s | %s' %(self.name, self.role)

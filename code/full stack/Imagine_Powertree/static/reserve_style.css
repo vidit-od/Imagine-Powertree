@@ -27,15 +27,17 @@ a:visited{
 }
 /* right section; image  */
 .reserve .right .blur{
-    position: fixed;
-    width: 45%;
+    position: absolute;
+    right: 0%;
+    width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4)
 }
 .reserve .right {
+    position: relative;
     width: 45%;
+    height: fit-content;
     overflow: hidden;
-    position: fixed;
     right: 0%;
 }
 .reserve .right img{

@@ -84,8 +84,6 @@ a:visited{
     justify-content: center;
 }
 .page1 .left .title{
-    position: absolute;
-    top: 12%;
     color:#ff9900;
     font-size: 40px;
     margin-bottom: 20px;
@@ -103,6 +101,16 @@ a:visited{
 .page1 .left .subtext{
     width: 100%;
     font-size: 20px;
+}
+.page1 .left .subtext span{
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0px;
+}
+.page1 .left .subtext p{
+    margin: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 .page1 .right{
     position: relative;
@@ -483,7 +491,7 @@ a:visited{
     margin-top: 20px;
 }
 .page4 .images .img img{
-    width: 300px;
+    width: 150px;
     height: 170px;
     object-fit: cover;
 }
@@ -500,9 +508,9 @@ a:visited{
     justify-content: center;
 }
 .page4 .images .img{
-    margin-top: 20px;
+    margin: 20px;
     margin-bottom: 50px;
-
+    width: 296px;
 }
 .page4 img{
     width: 300px;
@@ -803,7 +811,8 @@ a:visited{
         font-size: 30px;
     }
     .page1 .right{
-        height: 300px;
+        height: 265px;
+        overflow: hidden;
     }
     .page2 .cmain .title{
         height: 45px;

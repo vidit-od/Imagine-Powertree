@@ -317,6 +317,9 @@ a:visited{
 .item .desc{
     font-weight: 200;
 }
+.item .desc p{
+    margin-top: 10px;
+}
 .page2 .content .item .reserver{
     margin: auto;
     margin-top: 10px;
