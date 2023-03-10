@@ -123,7 +123,7 @@ class pinned(models.Model):
 class whats_new(models.Model):
     title = models.CharField(max_length=100,blank=False,null=False, unique=True)
     date = models.DateField()
-    desc = models.TextField(max_length=2000, blank=False,null=False)
+    desc = models.TextField(max_length=20000, blank=False,null=False)
     image = models.ImageField(upload_to="whats_new/")
     top = models.OneToOneField(pinned, on_delete=models.CASCADE ,blank=True, null=True)
 

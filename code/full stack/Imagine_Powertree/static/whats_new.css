@@ -182,14 +182,15 @@ a:visited{
 .page2 .cards {
     display: flex;
     flex-wrap: wrap;
+    min-height: 1150px;
 }
 .page2 .card{
     width: 350px;
-    height: 350px;
     margin-top: 15px;
     margin-bottom: 15px;
     margin-left: 10px;
     margin-right: 10px;
+    overflow: hidden;
 } 
 .page2 .card .image{
     width: 100%;
@@ -209,7 +210,9 @@ a:visited{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex-wrap: wrap;
+}
+.page2 .card .content .bolds a{
+    width: 300px;
 }
 .page2 .card .content .bolds .open{
     width: 22px;
@@ -224,9 +227,6 @@ a:visited{
 }
 .page2 .card .content .bolds .title{
     font-weight: 700;
-}
-.page2 .card .content .bolds .open{
-    margin-right: 30px;
 }
 .page2 .card .content .bolds .open svg{
     width: 22px;

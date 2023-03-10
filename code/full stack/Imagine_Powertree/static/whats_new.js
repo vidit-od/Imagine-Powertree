@@ -10,7 +10,7 @@ const max_pages = Math.ceil(total_cards.length/max_allowed) -1 ;
 pageset();
 
 const height0= document.querySelector(".navbar").scrollHeight;
-const height1= document.querySelector(".page1").scrollHeight;
+const height1= document.querySelector(".page1").scrollHeight +50;
 document.querySelector(".page2").style.top = height0 + height1 + "px";
 const height2= document.querySelector(".page2").scrollHeight;
 const total_height= height0+ height1 + height2 + 50;
