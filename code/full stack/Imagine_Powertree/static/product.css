@@ -320,11 +320,21 @@ a:visited{
 .item .desc p{
     margin-top: 10px;
 }
-.page2 .content .item .reserver{
+.page2 .content .buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.page2 .content .item .reserver,
+.page2 .content .item .read_more{
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 30%;
+    width: 45%;
     background-color: #ff9900;
     border: none;
     color: black;
@@ -333,6 +343,11 @@ a:visited{
     pointer-events: all;
     transition: all 0.3s ease;
     border: 1px solid #ff9900;
+}
+.page2 .content .item .read_more{
+    background-color: #ffffff;
+    border: 1px solid #FF9900;
+    color: #FF9900;
 }
 .page2 .content .item .reserver:hover{
     background-color: transparent;

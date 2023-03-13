@@ -128,13 +128,16 @@
                     </button>
                 </div>
                 <div class="desc">
-                    {{ product.desc }}
+                    {{ product.desc|truncatewords:80 }}
                 </div>
-                <button class="reserver">
-                    <a href="{% url 'reserve' %}">
+                <div class="buttons">
+                    <a href="product/{{ product.pk }}" class="read_more">
+                            Read more
+                    </a>
+                    <a href="{% url 'reserve' %}" class="reserver">
                         Reserve today
                     </a>
-                </button>
+                </div>
             </div>
             {% endfor %}
         </div>

@@ -4,7 +4,7 @@ from django.contrib.auth.models import auth,User
 from django.contrib import messages
 from datetime import datetime
 from django.urls import reverse
-from .models import reserve as reserve_model,why_powertree as why_model,team, products,advisory_board,image_gallery,key_clients,supported_by,projects,products_usedin_project,whats_new as blog
+from .models import reserve as reserve_model,why_powertree as why_model,team, products,advisory_board,image_gallery,key_clients,supported_by,projects,products_usedin_project,whats_new as blog,varient
 import os
 from django.conf import settings
 import random
@@ -87,3 +87,11 @@ def read_blog(request,pk):
 def our_team(request):
     teams = team.objects.all()
     return render(request, 'team.html',{"teams":teams})
+
+def product_details(request,pk):
+    selected = products.objects.get(id=pk)
+    try:
+        varients = varient.objects.filter(product_id=selected.pk)
+    except:
+        varients = None
+    return render(request, 'product_details.html',{"selected":selected,'varients':varients})

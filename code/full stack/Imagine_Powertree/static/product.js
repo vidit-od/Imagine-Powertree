@@ -140,10 +140,12 @@ image.addEventListener('click', function(){
     }
     images[current_page].style.width="100%";
     
+    let readmore = document.querySelectorAll(".read_more");
     for(let i =0; i<images.length; i++){
         images[i].style.pointerEvents="none";
+        readmore[i].style.pointerEvents="none";
     }
-
+    readmore[current_page].style.pointerEvents="all"
 })
 
 // hide info
