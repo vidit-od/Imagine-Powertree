@@ -4,7 +4,6 @@ const navbar =document.querySelector(".navbar");
 const home_title = document.querySelectorAll(".text_animation");
 const home_image = document.querySelector(".home_image");
 
-window.onpaint = pageht();
 window.addEventListener('DOMContentLoaded',function(){
     content_resize();
     pageht();
@@ -15,12 +14,7 @@ window.addEventListener('DOMContentLoaded',function(){
     home_image.style.transition="all 0.5s ease"
     home_image.style.opacity="1";
 })
-window.addEventListener('resize',function(){
-    content_resize();
-    pageht();
-})
 const slider = document.querySelector(".slider");
-pageht();
 let toggle = 0;
 document.querySelector(".sidemenu").style.transition = "all 1s ease";
 slider.addEventListener('click',function(){
@@ -52,9 +46,9 @@ const p4_lower =document.querySelector(".lower");
 
 
 window.addEventListener('scroll', function(){
-    if(window.scrollX >=2000){
+    pageht();
+    if(window.outerWidth >=1000){
     const percent= window.scrollY/height * 100;
-    console.log(percent)
     // powertree 360 rotation animation
     if (percent >= 0 && percent <=19.02){
         const degree = percent*9;
@@ -139,12 +133,17 @@ function next(){
     
 }
 function pageht(){
+    
+
+
     let navbar_ht =document.querySelector(".navbar").scrollHeight;
+    
     document.querySelector(".sidemenu").style.top = navbar_ht + "px";
     document.querySelector(".sidemenu").style.height = window.outerHeight - navbar_ht + 'px';
 
     document.querySelector(".home").style.top = navbar_ht + "px";
     let page1 = document.querySelector(".home").scrollHeight;
+    console.log("page1",page1);
     document.querySelector(".page2").style.top =navbar_ht + page1 +"px";
     let page2 = document.querySelector(".page2").scrollHeight;
     document.querySelector(".page3").style.top = navbar_ht + page1 + page2 + "px"; 
@@ -161,7 +160,6 @@ function pageht(){
 }
 function content_resize(){
     if(window.outerWidth <= 1000){
-        console.log("yo");
         document.querySelector(".p3_image").style.width = window.outerWidth + "px";
         let all_images = document.querySelectorAll(".p3_images");
         for(i =0; i< all_images.length; i++){

@@ -448,6 +448,9 @@ a:visited{
     width: 100%;
     height: 90%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .page3 .title{
     font-family: 'lobster';
