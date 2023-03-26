@@ -182,7 +182,6 @@ a:visited{
 .page2 .cards {
     display: flex;
     flex-wrap: wrap;
-    min-height: 1150px;
 }
 .page2 .card{
     width: 350px;
@@ -501,7 +500,30 @@ a:visited{
     }
     .page1 .blogs{
         margin: 0%;
-        margin-top: 40%;
+        margin-top: 25%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .pinned .blur{
+        position: relative;
+    }
+    .page1 .blogs .pinned{
+        height: auto;
+    }
+    .pinned .content{
+        color: black;
+    }
+    .pinned .content .date{
+        font-weight: 700;
+    }
+    .pinned .content .title{
+        color: black;
+    }
+    .pinned img{
+        height: auto;
+    }
+    .pinned .content{
+        position: relative;
     }
     .footer .lower .section .logo img{
         width: 40px;
@@ -519,4 +541,5 @@ a:visited{
     .explore{
         width: 130px;
     }
+
 }

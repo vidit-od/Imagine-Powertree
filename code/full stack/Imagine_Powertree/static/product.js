@@ -21,6 +21,7 @@ all_pages[0].classList.add("show_slide");
 heightset();
 // previous button 
 prev.addEventListener('click', function(){
+    if(window.outerWidth>1000){
     document.getElementById("deco").classList.add("click_anim");
     document.getElementById("deco").addEventListener('animationend', function(){
         document.getElementById("deco").classList.remove("click_anim");
@@ -50,10 +51,43 @@ prev.addEventListener('click', function(){
     images[current_page].style.pointerEvents="all";
 
     console.log(current_page);
+    }
+    else{
+        document.getElementById("deco").classList.add("click_anim");
+    document.getElementById("deco").addEventListener('animationend', function(){
+        document.getElementById("deco").classList.remove("click_anim");
+    })
+    prev_page= current_page;
+    current_page= (current_page -1 );
+
+    if(current_page == -1){
+        current_page = length-1;
+    }
+
+    pagereplacement(prev_page,current_page);
+
+    images[prev_page].classList.add("mob_image_up_prev");
+    images[prev_page].addEventListener('animationend',() => {
+        images[prev_page].classList.remove("mob_image_up_prev");
+        images[prev_page].style.opacity="0";
+    })
+    images[current_page].classList.add("mob_image_down_prev");
+    images[current_page].addEventListener('animationend',() => {
+        images[current_page].classList.remove("mob_image_down_prev");
+        images[current_page].style.opacity="1";
+    })
+    images[prev_page].style.opacity="0";
+    images[prev_page].style.pointerEvents="null";
+    images[current_page].style.opacity="1";
+    images[current_page].style.pointerEvents="all";
+
+    console.log(current_page);    
+    }
 })
 
 // next button
 next.addEventListener('click', function(){
+    if(window.outerWidth >1000){
     document.getElementById("deco").classList.add("click_anim");
 
     
@@ -82,7 +116,37 @@ next.addEventListener('click', function(){
     images[current_page].style.pointerEvents="all";
 
     console.log(current_page);
+    }
+    else{
+        document.getElementById("deco").classList.add("click_anim");
 
+    
+        document.getElementById("deco").addEventListener('animationend', function(){
+            document.getElementById("deco").classList.remove("click_anim");
+        })
+        
+        prev_page= current_page;
+        current_page= ( current_page+1 ) % length;
+        
+        pagereplacement(prev_page,current_page);
+    
+        images[prev_page].classList.add("mob_image_up_next");
+        images[prev_page].addEventListener('animationend',() => {
+            images[prev_page].classList.remove("mob_image_up_next");
+            images[prev_page].style.opacity="0";
+        })
+        images[current_page].classList.add("mob_image_down_next");
+        images[current_page].addEventListener('animationend',() => {
+            images[current_page].classList.remove("mob_image_down_next");
+            images[current_page].style.opacity="1";
+        })
+        images[prev_page].style.opacity="0";
+        images[prev_page].style.pointerEvents="null";
+        images[current_page].style.opacity="1";
+        images[current_page].style.pointerEvents="all";
+    
+        console.log(current_page);
+    }
 })
 const slider = document.querySelector(".slider");
 let toggle = 0;
@@ -168,7 +232,9 @@ back[i].addEventListener('click', function() {
     }
 })
 }
-
+window.addEventListener('scroll',function(){
+    heightset();
+})
 function heightset(){
     let navht = document.querySelector(".navbar").clientHeight;
     document.querySelector(".page1").style.top = navht +"px";

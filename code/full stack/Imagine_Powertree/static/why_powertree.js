@@ -37,7 +37,9 @@ slider.addEventListener('click',function(){
         toggle =0;
     }
 })
-
+window.addEventListener('scroll',function(){
+    heightset();
+})
 // all divs
 window.addEventListener('DOMContentLoaded',function(){
     // initially all divs will be invisible except div1

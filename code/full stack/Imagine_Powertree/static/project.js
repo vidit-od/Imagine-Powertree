@@ -17,7 +17,9 @@ if(window.outerWidth <1000){
     resp();
 }
 heightset()
-
+window.addEventListener('scroll',function(){
+    heightset();
+})
 const slider = document.querySelector(".slider");
 let toggle = 0;
 document.querySelector(".sidemenu").style.transition = "all 1s ease";

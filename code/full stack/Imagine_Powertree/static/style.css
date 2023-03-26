@@ -1177,6 +1177,7 @@ body{
 .sidemenu .right .social .media a svg{
     opacity: 60%;
 }
+
 @media screen and (max-width:1000px){
     .navbar{
         transform: translateY(0%);

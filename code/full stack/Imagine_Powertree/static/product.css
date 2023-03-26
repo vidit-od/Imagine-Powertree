@@ -274,6 +274,19 @@ a:visited{
 .image_down_next{
     animation: image_show_next 0.5s ease;
 }
+/*  */
+.mob_image_up_prev{
+    animation: mob_image_hide_prev 0.5s ease;
+}
+.mob_image_down_prev{
+    animation: mob_image_show_prev 0.5s ease;
+}
+.mob_image_up_next{
+    animation: mob_image_hide_next 0.5s ease;
+}
+.mob_image_down_next{
+    animation: mob_image_show_next 0.5s ease;
+}
 .slideshow .expand__deco{
     position: absolute;
     background-color: #FFCD82;
@@ -440,7 +453,55 @@ a:visited{
         opacity: 1;
     }
 }
-
+/*  */
+@keyframes mob_image_hide_prev {
+    0%{
+        pointer-events: none;
+        transform: translateX(-48%) translateY(-115%);
+        opacity: 1;
+    }
+    100%{
+        pointer-events: none;
+        transform: translateX(-100%) translateY(-220%);
+        opacity: 0;
+    }
+}
+@keyframes mob_image_show_prev {
+    0%{
+        pointer-events: none;
+        transform: translateX(148%) translateY(100%);
+        opacity: 0;
+    }
+    100%{
+        pointer-events: none;
+        transform: translateX(-48%) translateY(-115%);
+        opacity: 1;
+    }
+}
+@keyframes mob_image_hide_next {
+    0%{
+        pointer-events: none;
+        transform: translateX(-48%) translateY(-115%);
+        opacity: 1;
+    }
+    100%{
+        pointer-events: none;
+        transform: translateX(148%) translateY(100%);
+        opacity: 0;
+    }
+}
+@keyframes mob_image_show_next {
+    0%{
+        pointer-events: none;
+        transform: translateX(-100%) translateY(-220%);
+        opacity: 0;
+    }
+    100%{
+        pointer-events: none;
+        transform: translateX(-48%) translateY(-115%);
+        opacity: 1;
+    }
+}
 /* reserve today*/
 .page3{
     position: absolute;
@@ -754,9 +815,14 @@ a:visited{
         width: 100%;
     }
     .page2 .slide__img img{
+        transform:translateX(-48%) translateY(-115%);
         width: 100%;
         height: 40%;
         object-fit: cover;
+    }
+    .nav--prev,
+    .nav--next{
+        top: 35%;
     }
     .show_slide{
         width: 100%;
@@ -765,7 +831,12 @@ a:visited{
         width: 100%;
     }
     .slide{
-        top: 50%;
+        top: 40%;
+    }
+    .slide__title{
+        width: 100%;
+        height: auto;
+        min-width: auto;
     }
     .nav--prev svg{
         transform: rotate(-90deg) ;

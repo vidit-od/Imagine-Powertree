@@ -32,6 +32,7 @@ slider.addEventListener('click',function(){
 })
 // activate scroll on scroll
 window.addEventListener('scroll', () => {
+    heightset();
     let height_1= document.querySelector(".page1").scrollHeight;
     let height_2= document.querySelector(".page2").scrollHeight;
     let total=height_2;

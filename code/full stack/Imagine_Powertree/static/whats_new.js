@@ -8,13 +8,17 @@ let max_allowed = 9;
 current_page = 0;
 const max_pages = Math.ceil(total_cards.length/max_allowed) -1 ;
 pageset();
-
-const height0= document.querySelector(".navbar").scrollHeight;
-const height1= document.querySelector(".page1").scrollHeight +50;
-document.querySelector(".page2").style.top = height0 + height1 + "px";
-const height2= document.querySelector(".page2").scrollHeight;
-const total_height= height0+ height1 + height2 + 50;
-document.querySelector(".footer").style.top=total_height.toString()+"px";
+window.addEventListener('scroll',function(){
+    heightset();
+})
+function heightset(){
+    const height0= document.querySelector(".navbar").scrollHeight;
+    const height1= document.querySelector(".page1").scrollHeight +50;
+    document.querySelector(".page2").style.top = height0 + height1 + "px";
+    const height2= document.querySelector(".page2").scrollHeight;
+    const total_height= height0+ height1 + height2 + 50;
+    document.querySelector(".footer").style.top=total_height.toString()+"px";
+}
 
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
@@ -66,6 +70,7 @@ slider.addEventListener('click',function(){
 next.addEventListener("click", function(){
     current_page = current_page+1;
     pageset();
+    heightset();
     if( current_page != 0){
         document.querySelector(".prev").style.opacity = "1";
         document.querySelector(".prev").pointerEvents = "all";
@@ -87,6 +92,7 @@ next.addEventListener("click", function(){
 prev.addEventListener("click", function() {
     current_page = current_page -1;
     pageset();
+    heightset();
     if(current_page == 0){
         document.querySelector(".prev").style.opacity = "0";
         document.querySelector(".prev").pointerEvents = "none";
