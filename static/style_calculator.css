@@ -235,7 +235,6 @@ a:visited{
 }
 .page2{
     width: 100%;
-    height: 90%;
     position: absolute;
     top: 100%;
     background-color: #ffffff;
@@ -247,11 +246,23 @@ a:visited{
 
 .page2 .calculator{
     width: 80%;
-    height: 80%;
+    height: 85%;
+    margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 10px;
     box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
     position: relative;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    transition: width 1s ease;
+}
+.page2 .calculator form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .page2 .title{
     text-align: center;
@@ -263,16 +274,20 @@ a:visited{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    width: 650px;
 }
 
 .page2 .question1 .options{
     display: flex;
     justify-content: space-between;
-    margin-left: 50px;
-    width: 210px;
+    width: 170px;
+    margin-right: 100px;
 }
 .page2 .question1 .options .area,
-.page2 .question1 .options .production{
+.page2 .question1 .options .production,
+.page2 .question1 .options .budget{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -282,6 +297,11 @@ a:visited{
     box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
     margin: 10px;
     border-radius: 5px;
+    border: none;
+    transition: all 1s ease;
+}
+.page2 .question1 .options .area{
+    border: 1px solid black;
 }
 .page2 .question1 .options .option1,
 .page2 .question1 .options .option2{
@@ -292,6 +312,182 @@ a:visited{
 }
 .page2 .question1 .options img{
     width: 30px;
+}
+.page2 .question2 {
+    display: flex;
+    width: 650px;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.page2 .question2 .part1,
+.page2 .question2 .part2{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.page2 .question2 .part1 input[type=number],
+.page2 .question2 .part2 input[type=number]{
+    width: 170px;
+    height: 40px;
+    text-align: right;
+}
+.page2 .question2 .part1 .field,
+.page2 .question2 .part2 .field{
+    display: flex;
+    justify-content: space-between;
+    width: 260px;
+    align-items: center;
+}
+.page2 .question2 .symbol{
+    width: 71px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.page2 .question2 select{
+    height: 40px;
+}
+.page2 .question3{
+    display: flex;
+    width: 650px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.page2 .question3 select{
+    width: 260px;
+    height: 40px;
+}
+.page2 .question4{
+    display: flex;
+    width: 650px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.page2 .question4 .field{
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.page2 .question4 input{
+    width: 170px;
+    height: 40px;
+    text-align: right;
+}
+.page2 .calculator input[type=submit]{
+    width: 200px;
+    background-color: #FF9900;
+    border-radius: 10px;
+    height: 30px;
+    border: none;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+.page2 .calculator input[type=submit]:hover{
+    color: #ffffff;
+    
+}
+.page2 .calculator .question2 .capacity_input{
+    display: flex;
+    margin-left: 20px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.page2 .calculator .question2 .capacity_input p{
+    width: 250px;
+}
+.page2 .calculator .question2 .capacity_input .field{
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.page2 .calculator .question2 .capacity_input input{
+    width: 170px;
+    height: 40px;
+    text-align: right;
+}
+
+.page2 .messages{
+    position: absolute;
+    width: 0px;
+    height: 50px;
+    background-color: #FF9900;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    right: 0%;
+    top: 0%;
+    overflow: hidden;
+    transition: width 1s ease;
+    text-align: center;
+}
+
+.page2 .report{
+    width: 80%;
+    border-radius: 10px;
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    transition: width 1s ease;
+}
+.page2 .report .stat1,
+.page2 .report .stat2,
+.page2 .report .stat3,
+.page2 .report .stat4{
+    max-width: 600px;
+}
+.page2 .report .stat1,
+.page2 .report .stat2,
+.page2 .report .stat3,
+.page2 .report .stat4{
+    display: flex;
+    flex-direction: column;
+}
+.page2 .report .stat1 .fields,
+.page2 .report .stat2 .fields,
+.page2 .report .stat3 .fields,
+.page2 .report .stat4 .fields {
+    margin-left: 50px;
+}
+.page2 .report .stat3 .fields .tariff{
+    margin: 0px;
+
+}
+.page2 .report .stat1 .fields .first,
+.page2 .report .stat2 .fields .first,
+.page2 .report .stat2 .fields .second,
+.page2 .report .stat3 .fields .first,
+.page2 .report .stat3 .fields .second,
+.page2 .report .stat3 .fields .third,
+.page2 .report .stat4 .fields .first,
+.page2 .report .stat4 .fields .second{
+    display: flex;
+    justify-content: space-between;
+}
+.page2 .report .stat1 .fields .first .value,
+.page2 .report .stat2 .fields .first .value,
+.page2 .report .stat2 .fields .second .value,
+.page2 .report .stat3 .fields .first .value,
+.page2 .report .stat3 .fields .second .value,
+.page2 .report .stat3 .fields .third .value,
+.page2 .report .stat4 .fields .first .value,
+.page2 .report .stat4 .fields .second .value{
+    display: flex;
 }
 @media screen and (max-width:1000px) {
     .navbar{

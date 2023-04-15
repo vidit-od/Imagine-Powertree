@@ -102,7 +102,7 @@
                 Solar Calculator
             </div>
             <div class="question1">
-                1. Choose One of the following: 
+                <p>1. Choose One of the following:</p>  
                 <div class="options">
                     <div class="option1">
                         <div class="area">
@@ -114,7 +114,140 @@
                         <div class="production">
                         <img src="{%static 'images/43.png' %}" alt="">
                         </div>
-                        Production
+                        Capacity
+                    </div>
+                </div>
+            </div>
+            <div class="question2">
+            </div>
+            <div class="question3">
+                <p>2. Choose State:</p>  
+                <div class="options">
+                    <select name="states" id="state" required>
+                        <option value=" " disabled selected> </option>
+                        <option value="Andaman and Nicobar Island"> Andaman and Nicobar Islands</option>
+                        <option value="Andhra Pradesh"> Andhra Pradesh </option>
+                        <option value="Arunachal Pradesh"> Arunachal Pradesh </option>
+                        <option value="Assam"> Assam </option>
+                        <option value="Bihar"> Bihar </option>
+                        <option value="Chandigahr"> Chandigarh</option>
+                        <option value="Chhattisgarh"> Chhattisgarh </option>
+                        <option value="Dadra & Nagar Haveli and Daman & Diu"> Dadra & Nagar Haveli and Daman & Diu</option>
+                        <option value="Goa"> Goa </option>
+                        <option value="Gujarat"> Gujarat </option>
+                        <option value="Haryana"> Haryana </option>
+                        <option value="Himachal Pradesh"> Himachal Pradesh </option>
+                        <option value="Jammu and Kashmir"> Jammu and Kashmir</option>
+                        <option value="Jharkhand"> Jharkhand </option>
+                        <option value="Karnataka"> Karnataka </option>
+                        <option value="Kerala"> Kerala </option>
+                        <option value="Ladakh"> Ladakh</option>
+                        <option value="Lakshadwee"> Lakshadweep</option>
+                        <option value="Madhya Pradesh"> Madhya Pradesh </option>
+                        <option value="Maharashtra"> Maharashtra </option>
+                        <option value="Manipur"> Manipur </option>
+                        <option value="Meghalaya"> Meghalaya </option>
+                        <option value="Mizoram"> Mizoram </option>
+                        <option value="Nagaland"> Nagaland </option>
+                        <option value="Odisha"> Odisha </option>
+                        <option value="Puducherr"> Puducherry</option>
+                        <option value="Punjab"> Punjab </option>
+                        <option value="Rajasthan"> Rajasthan </option>
+                        <option value="Sikkim"> Sikkim </option>
+                        <option value="Tamil Nadu"> Tamil Nadu </option>
+                        <option value="Telangana"> Telangana </option>
+                        <option value="Tripura"> Tripura </option>
+                        <option value="Uttar Pradesh"> Uttar Pradesh </option>
+                        <option value="Uttarakhand"> Uttarakhand </option>
+                        <option value="West Bengal"> West Bengal </option>
+                    </select>
+                </div>
+            </div>
+            <div class="question4">
+                <p>3. What is your average Electricity Cost?</p> 
+                <div class="field">
+                    <input type="number" min="0" value="8" name="" id="cost">
+                    Rs/Kwh
+                </div>
+            </div>
+            <input type="submit" id="submit" value="submit">
+            <div class="messages">
+            </div>
+        </div>
+        <div class="report">
+            <div class="title">
+                Your report
+            </div>
+            <div class="desc">
+                <p>Average solar irradiation in <span id="state_name">SIKKIM</span> state is <b id="state_radiation">1046.26 W / sq.m </b></p> 
+                <p>1kWp solar rooftop plant will generate on an average over the year <b id="state_avg">4.1 kWh </b>  of electricity per day (considering 5.5 sunshine hours)</p>
+            </div>
+            <div class="stat1">
+                <p><b>1. Size of Power Plant</b></p>
+                <div class="fields">
+                    <div class="first">
+                        <p>Feasible Plant size as per your Roof Top Area :</p>
+                        <div class="value"> 
+                        <p id="size">10</p>Kw
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stat2">
+                <p><b>2. Total Electricity Generation from Solar Plant :</b></p>
+                <div class="fields">
+                    <div class="first">
+                        <p>Annual :</p>
+                        <div class="value">
+                        <p id="annual_elec">10</p>Kwh
+                        </div>
+                    </div>
+                    <div class="second">
+                        <p>Life-Time (25 years):</p>
+                        <div class="value">
+                        <p id="life_elec">10</p>Kwh
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stat3">
+                <p><b>3. Financial Savings :</b></p>
+                <p class="tariff">Tariff @ Rs. <span id="rates">8</span> / kWh -No increase assumed over 25 years :</p>
+                <div class="fields">
+                    <div class="first">
+                        <p>Monthly :</p> 
+                        <div class="value">
+                        <p id="month_savings">10</p> .Rs
+                        </div>
+                    </div>
+                    <div class="second">
+                        <p>Annually :</p> 
+                        <div class="value">
+                        <p id="annual_savings">10</p> .Rs    
+                        </div>
+                    </div>
+                    <div class="third">
+                        <p>Life-Time (25 years) :</p> 
+                        <div class="value">
+                        <p id="lifetime_savings">10</p> .Rs
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stat4">
+                <p><b>4. Environmental Impact</b></p>
+                <div class="fields">
+                    <div class="first">
+                        <p>Carbon dioxide emissions mitigated is</p>
+                        <div class="value">
+                        <p id="co2_reduce">10 tonnes </p>
+                        </div>
+                    </div>
+                    <div class="second">
+                        <p>This installation will be equivalent to planting <br> Teak trees over the life time.</p>
+                        <div class="value">
+                        <p id="tree">10</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -122,4 +255,4 @@
     </div>
 </body>
 </html>
-<script src="{% static 'calculator.js' %}"></script>
+<script src="{% static 'calculator.js' %}"></script> 
