@@ -167,7 +167,61 @@ a:visited{
 .sidemenu .right .social .media a svg{
     opacity: 60%;
 }
-
+.page1{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    min-height: 90%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.page1 .calculator{
+    width: 96%;
+    height: 90%;
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.page1 .calculator .title{
+    color: #FF9900;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+}
+.page1 .calculator .state{
+    width: 570px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+.page1 .calculator .table{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.page1 .calculator .table table{
+    width: 96%;
+}
+th, td {
+    border: 1px solid black;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+input[type=number],
+input[type=number]:focus{
+    border: none;
+    outline: none;
+    text-align: center;
+    
+}
+.table button{
+    background-color: transparent;
+    border: none;
+}
 @media screen and (max-width:1000px) {
     .navbar{
         width: 100%;
