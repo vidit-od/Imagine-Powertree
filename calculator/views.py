@@ -5,3 +5,12 @@ import os
 
 def calculator(request):
     return render(request, 'calculator.html')
+
+def rooftop_calculator(request):
+    return render(request, 'rooftop_calculator.html')
+
+def tree_calculator(request):
+    return render(request, 'tree_calculator.html')
+
+def appliance_calculator(request):
+    return render(request, 'appliance_calculator.html')

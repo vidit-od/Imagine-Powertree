@@ -1,0 +1,247 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , maximum-scale=1.0, user-scalable=0">
+    <!-- import font poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,700&display=swap" rel="stylesheet">
+
+    <!-- import font lobster -->
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <link rel="stylesheet" href='{% static "rooftop_calculator.css" %}'>
+    <title>Imagine powertree</title>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="Logo"><a href="{% url 'index' %}"><img src='{% static "images/1.png" %}'alt=""></a></div>
+        <div class="content">
+            <p class="navlink"><a href="{% url 'product' %}">Our Products</a></p>
+            <p class="navlink"><a href="{% url 'project' %} ">Our Projects</a></p>
+            <p class="navlink"><a href="{% url 'whats_new' %}">What's New</a></p>
+            <p class="navlink"><a href="{% url 'aboutus' %}">About us</a></p>
+        </div>
+        <div class="slider">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+        </div>
+    </div>
+
+    <!-- sidemenu -->
+    <div class="sidemenu">
+        <div class="content">
+            <p class="navlink"><a href="{% url 'product' %}">Our Products</a></p>
+            <p class="navlink"><a href="{% url 'project' %} ">Our Projects</a></p>
+            <p class="navlink"><a href="{% url 'whats_new' %}">What's new</a></p>
+            <p class="navlink"><a href="{% url 'reserve' %}">Reserve appoinment</a></p>
+            <p class="navlink"><a href="{% url 'aboutus' %}">About us</a></p>
+            
+
+        </div>
+        <div class="menufooter">
+            <hr>
+            <div class="stuff">
+                <div class="left">
+                    <div class="phone">
+                        <p>Phone numbers:</p>
+                        <ul>
+                            <li>+91 9586121111</li>
+                            <li>+91 6358849468</li>
+                            <li>+91 9408985128</li>
+                        </ul>
+                    </div>
+                    <div class="email">
+                        <p>Email:</p>
+                        powerup@powertree.co.in
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="contact">
+                        <a href="{% url 'reserve' %}">contact us</a>
+                    </div>
+                    <div class="social">
+                        <div class="main">Follow us</div>
+                            <div class="media">
+                                <a href="https://www.facebook.com/Imaginepowertree/">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+                                </a>
+                                <a href="https://www.instagram.com/imaginepowertree/?hl=en">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                                </a>
+                                <a href="https://mobile.twitter.com/img_powertree">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="page2">
+        <div class="calculator">
+            <div class="title">
+                Rooftop Calculator
+            </div>
+            <div class="question1">
+                <p>1. Choose One of the following:</p>  
+                <div class="options">
+                    <div class="option1">
+                        <div class="area">
+                        <img src="{%static 'images/44.png' %}" alt="">
+                        </div>
+                        Area
+                    </div>
+                    <div class="option2">
+                        <div class="production">
+                        <img src="{%static 'images/43.png' %}" alt="">
+                        </div>
+                        Capacity
+                    </div>
+                </div>
+            </div>
+            <div class="question2">
+            </div>
+            <div class="question3">
+                <p>2. Choose State:</p>  
+                <div class="options">
+                    <select name="states" id="state" required>
+                        <option value=" " disabled selected> </option>
+                        <option value="Andaman and Nicobar Island"> Andaman and Nicobar Islands</option>
+                        <option value="Andhra Pradesh"> Andhra Pradesh </option>
+                        <option value="Arunachal Pradesh"> Arunachal Pradesh </option>
+                        <option value="Assam"> Assam </option>
+                        <option value="Bihar"> Bihar </option>
+                        <option value="Chandigahr"> Chandigarh</option>
+                        <option value="Chhattisgarh"> Chhattisgarh </option>
+                        <option value="Dadra & Nagar Haveli and Daman & Diu"> Dadra & Nagar Haveli and Daman & Diu</option>
+                        <option value="Goa"> Goa </option>
+                        <option value="Gujarat"> Gujarat </option>
+                        <option value="Haryana"> Haryana </option>
+                        <option value="Himachal Pradesh"> Himachal Pradesh </option>
+                        <option value="Jammu and Kashmir"> Jammu and Kashmir</option>
+                        <option value="Jharkhand"> Jharkhand </option>
+                        <option value="Karnataka"> Karnataka </option>
+                        <option value="Kerala"> Kerala </option>
+                        <option value="Ladakh"> Ladakh</option>
+                        <option value="Lakshadwee"> Lakshadweep</option>
+                        <option value="Madhya Pradesh"> Madhya Pradesh </option>
+                        <option value="Maharashtra"> Maharashtra </option>
+                        <option value="Manipur"> Manipur </option>
+                        <option value="Meghalaya"> Meghalaya </option>
+                        <option value="Mizoram"> Mizoram </option>
+                        <option value="Nagaland"> Nagaland </option>
+                        <option value="Odisha"> Odisha </option>
+                        <option value="Puducherr"> Puducherry</option>
+                        <option value="Punjab"> Punjab </option>
+                        <option value="Rajasthan"> Rajasthan </option>
+                        <option value="Sikkim"> Sikkim </option>
+                        <option value="Tamil Nadu"> Tamil Nadu </option>
+                        <option value="Telangana"> Telangana </option>
+                        <option value="Tripura"> Tripura </option>
+                        <option value="Uttar Pradesh"> Uttar Pradesh </option>
+                        <option value="Uttarakhand"> Uttarakhand </option>
+                        <option value="West Bengal"> West Bengal </option>
+                    </select>
+                </div>
+            </div>
+            <div class="question4">
+                <p>3. What is your average Electricity Cost?</p> 
+                <div class="field">
+                    <input type="number" min="0" value="8" name="" id="cost">
+                    Rs/Kwh
+                </div>
+            </div>
+            <input type="submit" id="submit" value="submit">
+            <div class="messages">
+            </div>
+        </div>
+        <div class="report">
+            <div class="title">
+                Your report
+            </div>
+            <div class="desc">
+                <p>Average solar irradiation in <span id="state_name">SIKKIM</span> state is <b id="state_radiation">1046.26 W / sq.m </b></p> 
+                <p>1kWp solar rooftop plant will generate on an average over the year <b id="state_avg">4.1 kWh </b>  of electricity per day (considering 5.5 sunshine hours)</p>
+            </div>
+            <div class="stat1">
+                <p><b>1. Size of Power Plant</b></p>
+                <div class="fields">
+                    <div class="first">
+                        <p>Feasible Plant size as per your Roof Top Area :</p>
+                        <div class="value"> 
+                        <p id="size">10</p>Kw
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stat2">
+                <p><b>2. Total Electricity Generation from Solar Plant :</b></p>
+                <div class="fields">
+                    <div class="first">
+                        <p>Annual :</p>
+                        <div class="value">
+                        <p id="annual_elec">10</p>Kwh
+                        </div>
+                    </div>
+                    <div class="second">
+                        <p>Life-Time (25 years):</p>
+                        <div class="value">
+                        <p id="life_elec">10</p>Kwh
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stat3">
+                <p><b>3. Financial Savings :</b></p>
+                <p class="tariff">Tariff @ Rs. <span id="rates">8</span> / kWh -No increase assumed over 25 years :</p>
+                <div class="fields">
+                    <div class="first">
+                        <p>Monthly :</p> 
+                        <div class="value">
+                        <p id="month_savings">10</p> .Rs
+                        </div>
+                    </div>
+                    <div class="second">
+                        <p>Annually :</p> 
+                        <div class="value">
+                        <p id="annual_savings">10</p> .Rs    
+                        </div>
+                    </div>
+                    <div class="third">
+                        <p>Life-Time (25 years) :</p> 
+                        <div class="value">
+                        <p id="lifetime_savings">10</p> .Rs
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stat4">
+                <p><b>4. Environmental Impact</b></p>
+                <div class="fields">
+                    <div class="first">
+                        <p>Carbon dioxide emissions mitigated is</p>
+                        <div class="value">
+                        <p id="co2_reduce">10 tonnes </p>
+                        </div>
+                    </div>
+                    <div class="second">
+                        <p>This installation will be equivalent to planting <br> Teak trees over the life time.</p>
+                        <div class="value">
+                        <p id="tree">10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="disclaimer">
+                Disclaimer: The calculation is indicative in nature. Generation may vary from location to location.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="{% static 'rooftop_calculator.js' %}"></script> 

@@ -67,64 +67,38 @@ function choice(){
     document.querySelector(".question2").innerHTML = content;
 }
 form_submit.addEventListener('click',function(){
+    let allow = true;
     if( mode == 1){
-        let roof_area = document.getElementById('roof_area').value
-        let roof_area_unit = document.getElementById('roof_area_unit').value
-        let percent = document.getElementById('percent').value
-        let state = document.getElementById('state').value
-        let cost = document.getElementById('cost').value
-        let allow = true;
+        let roof_area = document.getElementById('roof_area').value;
+        let roof_area_unit = document.getElementById('roof_area_unit').value;
+        let percent = document.getElementById('percent').value;
+        let state = document.getElementById('state').value;
+        let cost = document.getElementById('cost').value;
         if( roof_area <= 0){
             allow = false;
             document.querySelector(".messages").innerHTML = "Area invalid";
             document.querySelector(".messages").style.width = "200px";
-            document.querySelector(".messages").addEventListener('transitionend',function(){
-                var delayInMilliseconds = 5000; //5 seconds
-                setTimeout(function() {
-                    document.querySelector(".messages").style.width = "0px";
-                }, delayInMilliseconds);
-                
-            })
         }
         if( percent <= 0){
             allow = false;
             document.querySelector(".messages").innerHTML = "Percent invalid";
             document.querySelector(".messages").style.width = "200px";
-            document.querySelector(".messages").addEventListener('transitionend',function(){
-                var delayInMilliseconds = 5000; //5 seconds
-                setTimeout(function() {
-                    document.querySelector(".messages").style.width = "0px";
-                }, delayInMilliseconds);
-                
-            })
         }
         if( state == " " ){
             allow = false;
             document.querySelector(".messages").innerHTML = "Empty State field"
             document.querySelector(".messages").style.width = "200px";
-            document.querySelector(".messages").addEventListener('transitionend',function(){
-                var delayInMilliseconds = 5000; //5 seconds
-                setTimeout(function() {
-                    document.querySelector(".messages").style.width = "0px";
-                }, delayInMilliseconds);
-                
-            })
         }
         if( roof_area_unit == 'Sq.ft.'){
             roof_area = roof_area * 0.092903;
         }
         roof_area = roof_area * (percent/100);
         let plant_size = roof_area/10;
+        plant_size = Math.round(plant_size*10)/10
         if( allow == true){
             document.querySelector(".messages").innerHTML = "Your Report is generated, scroll down"
-            document.querySelector(".messages").style.width = "400px";
-            document.querySelector(".messages").addEventListener('transitionend',function(){
-                var delayInMilliseconds = 5000; //5 seconds
-                setTimeout(function() {
-                    document.querySelector(".messages").style.width = "0px";
-                }, delayInMilliseconds);
-                
-            })
+            document.querySelector(".messages").style.width = "200px";
+            document.querySelector(".messages").style.height = "170px";
 
             document.getElementById('state_name').innerHTML = state;
             document.getElementById('state_radiation').innerHTML = state_dict[state][1] + ' W / sq.m';
@@ -132,7 +106,7 @@ form_submit.addEventListener('click',function(){
 
             document.getElementById('size').innerHTML = plant_size;
 
-            let annual_generation = state_dict[state][0] * 300;
+            let annual_generation = state_dict[state][0] * 300 * plant_size;
             document.getElementById('annual_elec').innerHTML = annual_generation;
             
             document.getElementById('life_elec').innerHTML = annual_generation * 25;
@@ -154,10 +128,80 @@ form_submit.addEventListener('click',function(){
     }
 
     else if( mode == 2){
-        let capacity = document.getElementById('capacity').value
+        let plant_size = document.getElementById('capacity').value
         let state = document.getElementById('state').value
         let cost = document.getElementById('cost').value
     
-        console.log(capacity,state,cost)
+        if( plant_size <= 0){
+            allow = false;
+            document.querySelector(".messages").innerHTML = "Invalid Capacity"
+            document.querySelector(".messages").style.width = "200px";
+            document.querySelector(".messages").addEventListener('transitionend',function(){
+                var delayInMilliseconds = 5000; //5 seconds
+                setTimeout(function() {
+                    document.querySelector(".messages").style.width = "0px";
+                }, delayInMilliseconds);
+                
+            })
+        }
+        if( state == " " ){
+            allow = false;
+            document.querySelector(".messages").innerHTML = "Empty State field"
+            document.querySelector(".messages").style.width = "200px";
+            document.querySelector(".messages").addEventListener('transitionend',function(){
+                var delayInMilliseconds = 5000; //5 seconds
+                setTimeout(function() {
+                    document.querySelector(".messages").style.width = "0px";
+                }, delayInMilliseconds);
+                
+            })
+        }
+        if(cost <= 0){
+            allow = false;
+            document.querySelector(".messages").innerHTML = "Invalid Electricity cost"
+            document.querySelector(".messages").style.width = "200px";
+            document.querySelector(".messages").addEventListener('transitionend',function(){
+                var delayInMilliseconds = 5000; //5 seconds
+                setTimeout(function() {
+                    document.querySelector(".messages").style.width = "0px";
+                }, delayInMilliseconds);
+                
+            })
+        }
+
+        if(allow == true){
+            document.querySelector(".messages").innerHTML = "Your Report is generated, scroll down"
+            document.querySelector(".messages").style.width = "200px";
+
+            document.getElementById('state_name').innerHTML = state;
+            document.getElementById('state_radiation').innerHTML = state_dict[state][1] + ' W / sq.m';
+            document.getElementById('state_avg').innerHTML = state_dict[state][0] + ' KWH';
+            
+            document.getElementById('size').innerHTML = plant_size;
+
+            let annual_generation = state_dict[state][0] * 300;
+            document.getElementById('annual_elec').innerHTML = annual_generation;
+            
+            document.getElementById('life_elec').innerHTML = annual_generation * 25;
+
+            document.getElementById('rates').innerHTML = cost;
+
+            let month_savings = cost * plant_size * 125;
+
+            document.getElementById('month_savings').innerHTML = month_savings;
+
+            document.getElementById('annual_savings').innerHTML = month_savings * 12;
+
+            document.getElementById('lifetime_savings').innerHTML = month_savings * 12 * 25;
+
+            document.getElementById('co2_reduce').innerHTML = Math.round(plant_size * 30.8) + "tonnes";
+
+            document.getElementById('tree').innerHTML = plant_size * 49; 
+        }
+    }
+
+    if( allow == true){
+        document.querySelector('.report').style.height = 'auto';
+        document.querySelector('.report').style.padding = '20px';
     }
 })

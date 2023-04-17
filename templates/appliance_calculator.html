@@ -13,7 +13,7 @@
 
     <!-- import font lobster -->
     <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
-    <link rel="stylesheet" href='{% static "style_calculator.css" %}'>
+    <link rel="stylesheet" href='{% static "appliance_calculator.css" %}'>
     <title>Imagine powertree</title>
 </head>
 <body>
@@ -81,110 +81,5 @@
                 </div>
             </div>
     </div>
-
-    <div class="page1">
-        <div class="title">
-            Energy for today,<br>
-            hope <span>for tomm</span>orow
-        </div>
-        <div class="image">
-            <div class="shade"></div>
-            <img src="{%static 'images/img.JPG' %}" alt="">
-        </div>
-        <div class="button">
-            Calculator
-        </div>
-    </div>
-    <div class="page2">
-        <div class="left">
-        <div class="number">01</div>
-        <div class="image">
-            <img src='{% static "images/21.JPG" %}'alt="">
-            <div class="background"></div>
-        </div>
-        <div class="title">Solar Tree calculator</div> 
-        </div>
-        <div class="right">
-            <ol>
-            <li>
-            estimates solar energy capacity from a solar tree
-            </li>
-            <li>
-            provides an estimate of energy generation
-            </li>
-            <li>
-            helps customers make informed decisions
-            </li>
-            <li>
-            promotes renewable energy adoption and sustainability.
-            </li>
-            </ol>
-        </div>
-        <button class="button">
-            <a href="tree">
-            Open Calculator
-            </a>
-        </button>
-    </div>
-    <div class="page3">
-        <div class="left">
-        <div class="number">02</div>
-        <div class="image">
-            <img src='{% static "images/40.JPG" %}'alt="">
-            <div class="background"></div>
-        </div>
-        <div class="title">Appliances based calculator</div> 
-        </div>
-        <div class="right">
-            <ol>
-            <li>It considers factors like appliance energy consumption, usage hours, and customer location
-            </li>
-            <li>The calculator helps customers determine the solar power system needed to reduce grid reliance.
-            </li>
-            <li>Customers can use the calculator to make informed decisions for cost-effective and efficient appliance power.
-            </li>
-            <li>Overall, an appliance-based solar calculator promotes solar power adoption and sustainability
-            </li>
-            </ol>
-        </div>
-        <button class="button">
-            <a href="appliances">
-            Open Calculator
-            </a>
-        </button>
-    </div>
-    <div class="page4">
-        <div class="left">
-        <div class="number">03</div>
-        <div class="image">
-            <img src='{% static "images/41.JPG" %}'alt="">
-            <div class="background"></div>
-        </div>
-        <div class="title">Rooftop calculator</div> 
-        </div>
-        <div class="right">
-            <ol>
-            <li>
-                helps determine rooftop solar capacity based on available area or needed capacity
-            </li>
-            <li>
-                estimates solar panel capacity for energy independence
-            </li>
-            <li>
-                customers make informed decisions for cost-effectiveness and efficiency
-            </li>
-            <li>
-            promotes renewable energy adoption and sustainability.
-            </li>
-            </ol>
-        </div>
-        <button class="button">
-            <a href="rooftop">
-            Open Calculator
-            </a>
-        </button>
-    </div>
-    </div>
 </body>
 </html>
-<script src="{% static 'calculator.js' %}"></script> 
