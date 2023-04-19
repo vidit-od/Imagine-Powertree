@@ -35,9 +35,31 @@ all_time.forEach(function(node,index){
         }
     })
 })
-
+let already = 1;
 all_delete.forEach(function(node,index){
     node.addEventListener('click',function(){
-        console.log(index);
+        let srno = node.parentNode.children[0].innerHTML
+        delete_helper(srno);
     })
 })
+
+function delete_helper(srno){
+    let all_rows = document.querySelectorAll('.row');
+    for( i=0; i<all_rows.length; i++){
+        let curr = all_rows[i].children[0].innerHTML;
+        if(srno == curr){
+            table.deleteRow(curr);
+            srno_change(srno);
+        }
+    } 
+}
+
+function srno_change(srno){
+    let all_rows = document.querySelectorAll('.row');
+    let pos =0;
+    for (i=srno-1; i<all_rows.length; i++){
+        let index = parseInt(srno)+parseInt(pos);
+        all_rows[i].children[0].innerHTML=index;
+        pos++;
+    }
+}
