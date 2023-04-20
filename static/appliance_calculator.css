@@ -178,7 +178,8 @@ a:visited{
     flex-wrap: wrap;
     align-items: center;
 }
-.page1 .calculator{
+.page1 .calculator,
+.page1 .report{
     width: 96%;
     height: 90%;
     margin-top: 25px;
@@ -256,6 +257,25 @@ input[type=number]:focus{
     width: 150px;
     margin: auto;
     margin-top: 10px;
+}
+.page1 .report{
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.page1 .report .title{
+    width: 100%;
+    text-align: center;
+    color: #FF9900;
+    font-size: 30px;
+}
+.page1 .report .part1{
+    width: 725px;
+    margin-top: 20px;
+}
+
+.page1 .report .part1 .lines{
+    display: flex;
+    justify-content: space-between;
 }
 @media screen and (max-width:1000px) {
     .navbar{

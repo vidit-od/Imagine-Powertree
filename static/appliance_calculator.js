@@ -6,9 +6,47 @@ let all_total_watts = document.querySelectorAll("#total_watts")
 let all_time = document.querySelectorAll("#time");
 let all_total_units = document.querySelectorAll('#total_units');
 let all_delete = document.querySelectorAll('#delete')
+let state = document.querySelector('#state');
 console.log(all_delete);
-let submit = document.getElementById('submit');
 let max_rows = 13;
+let curr_total_units = 0;
+let state_dict = {
+    "Andaman and Nicobar Island":2.1,
+    "Andhra Pradesh" :1.9,
+    "Arunachal Pradesh" :2.4,
+    "Assam" :2.1,
+    "Bihar" :1.9,
+    "Chandigahr":1.9,
+    "Chhattisgarh":2,
+    "Dadra & Nagar Haveli and Daman & Diu":1.7,
+    "Goa":1.7,
+    "Gujarat":1.7,
+    "Haryana":1.8,
+    "Himachal Pradesh":1.9,
+    "Jammu and Kashmir":2.2,
+    "Jharkhand":2.1,
+    "Karnataka":1.9,
+    "Kerala":1.7,
+    "Ladakh":1.9,
+    "Lakshadwee":2.0,
+    "Madhya Pradesh":1.8,
+    "Maharashtra":1.7,
+    "Manipur":2.1,
+    "Meghalaya":3.2,
+    "Mizoram":2.1,
+    "Nagaland":2.2,
+    "Odisha":2.0,
+    "Puducherr":1.9,
+    "Punjab":1.8,
+    "Rajasthan":1.7,
+    "Sikkim":2.6,
+    "Tamil Nadu":1.8,
+    "Telangana":1.9,
+    "Tripura":2.2,
+    "Uttar Pradesh":1.8,
+    "Uttarakhand":1.9,
+    "West Bengal":12
+}
 
 all_quantity.forEach(function(node,index){
     node.addEventListener('input',function(){
@@ -16,6 +54,9 @@ all_quantity.forEach(function(node,index){
         if(all_time[index].value != 0){
             all_total_units[index].innerHTML = (parseInt(node.value) * all_watts[index].value * all_time[index].value)/1000;
         }
+        total_demand();
+        total_units();
+        state_values();
     })
 })
 
@@ -27,6 +68,9 @@ all_watts.forEach(function(node,index){
         if(all_time[index].value != 0){
             all_total_units[index].innerHTML = (parseInt(node.value) * all_quantity[index].value * all_time[index].value)/1000;
         }
+        total_demand();
+        total_units();
+        state_values();
     })
 })
 
@@ -35,7 +79,14 @@ all_time.forEach(function(node,index){
         if(all_quantity[index].value != 0){
             all_total_units[index].innerHTML = (parseInt(node.value) * all_quantity[index].value * all_watts[index].value)/1000;
         }
+        total_demand();
+        total_units();
+        max_time();
+        state_values();
     })
+})
+state.addEventListener('input',function(){
+    state_values();
 })
 let already = 1;
 all_delete.forEach(function(node,index){
@@ -57,7 +108,6 @@ function delete_helper(srno){
         }
     } 
 }
-
 function srno_change(srno){
     let all_rows = document.querySelectorAll('.row');
     let pos =0;
@@ -67,43 +117,32 @@ function srno_change(srno){
         pos++;
     }
 }
-
-function update(){
-    table = document.querySelector('#table');
-    all_srno = document.querySelectorAll('#srno');
-    all_watts = document.querySelectorAll("#watts");
-    all_quantity = document.querySelectorAll("#quantity");
-    all_total_watts = document.querySelectorAll("#total_watts")
-    all_time = document.querySelectorAll("#time");
-    all_total_units = document.querySelectorAll('#total_units');
-    all_delete = document.querySelectorAll('#delete');
-    submit = document.getElementById('submit');
-
+function total_demand(){
+    var total = 0;
+    for(var i=0; i<all_total_watts.length; i++){
+            total = total + parseInt(all_total_watts[i].innerHTML)
+    }
+    document.querySelector('.first_ans').innerHTML = total/1000;
 }
-submit.addEventListener('click',function(){
-    let input = document.getElementById('new_appliance').value;
-    document.getElementById('new_appliance').value = "";
-    
-    var row = table.insertRow(max_rows+1);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    var cell4 = row.insertCell(3);
-    var cell5 = row.insertCell(4);
-    var cell6 = row.insertCell(5);
-    var cell7 = row.insertCell(6);
-    var cell8 = row.insertCell(7);
-
-    cell1.innerHTML = max_rows + 1;
-    cell2.innerHTML = input;
-    cell3.innerHTML = '<input type="number" min="0" name="" id="watts"  value="60">';
-    cell4.innerHTML = '<input type="number" min="0" name="" id="quantity" value="0">';
-    cell5.innerHTML = '';
-    cell6.innerHTML = '<input type="number" min="0" name="" id="time" value="0">'
-    cell7.innerHTML = '';
-    cell8.innerHTML = '<button>x</button>';
-    max_rows++;
-
-    update();
-    console.log(table);
-})
+function total_units(){
+    var total = 0;
+    for(var i=0; i<all_total_units.length; i++){
+            total = total + parseFloat(all_total_units[i].innerHTML)
+    }
+    document.querySelector('.second_ans').innerHTML = total;
+    curr_total_units = total;
+}
+function max_time(){
+    var max = 0;
+    for(var i=0; i<all_time.length;i++){
+        if( parseInt(all_time[i].value) > max){
+            max = parseInt(all_time[i].value);
+        }
+        document.querySelector('.third_ans').innerHTML = max;
+    }
+}
+function state_values(){
+    var ans = (state_dict[state.value] * curr_total_units)/10;
+    document.querySelector('.four_ans').innerHTML = Math.round(ans*100)/100;
+    document.querySelector('.five_ans').innerHTML = Math.round(curr_total_units * 32500)/100;
+}
