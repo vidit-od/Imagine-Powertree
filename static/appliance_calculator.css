@@ -197,14 +197,16 @@ a:visited{
     justify-content: space-between;
     margin: 20px;
 }
-.page1 .calculator .table{
+.page1 .calculator .table_holder{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 12px;
 }
-.page1 .calculator .table table{
+.page1 .calculator .table_holder table{
     width: 96%;
 }
 th, td {
@@ -220,9 +222,40 @@ input[type=number]:focus{
     text-align: center;
     
 }
-.table button{
+
+.table_holder button{
     background-color: transparent;
     border: none;
+}
+.add_row{
+    width: 570px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.add_row .main{
+    display: flex;
+    justify-content: space-between;
+}
+.add_row .inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.add_row input[type=text]{
+    text-align: center;
+    width: 300px;
+}
+.add_row input[type=submit]{
+    border: 2px solid #ff9900;
+    background: transparent;
+    color: #FF9900;
+    width: 150px;
+    margin: auto;
+    margin-top: 10px;
 }
 @media screen and (max-width:1000px) {
     .navbar{
