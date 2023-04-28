@@ -205,3 +205,22 @@ form_submit.addEventListener('click',function(){
         document.querySelector('.report').style.padding = '20px';
     }
 })
+
+let contact = document.getElementById('contact_submit');
+console.log(contact)
+contact.addEventListener('click',function(){
+    document.querySelector('.contactus').style.opacity = "0";
+})
+
+let contact_field = document.getElementById("phone_number");
+contact_field.addEventListener('input',function(){
+    var value = contact_field.value;
+    if( value.length == 10){
+        document.getElementById('contact_submit').style.background = '#ff9900';
+        document.getElementById('contact_submit').style.pointerEvents = "all";
+    }
+    else{
+        document.getElementById('contact_submit').style.background = '#ffffff';
+        document.getElementById('contact_submit').style.pointerEvents = "none";
+    }
+})

@@ -146,3 +146,22 @@ function state_values(){
     document.querySelector('.four_ans').innerHTML = Math.round(ans*100)/100;
     document.querySelector('.five_ans').innerHTML = Math.round(curr_total_units * 32500)/100;
 }
+
+let contact = document.getElementById('contact_submit');
+console.log(contact)
+contact.addEventListener('click',function(){
+    document.querySelector('.contactus').style.opacity = "0";
+})
+
+let contact_field = document.getElementById("phone_number");
+contact_field.addEventListener('input',function(){
+    var value = contact_field.value;
+    if( value.length == 10){
+        document.getElementById('contact_submit').style.background = '#ff9900';
+        document.getElementById('contact_submit').style.pointerEvents = "all";
+    }
+    else{
+        document.getElementById('contact_submit').style.background = '#ffffff';
+        document.getElementById('contact_submit').style.pointerEvents = "none";
+    }
+})

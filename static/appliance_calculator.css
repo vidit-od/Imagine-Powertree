@@ -261,6 +261,7 @@ input[type=number]:focus{
 .page1 .report{
     padding: 20px;
     margin-bottom: 20px;
+    position: relative;
 }
 .page1 .report .title{
     width: 100%;
@@ -276,6 +277,33 @@ input[type=number]:focus{
 .page1 .report .part1 .lines{
     display: flex;
     justify-content: space-between;
+}
+
+.page1 .contactus{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:transparent;
+    backdrop-filter: blur(30px);
+    z-index: 1;
+    transform: translateX(-20px) translateY(-20px);
+    transition: opacity 0.5s ease;
+}
+.page1 .contactus .box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.page1 .contactus .box #contact_submit{
+    pointer-events: none;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: #ffffff;
+    transition: background 1s ease;
 }
 @media screen and (max-width:1000px) {
     .navbar{
