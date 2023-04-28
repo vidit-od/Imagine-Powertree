@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,700&display=swap" rel="stylesheet">
-
     <!-- import font lobster -->
     <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
     <link rel="stylesheet" href='{% static "tree_calculator.css" %}'>
@@ -81,6 +80,11 @@
                 </div>
             </div>
     </div>
+    <div class="shower">
+        {% for message in messages %}
+            {{message}}
+        {% endfor %}
+    </div>
     <!-- calculator -->
     <div class="page2">
         <div class="calculator">
@@ -144,6 +148,17 @@
             </div>
         </div>
         <div class="report">
+            <div class="contactus">
+                <div class="box">
+                    Enter your contact number to see your report: 
+                    <form id="post-form"> 
+                        {% csrf_token %}
+                        <input type="number" id="phone_number">
+                        <input type="submit" id='contact_submit' value="submit" >
+                    </form>
+                    
+                </div>
+            </div>
             <div class="title">
                 Your report
             </div>
@@ -227,4 +242,26 @@
     </div>
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.5.1.js" 
+          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+            crossorigin="anonymous"></script>
+  
+    <script type="text/javascript">
+    $(document).on('submit','#post-form',function(e){
+        e.preventDefault();
+        $.ajax({
+            type:'POST',
+            url:"{% url 'create' %}",
+            data:
+            {
+                phone_number:$("#phone_number").val(),
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+            },
+            success:function(){
+                    alert('Your Contact number is saved !! our team will respond to you soon');
+                }
+            })
+        });
+    </script>
+
 <script src="{% static 'tree_calculator.js' %}"></script>

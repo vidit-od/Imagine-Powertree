@@ -431,7 +431,32 @@ a:visited{
     background-color: #FF9900;
     text-align: center;
 }
-
+.page2 .contactus{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:transparent;
+    backdrop-filter: blur(30px);
+    z-index: 1;
+    transform: translateX(-20px) translateY(-20px);
+    transition: opacity 0.5s ease;
+}
+.page2 .contactus .box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.page2 .contactus .box #contact_submit{
+    pointer-events: none;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: #ffffff;
+    transition: background 1s ease;
+}
 @media screen and (max-width:1000px) {
     .navbar{
         width: 100%;
